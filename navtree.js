@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Template", "index.html", [
+  [ "PiCo", "index.html", [
     [ "Related Pages", "pages.html", "pages" ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
