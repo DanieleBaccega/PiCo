@@ -98,49 +98,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment"> * BinaryOperator.hpp</span>
-<a name="l00003"></a>00003 <span class="comment"> *</span>
-<a name="l00004"></a>00004 <span class="comment"> *  Created on: Aug 7, 2016</span>
-<a name="l00005"></a>00005 <span class="comment"> *      Author: misale</span>
-<a name="l00006"></a>00006 <span class="comment"> */</span>
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="preprocessor">#ifndef OPERATORS_BINARYOPERATOR_HPP_</span>
-<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define OPERATORS_BINARYOPERATOR_HPP_</span>
-<a name="l00010"></a>00010 <span class="preprocessor"></span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;../Operators/Operator.hpp&quot;</span>
-<a name="l00016"></a>00016 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> In1, <span class="keyword">typename</span> In2, <span class="keyword">typename</span> Out&gt;
-<a name="l00017"></a><a class="code" href="class_binary_operator.html">00017</a> <span class="keyword">class </span><a class="code" href="class_binary_operator.html">BinaryOperator</a> : <span class="keyword">public</span> <a class="code" href="class_operator.html">Operator</a> {
-<a name="l00018"></a>00018     <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_pipe.html">Pipe</a>;
-<a name="l00019"></a>00019 <span class="keyword">public</span>:
-<a name="l00020"></a>00020     <span class="keyword">virtual</span> ~<a class="code" href="class_binary_operator.html">BinaryOperator</a>() {};
-<a name="l00021"></a>00021     <span class="keyword">virtual</span> std::string <a class="code" href="class_binary_operator.html#a6df8c4e6dee857f27d870c30d4f65920">name</a>()=0;
-<a name="l00022"></a>00022 <span class="keyword">protected</span>:
-<a name="l00023"></a>00023     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> checkInputTypeSanity(TypeInfoRef <span class="keywordtype">id</span>) {
-<a name="l00024"></a>00024 <span class="preprocessor">#ifdef DEBUG</span>
-<a name="l00025"></a>00025 <span class="preprocessor"></span>        std::cerr &lt;&lt; std::boolalpha;
-<a name="l00026"></a>00026         std::cerr &lt;&lt; <span class="stringliteral">&quot;[BINARY_ACTOR_NODE] Type sanity check: &quot;</span> &lt;&lt; (<span class="keyword">typeid</span>(Out) == <span class="keywordtype">id</span>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-<a name="l00027"></a>00027 <span class="preprocessor">#endif</span>
-<a name="l00028"></a>00028 <span class="preprocessor"></span>        <span class="keywordflow">return</span> <span class="keyword">typeid</span>(In1) == <span class="keywordtype">id</span> || <span class="keyword">typeid</span>(In2) == id;
-<a name="l00029"></a>00029     }
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> checkOutputTypeSanity(TypeInfoRef <span class="keywordtype">id</span>) {
-<a name="l00032"></a>00032 <span class="preprocessor">#ifdef DEBUG</span>
-<a name="l00033"></a>00033 <span class="preprocessor"></span>        std::cerr &lt;&lt; std::boolalpha;
-<a name="l00034"></a>00034         std::cerr &lt;&lt; <span class="stringliteral">&quot;[BINARY_ACTOR_NODE] Type sanity check: &quot;</span> &lt;&lt; (<span class="keyword">typeid</span>(Out) == <span class="keywordtype">id</span>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-<a name="l00035"></a>00035 <span class="preprocessor">#endif</span>
-<a name="l00036"></a>00036 <span class="preprocessor"></span>        <span class="keywordflow">return</span> <span class="keyword">typeid</span>(Out) == <span class="keywordtype">id</span>;
-<a name="l00037"></a>00037     }
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> i_degree()=0;
-<a name="l00040"></a>00040     <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> o_degree()=0;
-<a name="l00041"></a>00041     <span class="keyword">virtual</span> <span class="keywordtype">bool</span>* structure_type()=0;
-<a name="l00042"></a>00042     <span class="keyword">virtual</span> <span class="keyword">const</span> OperatorClass operator_class()=0;
-<a name="l00043"></a>00043     <span class="keyword">virtual</span> ff::ff_node* node_operator(<span class="keywordtype">size_t</span> parallelism = 1)=0;
-<a name="l00044"></a>00044 };
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048 <span class="preprocessor">#endif </span><span class="comment">/* OPERATORS_BINARYOPERATOR_HPP_ */</span>
+<a name="l00002"></a>00002 <span class="comment">    This file is part of PiCo.</span>
+<a name="l00003"></a>00003 <span class="comment">    PiCo is free software: you can redistribute it and/or modify</span>
+<a name="l00004"></a>00004 <span class="comment">    it under the terms of the GNU Lesser General Public License as published by</span>
+<a name="l00005"></a>00005 <span class="comment">    the Free Software Foundation, either version 3 of the License, or</span>
+<a name="l00006"></a>00006 <span class="comment">    (at your option) any later version.</span>
+<a name="l00007"></a>00007 <span class="comment">    PiCo is distributed in the hope that it will be useful,</span>
+<a name="l00008"></a>00008 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00009"></a>00009 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00010"></a>00010 <span class="comment">    GNU Lesser General Public License for more details.</span>
+<a name="l00011"></a>00011 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
+<a name="l00012"></a>00012 <span class="comment">    along with PiCo.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00013"></a>00013 <span class="comment">*/</span>
+<a name="l00014"></a>00014 <span class="comment">/*</span>
+<a name="l00015"></a>00015 <span class="comment"> * BinaryOperator.hpp</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *  Created on: Aug 7, 2016</span>
+<a name="l00018"></a>00018 <span class="comment"> *      Author: misale</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="preprocessor">#ifndef OPERATORS_BINARYOPERATOR_HPP_</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define OPERATORS_BINARYOPERATOR_HPP_</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;../Operators/Operator.hpp&quot;</span>
+<a name="l00029"></a>00029 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> In1, <span class="keyword">typename</span> In2, <span class="keyword">typename</span> Out&gt;
+<a name="l00030"></a><a class="code" href="class_binary_operator.html">00030</a> <span class="keyword">class </span><a class="code" href="class_binary_operator.html">BinaryOperator</a> : <span class="keyword">public</span> <a class="code" href="class_operator.html">Operator</a> {
+<a name="l00031"></a>00031     <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_pipe.html">Pipe</a>;
+<a name="l00032"></a>00032 <span class="keyword">public</span>:
+<a name="l00033"></a>00033     <span class="keyword">virtual</span> ~<a class="code" href="class_binary_operator.html">BinaryOperator</a>() {};
+<a name="l00034"></a>00034     <span class="keyword">virtual</span> std::string <a class="code" href="class_binary_operator.html#a6df8c4e6dee857f27d870c30d4f65920">name</a>()=0;
+<a name="l00035"></a>00035 <span class="keyword">protected</span>:
+<a name="l00036"></a>00036     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> checkInputTypeSanity(TypeInfoRef <span class="keywordtype">id</span>) {
+<a name="l00037"></a>00037 <span class="preprocessor">#ifdef DEBUG</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span>        std::cerr &lt;&lt; std::boolalpha;
+<a name="l00039"></a>00039         std::cerr &lt;&lt; <span class="stringliteral">&quot;[BINARY_ACTOR_NODE] Type sanity check: &quot;</span> &lt;&lt; (<span class="keyword">typeid</span>(Out) == <span class="keywordtype">id</span>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00040"></a>00040 <span class="preprocessor">#endif</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>        <span class="keywordflow">return</span> <span class="keyword">typeid</span>(In1) == <span class="keywordtype">id</span> || <span class="keyword">typeid</span>(In2) == id;
+<a name="l00042"></a>00042     }
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> checkOutputTypeSanity(TypeInfoRef <span class="keywordtype">id</span>) {
+<a name="l00045"></a>00045 <span class="preprocessor">#ifdef DEBUG</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span>        std::cerr &lt;&lt; std::boolalpha;
+<a name="l00047"></a>00047         std::cerr &lt;&lt; <span class="stringliteral">&quot;[BINARY_ACTOR_NODE] Type sanity check: &quot;</span> &lt;&lt; (<span class="keyword">typeid</span>(Out) == <span class="keywordtype">id</span>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00048"></a>00048 <span class="preprocessor">#endif</span>
+<a name="l00049"></a>00049 <span class="preprocessor"></span>        <span class="keywordflow">return</span> <span class="keyword">typeid</span>(Out) == <span class="keywordtype">id</span>;
+<a name="l00050"></a>00050     }
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052     <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> i_degree()=0;
+<a name="l00053"></a>00053     <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> o_degree()=0;
+<a name="l00054"></a>00054     <span class="keyword">virtual</span> <span class="keywordtype">bool</span>* structure_type()=0;
+<a name="l00055"></a>00055     <span class="keyword">virtual</span> <span class="keyword">const</span> OperatorClass operator_class()=0;
+<a name="l00056"></a>00056     <span class="keyword">virtual</span> ff::ff_node* node_operator(<span class="keywordtype">size_t</span> parallelism = 1)=0;
+<a name="l00057"></a>00057 };
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 <span class="preprocessor">#endif </span><span class="comment">/* OPERATORS_BINARYOPERATOR_HPP_ */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

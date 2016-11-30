@@ -98,72 +98,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment"> * WriteToDiskFFNode.hpp</span>
-<a name="l00003"></a>00003 <span class="comment"> *</span>
-<a name="l00004"></a>00004 <span class="comment"> *  Created on: Sep 21, 2016</span>
-<a name="l00005"></a>00005 <span class="comment"> *      Author: misale</span>
-<a name="l00006"></a>00006 <span class="comment"> */</span>
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="preprocessor">#ifndef INTERNALS_FFOPERATORS_INOUT_WRITETODISKFFNODE_HPP_</span>
-<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define INTERNALS_FFOPERATORS_INOUT_WRITETODISKFFNODE_HPP_</span>
-<a name="l00010"></a>00010 <span class="preprocessor"></span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;ff/node.hpp&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;../../utils.hpp&quot;</span>
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="keyword">using namespace </span>ff;
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> In&gt;
-<a name="l00017"></a><a class="code" href="class_write_to_disk_f_f_node.html">00017</a> <span class="keyword">class </span><a class="code" href="class_write_to_disk_f_f_node.html">WriteToDiskFFNode</a>: <span class="keyword">public</span> ff_node{
-<a name="l00018"></a>00018 <span class="keyword">public</span>:
-<a name="l00019"></a>00019     <a class="code" href="class_write_to_disk_f_f_node.html">WriteToDiskFFNode</a>(<span class="keywordtype">size_t</span> parallelism_, std::function&lt;In(In)&gt; kernel_, std::string filename_):
-<a name="l00020"></a>00020             par_deg(parallelism_), kernel(kernel_), filename(filename_), recv_sync(<span class="keyword">false</span>){};
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022     <span class="keywordtype">int</span> svc_init(){
-<a name="l00023"></a>00023 <span class="comment">//#ifdef DEBUG</span>
-<a name="l00024"></a>00024 <span class="comment">//      fprintf(stderr, &quot;[WRITE TO DISK] init FFnode\n&quot;);</span>
-<a name="l00025"></a>00025 <span class="comment">//#endif</span>
-<a name="l00026"></a>00026         outfile.open(filename);
-<a name="l00027"></a>00027         <span class="keywordflow">return</span> 0;
-<a name="l00028"></a>00028     }
-<a name="l00029"></a>00029     <span class="keywordtype">void</span>* svc(<span class="keywordtype">void</span>* task){
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031         <span class="keywordflow">if</span>(task == PICO_SYNC){
-<a name="l00032"></a>00032 <span class="preprocessor">#ifdef DEBUG</span>
-<a name="l00033"></a>00033 <span class="preprocessor"></span>        fprintf(stderr, <span class="stringliteral">&quot;[WRITE TO DISK] In SVC: RECEIVED PICO_SYNC\n&quot;</span>);
-<a name="l00034"></a>00034 <span class="preprocessor">#endif</span>
-<a name="l00035"></a>00035 <span class="preprocessor"></span>            recv_sync = <span class="keyword">true</span>;
-<a name="l00036"></a>00036             <span class="keywordflow">return</span> GO_ON;
-<a name="l00037"></a>00037         }
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039         <span class="keywordflow">if</span>(recv_sync || task != PICO_EOS){
-<a name="l00040"></a>00040             in = <span class="keyword">reinterpret_cast&lt;</span>In*<span class="keyword">&gt;</span>(task);
-<a name="l00041"></a>00041             <span class="keywordflow">if</span> (outfile.is_open()) {
-<a name="l00042"></a>00042                 in = <span class="keyword">reinterpret_cast&lt;</span>In*<span class="keyword">&gt;</span>(task);
-<a name="l00043"></a>00043                 outfile &lt;&lt; *in <span class="comment">/*kernel(*task)*/</span>&lt;&lt; std::endl;
-<a name="l00044"></a>00044                 <span class="keyword">delete</span> in;
-<a name="l00045"></a>00045             } <span class="keywordflow">else</span> {
-<a name="l00046"></a>00046                 std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open file&quot;</span>;
-<a name="l00047"></a>00047             }
-<a name="l00048"></a>00048         }
-<a name="l00049"></a>00049         <span class="keywordflow">return</span> GO_ON;
-<a name="l00050"></a>00050     }
+<a name="l00002"></a>00002 <span class="comment">    This file is part of PiCo.</span>
+<a name="l00003"></a>00003 <span class="comment">    PiCo is free software: you can redistribute it and/or modify</span>
+<a name="l00004"></a>00004 <span class="comment">    it under the terms of the GNU Lesser General Public License as published by</span>
+<a name="l00005"></a>00005 <span class="comment">    the Free Software Foundation, either version 3 of the License, or</span>
+<a name="l00006"></a>00006 <span class="comment">    (at your option) any later version.</span>
+<a name="l00007"></a>00007 <span class="comment">    PiCo is distributed in the hope that it will be useful,</span>
+<a name="l00008"></a>00008 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00009"></a>00009 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00010"></a>00010 <span class="comment">    GNU Lesser General Public License for more details.</span>
+<a name="l00011"></a>00011 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
+<a name="l00012"></a>00012 <span class="comment">    along with PiCo.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00013"></a>00013 <span class="comment">*/</span>
+<a name="l00014"></a>00014 <span class="comment">/*</span>
+<a name="l00015"></a>00015 <span class="comment"> * WriteToDiskFFNode.hpp</span>
+<a name="l00016"></a>00016 <span class="comment"> *</span>
+<a name="l00017"></a>00017 <span class="comment"> *  Created on: Sep 21, 2016</span>
+<a name="l00018"></a>00018 <span class="comment"> *      Author: misale</span>
+<a name="l00019"></a>00019 <span class="comment"> */</span>
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="preprocessor">#ifndef INTERNALS_FFOPERATORS_INOUT_WRITETODISKFFNODE_HPP_</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define INTERNALS_FFOPERATORS_INOUT_WRITETODISKFFNODE_HPP_</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;ff/node.hpp&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;../../utils.hpp&quot;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="keyword">using namespace </span>ff;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> In&gt;
+<a name="l00030"></a><a class="code" href="class_write_to_disk_f_f_node.html">00030</a> <span class="keyword">class </span><a class="code" href="class_write_to_disk_f_f_node.html">WriteToDiskFFNode</a>: <span class="keyword">public</span> ff_node{
+<a name="l00031"></a>00031 <span class="keyword">public</span>:
+<a name="l00032"></a>00032     <a class="code" href="class_write_to_disk_f_f_node.html">WriteToDiskFFNode</a>(<span class="keywordtype">size_t</span> parallelism_, std::function&lt;In(In)&gt; kernel_, std::string filename_):
+<a name="l00033"></a>00033             par_deg(parallelism_), kernel(kernel_), filename(filename_), recv_sync(<span class="keyword">false</span>){};
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035     <span class="keywordtype">int</span> svc_init(){
+<a name="l00036"></a>00036 <span class="comment">//#ifdef DEBUG</span>
+<a name="l00037"></a>00037 <span class="comment">//      fprintf(stderr, &quot;[WRITE TO DISK] init FFnode\n&quot;);</span>
+<a name="l00038"></a>00038 <span class="comment">//#endif</span>
+<a name="l00039"></a>00039         outfile.open(filename);
+<a name="l00040"></a>00040         <span class="keywordflow">return</span> 0;
+<a name="l00041"></a>00041     }
+<a name="l00042"></a>00042     <span class="keywordtype">void</span>* svc(<span class="keywordtype">void</span>* task){
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044         <span class="keywordflow">if</span>(task == PICO_SYNC){
+<a name="l00045"></a>00045 <span class="preprocessor">#ifdef DEBUG</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span>        fprintf(stderr, <span class="stringliteral">&quot;[WRITE TO DISK] In SVC: RECEIVED PICO_SYNC\n&quot;</span>);
+<a name="l00047"></a>00047 <span class="preprocessor">#endif</span>
+<a name="l00048"></a>00048 <span class="preprocessor"></span>            recv_sync = <span class="keyword">true</span>;
+<a name="l00049"></a>00049             <span class="keywordflow">return</span> GO_ON;
+<a name="l00050"></a>00050         }
 <a name="l00051"></a>00051 
-<a name="l00052"></a>00052     <span class="keywordtype">void</span> svc_end(){
-<a name="l00053"></a>00053         outfile.close();
-<a name="l00054"></a>00054     }
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056 <span class="keyword">private</span>:
-<a name="l00057"></a>00057     <span class="keywordtype">size_t</span> par_deg;
-<a name="l00058"></a>00058     std::function&lt;In(In)&gt; kernel;
-<a name="l00059"></a>00059     std::string filename;
-<a name="l00060"></a>00060     std::ofstream outfile;
-<a name="l00061"></a>00061     In* in;
-<a name="l00062"></a>00062     <span class="keywordtype">bool</span> recv_sync;
-<a name="l00063"></a>00063 };
+<a name="l00052"></a>00052         <span class="keywordflow">if</span>(recv_sync || task != PICO_EOS){
+<a name="l00053"></a>00053             in = <span class="keyword">reinterpret_cast&lt;</span>In*<span class="keyword">&gt;</span>(task);
+<a name="l00054"></a>00054             <span class="keywordflow">if</span> (outfile.is_open()) {
+<a name="l00055"></a>00055                 in = <span class="keyword">reinterpret_cast&lt;</span>In*<span class="keyword">&gt;</span>(task);
+<a name="l00056"></a>00056                 outfile &lt;&lt; *in <span class="comment">/*kernel(*task)*/</span>&lt;&lt; std::endl;
+<a name="l00057"></a>00057                 <span class="keyword">delete</span> in;
+<a name="l00058"></a>00058             } <span class="keywordflow">else</span> {
+<a name="l00059"></a>00059                 std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open file&quot;</span>;
+<a name="l00060"></a>00060             }
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062         <span class="keywordflow">return</span> GO_ON;
+<a name="l00063"></a>00063     }
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_FFOPERATORS_INOUT_WRITETODISKFFNODE_HPP_ */</span>
+<a name="l00065"></a>00065     <span class="keywordtype">void</span> svc_end(){
+<a name="l00066"></a>00066         outfile.close();
+<a name="l00067"></a>00067     }
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 <span class="keyword">private</span>:
+<a name="l00070"></a>00070     <span class="keywordtype">size_t</span> par_deg;
+<a name="l00071"></a>00071     std::function&lt;In(In)&gt; kernel;
+<a name="l00072"></a>00072     std::string filename;
+<a name="l00073"></a>00073     std::ofstream outfile;
+<a name="l00074"></a>00074     In* in;
+<a name="l00075"></a>00075     <span class="keywordtype">bool</span> recv_sync;
+<a name="l00076"></a>00076 };
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_FFOPERATORS_INOUT_WRITETODISKFFNODE_HPP_ */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

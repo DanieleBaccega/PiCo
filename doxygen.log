@@ -129,20 +129,20 @@ Parsing file /home/travis/build/alpha-unito/PiCo/Internals/WindowParam.hpp...
 Preprocessing /home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp...
 Parsing file /home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp...
 Preprocessing /home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp...
-Parsing file /home/travis/build/alpha-unito/PiCo/Operators/BinaryOp/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Emitter.hpp:14: warning: Compound Emitter is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:18: warning: Compound ReadFromFileFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:13: warning: Compound BCastEmitter is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:16: warning: Compound SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/GroupParam.hpp:11: warning: Compound GroupParam is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:25: warning: Compound ParExecDF is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:14: warning: Compound KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:17: warning: Compound WriteToDiskFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Collector.hpp:15: warning: Compound Collector is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/WindowParam.hpp:12: warning: Compound WindowParam is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp:20: warning: Compound PReduceFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:17: warning: Compound UnaryMapFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp:16: warning: Compound UnaryFlatMapFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:13: warning: Compound RREmitter is not documented.
+Parsing file /home/travis/build/alpha-unito/PiCo/Operators/BinaryOp/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Emitter.hpp:27: warning: Compound Emitter is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:31: warning: Compound ReadFromFileFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:26: warning: Compound BCastEmitter is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:29: warning: Compound SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/GroupParam.hpp:24: warning: Compound GroupParam is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:38: warning: Compound ParExecDF is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:27: warning: Compound KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:30: warning: Compound WriteToDiskFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Collector.hpp:28: warning: Compound Collector is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/WindowParam.hpp:25: warning: Compound WindowParam is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp:33: warning: Compound PReduceFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:30: warning: Compound UnaryMapFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp:29: warning: Compound UnaryFlatMapFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:26: warning: Compound RREmitter is not documented.
 erator.hpp...
 Preprocessing /home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp...
 Parsing file /home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp...
@@ -224,134 +224,134 @@ Generating file sources...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BinaryMapFarm.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Collector.hpp...
-Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOper/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:16: warning: Member BCastEmitter(size_t nworkers_, ff_loadbalancer *const lb_) (function) of class BCastEmitter is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:19: warning: Member svc_init() (function) of class BCastEmitter is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:26: warning: Member svc(void *task) (function) of class BCastEmitter is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:62: warning: Member run() (function) of class BinaryMap is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:76: warning: Member i_degree() (function) of class BinaryMap is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:80: warning: Member o_degree() (function) of class BinaryMap is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:84: warning: Member structure_type() (function) of class BinaryMap is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:88: warning: Member operator_class() (function) of class BinaryMap is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:92: warning: Member node_operator(size_t parallelism=1) (function) of class BinaryMap is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:27: warning: argument 'bmapf' of command @param is not found in the argument list of BinaryMap< In1, In2, Out >::BinaryMap(std::function< Out(In1, In2)> bmapf_)
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:27: warning: The following parameters of BinaryMap::BinaryMap(std::function< Out(In1, In2)> bmapf_) are not documented:
+Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOper/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:29: warning: Member BCastEmitter(size_t nworkers_, ff_loadbalancer *const lb_) (function) of class BCastEmitter is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:32: warning: Member svc_init() (function) of class BCastEmitter is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:39: warning: Member svc(void *task) (function) of class BCastEmitter is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:75: warning: Member run() (function) of class BinaryMap is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:89: warning: Member i_degree() (function) of class BinaryMap is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:93: warning: Member o_degree() (function) of class BinaryMap is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:97: warning: Member structure_type() (function) of class BinaryMap is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:101: warning: Member operator_class() (function) of class BinaryMap is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:105: warning: Member node_operator(size_t parallelism=1) (function) of class BinaryMap is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:40: warning: argument 'bmapf' of command @param is not found in the argument list of BinaryMap< In1, In2, Out >::BinaryMap(std::function< Out(In1, In2)> bmapf_)
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:40: warning: The following parameters of BinaryMap::BinaryMap(std::function< Out(In1, In2)> bmapf_) are not documented:
   parameter 'bmapf_'
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:23: warning: Member checkInputTypeSanity(TypeInfoRef id) (function) of class BinaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:31: warning: Member checkOutputTypeSanity(TypeInfoRef id) (function) of class BinaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:39: warning: Member i_degree()=0 (function) of class BinaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:40: warning: Member o_degree()=0 (function) of class BinaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:41: warning: Member structure_type()=0 (function) of class BinaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:42: warning: Member operator_class()=0 (function) of class BinaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:43: warning: Member node_operator(size_t parallelism=1)=0 (function) of class BinaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Collector.hpp:19: warning: Member svc_init() (function) of class Collector is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Collector.hpp:25: warning: Member svc(void *task) (function) of class Collector is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:50: warning: Member run(In *task) (function) of class FlatMap is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:57: warning: Member operator_class() (function) of class FlatMap is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:61: warning: Member node_operator(size_t par_deg=1) (function) of class FlatMap is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:27: warning: argument 'flatmapf' of command @param is not found in the argument list of FlatMap< In, Out >::FlatMap(std::function< std::vector< Out >(In)> flatmapf_)
-/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:27: warning: The following parameters of FlatMap::FlatMap(std::function< std::vector< Out >(In)> flatmapf_) are not documented:
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:36: warning: Member checkInputTypeSanity(TypeInfoRef id) (function) of class BinaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:44: warning: Member checkOutputTypeSanity(TypeInfoRef id) (function) of class BinaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:52: warning: Member i_degree()=0 (function) of class BinaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:53: warning: Member o_degree()=0 (function) of class BinaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:54: warning: Member structure_type()=0 (function) of class BinaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:55: warning: Member operator_class()=0 (function) of class BinaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:56: warning: Member node_operator(size_t parallelism=1)=0 (function) of class BinaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Collector.hpp:32: warning: Member svc_init() (function) of class Collector is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Collector.hpp:38: warning: Member svc(void *task) (function) of class Collector is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:63: warning: Member run(In *task) (function) of class FlatMap is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:70: warning: Member operator_class() (function) of class FlatMap is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:74: warning: Member node_operator(size_t par_deg=1) (function) of class FlatMap is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:40: warning: argument 'flatmapf' of command @param is not found in the argument list of FlatMap< In, Out >::FlatMap(std::function< std::vector< Out >(In)> flatmapf_)
+/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:40: warning: The following parameters of FlatMap::FlatMap(std::function< std::vector< Out >(In)> flatmapf_) are not documented:
   parameter 'flatmapf_'
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/InputOperator.hpp:78: warning: Member run_kernel()=0 (function) of class InputOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/InputOperator.hpp:81: warning: Member operator_class() (function) of class InputOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:16: warning: Member keytype (typedef) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:18: warning: Member KeyValue(K key_, V val_) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:19: warning: Member KeyValue(const KeyValue &kv) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:20: warning: Member Key() const  (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:21: warning: Member Value() const  (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:22: warning: Member Key(K key_) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:23: warning: Member Value(V val_) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:24: warning: Member KeyVal(K key_, V val_) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:29: warning: Member operator=(const KeyValue &kv) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:34: warning: Member operator==(KeyValue &kv) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:54: warning: Member sumValue(const KeyValue &kv) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:58: warning: Member sameKey(const KeyValue &kv) const  (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:39: warning: Member operator<<(std::ostream &os, const KeyValue &kv) (friend) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:48: warning: Member operator+(KeyValue lhs, const KeyValue &rhs) (friend) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:51: warning: Member run_kernel(In *in_task) (function) of class Map is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:76: warning: Member operator_class() (function) of class Map is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:81: warning: Member node_operator(size_t parallelism=1) (function) of class Map is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:28: warning: argument 'mapf' of command @param is not found in the argument list of Map< In, Out >::Map(std::function< Out(In)> mapf_)
-/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:28: warning: The following parameters of Map::Map(std::function< Out(In)> mapf_) are not documented:
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/InputOperator.hpp:91: warning: Member run_kernel()=0 (function) of class InputOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/InputOperator.hpp:94: warning: Member operator_class() (function) of class InputOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:29: warning: Member keytype (typedef) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:31: warning: Member KeyValue(K key_, V val_) (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:32: warning: Member KeyValue(const KeyValue &kv) (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:33: warning: Member Key() const  (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:34: warning: Member Value() const  (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:35: warning: Member Key(K key_) (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:36: warning: Member Value(V val_) (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:37: warning: Member KeyVal(K key_, V val_) (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:42: warning: Member operator=(const KeyValue &kv) (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:47: warning: Member operator==(KeyValue &kv) (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:67: warning: Member sumValue(const KeyValue &kv) (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:71: warning: Member sameKey(const KeyValue &kv) const  (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:52: warning: Member operator<<(std::ostream &os, const KeyValue &kv) (friend) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:61: warning: Member operator+(KeyValue lhs, const KeyValue &rhs) (friend) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:64: warning: Member run_kernel(In *in_task) (function) of class Map is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:89: warning: Member operator_class() (function) of class Map is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:94: warning: Member node_operator(size_t parallelism=1) (function) of class Map is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:41: warning: argument 'mapf' of command @param is not found in the argument list of Map< In, Out >::Map(std::function< Out(In)> mapf_)
+/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:41: warning: The following parameters of Map::Map(std::function< Out(In)> mapf_) are not documented:
   parameter 'mapf_'
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:44: warning: Member name_short()=0 (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:49: warning: Member checkInputTypeSanity(TypeInfoRef id)=0 (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:50: warning: Member checkOutputTypeSanity(TypeInfoRef id)=0 (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:51: warning: Member operator_class()=0 (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:52: warning: Member node_operator(size_t par_deg=1)=0 (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:54: warning: Member structure_type() (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:59: warning: Member set_input_degree(size_t degree) (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:64: warning: Member i_degree() const  (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:69: warning: Member set_output_degree(size_t degree) (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:74: warning: Member o_degree() const  (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:78: warning: Member set_stype(enum RawStructureType stype, bool flag) (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:83: warning: Member stype(enum RawStructureType stype) const  (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/OutputOperator.hpp:80: warning: Member run_kernel(In *)=0 (function) of class OutputOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/OutputOperator.hpp:83: warning: Member operator_class() (function) of class OutputOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:29: warning: Member ParExecDF(adjList *dag, SemDAGNode *firstnode_, SemDAGNode *lastnode_, Operator *firstop_, Operator *lastop_) (function) of class ParExecDF is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:39: warning: Member run() (function) of class ParExecDF is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:46: warning: Member run() (function) of class PReduce is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:50: warning: Member operator_class() (function) of class PReduce is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:55: warning: Member node_operator(size_t par_deg=1) (function) of class PReduce is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp:23: warning: Member PReduceFFNode(size_t parallelism, std::function< In(In, In)> *preducef) (function) of class PReduceFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp:29: warning: Member svc(void *task) (function) of class PReduceFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:68: warning: Member run_kernel() (function) of class ReadFromFile is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:72: warning: Member operator_class() (function) of class ReadFromFile is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:76: warning: Member node_operator(size_t parallelism=1) (function) of class ReadFromFile is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:21: warning: Member ReadFromFileFFNode(size_t parallelism_, std::function< Out(std::string)> kernel_, std::string filename_) (function) of class ReadFromFileFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:23: warning: Member svc(void *in) (function) of class ReadFromFileFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Reduce.hpp:46: warning: Member run() (function) of class Reduce is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Reduce.hpp:55: warning: Member operator_class() (function) of class Reduce is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Reduce.hpp:59: warning: Member node_operator(size_t parallelism=1) (function) of class Reduce is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:16: warning: Member RREmitter(size_t nworkers_, ff_loadbalancer *const lb_) (function) of class RREmitter is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:19: warning: Member svc_init() (function) of class RREmitter is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:26: warning: Member svc(void *task) (function) of class RREmitter is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:44: warning: Member SemanticDAG(std::shared_ptr< Operator > start) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:62: warning: Member add_operator(std::shared_ptr< Operator > op) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:67: warning: Member append(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:73: warning: Member add_bcast_block(std::shared_ptr< Operator > mergeOp) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:89: warning: Member append_to(const SemanticDAG &inputg, SemDAGNode *&mergeNode) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:95: warning: Member append_merge(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:125: warning: Member print() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:149: warning: Member to_dotfile(std::string filename) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:176: warning: Member bfs() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:206: warning: Member empty() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:210: warning: Member lastNode() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:214: warning: Member lastNode(SemDAGNode *node) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:218: warning: Member firstNode() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:222: warning: Member lastOp() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:226: warning: Member lastOp(std::shared_ptr< Operator > op_) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:230: warning: Member firstOp() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:234: warning: Member run() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:243: warning: Member size() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:24: warning: Member SemDAGNode(const SemDAGNode *node) (function) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:27: warning: Member SemDAGNode(std::shared_ptr< Operator > op_) (function) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:29: warning: Member SemDAGNode(DAGNodeRole role_, OperatorClass op_) (function) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:30: warning: Member SemDAGNode(DAGNodeRole role_, OperatorClass op_, size_t farmid_) (function) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:35: warning: Member assign(std::shared_ptr< Operator > op_) (function) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:41: warning: Member node_operator(size_t par_deg=1) (function) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:59: warning: Member name_short() const  (function) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:18: warning: Member op (variable) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:19: warning: Member role (variable) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:20: warning: Member opclass (variable) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:22: warning: Member farmid (variable) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:21: warning: Member farmidcounter (variable) of class SemDAGNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp:20: warning: Member UnaryFlatMapFFNode(size_t parallelism, std::function< std::vector< Out >(In)> *flatmapf) (function) of class UnaryFlatMapFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp:23: warning: Member svc(void *task) (function) of class UnaryFlatMapFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:19: warning: Member UnaryMapFFNode(size_t parallelism, std::function< Out(In)> *mapf_) (function) of class UnaryMapFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:22: warning: Member svc(void *task) (function) of class UnaryMapFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:40: warning: Member inT (typedef) of class UnaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:41: warning: Member outT (typedef) of class UnaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:26: warning: Member UnaryOperator(const UnaryOperator &copy) (function) of class UnaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:45: warning: Member checkInputTypeSanity(TypeInfoRef id) (function) of class UnaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:54: warning: Member checkOutputTypeSanity(TypeInfoRef id) (function) of class UnaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:62: warning: Member operator_class()=0 (function) of class UnaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:68: warning: Member run_kernel(In *task) (function) of class WriteToDisk is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:80: warning: Member operator_class() (function) of class WriteToDisk is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:84: warning: Member node_operator(size_t parallelism=1) (function) of class WriteToDisk is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:20: warning: Member WriteToDiskFFNode(size_t parallelism_, std::function< In(In)> kernel_, std::string filename_) (function) of class WriteToDiskFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:22: warning: Member svc_init() (function) of class WriteToDiskFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:29: warning: Member svc(void *task) (function) of class WriteToDiskFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:52: warning: Member svc_end() (function) of class WriteToDiskFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:57: warning: Member name_short()=0 (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:62: warning: Member checkInputTypeSanity(TypeInfoRef id)=0 (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:63: warning: Member checkOutputTypeSanity(TypeInfoRef id)=0 (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:64: warning: Member operator_class()=0 (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:65: warning: Member node_operator(size_t par_deg=1)=0 (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:67: warning: Member structure_type() (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:72: warning: Member set_input_degree(size_t degree) (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:77: warning: Member i_degree() const  (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:82: warning: Member set_output_degree(size_t degree) (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:87: warning: Member o_degree() const  (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:91: warning: Member set_stype(enum RawStructureType stype, bool flag) (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:96: warning: Member stype(enum RawStructureType stype) const  (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/OutputOperator.hpp:93: warning: Member run_kernel(In *)=0 (function) of class OutputOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/OutputOperator.hpp:96: warning: Member operator_class() (function) of class OutputOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:42: warning: Member ParExecDF(adjList *dag, SemDAGNode *firstnode_, SemDAGNode *lastnode_, Operator *firstop_, Operator *lastop_) (function) of class ParExecDF is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:52: warning: Member run() (function) of class ParExecDF is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:59: warning: Member run() (function) of class PReduce is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:63: warning: Member operator_class() (function) of class PReduce is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:68: warning: Member node_operator(size_t par_deg=1) (function) of class PReduce is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp:36: warning: Member PReduceFFNode(size_t parallelism, std::function< In(In, In)> *preducef) (function) of class PReduceFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp:42: warning: Member svc(void *task) (function) of class PReduceFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:81: warning: Member run_kernel() (function) of class ReadFromFile is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:85: warning: Member operator_class() (function) of class ReadFromFile is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:89: warning: Member node_operator(size_t parallelism=1) (function) of class ReadFromFile is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:34: warning: Member ReadFromFileFFNode(size_t parallelism_, std::function< Out(std::string)> kernel_, std::string filename_) (function) of class ReadFromFileFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:36: warning: Member svc(void *in) (function) of class ReadFromFileFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Reduce.hpp:59: warning: Member run() (function) of class Reduce is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Reduce.hpp:68: warning: Member operator_class() (function) of class Reduce is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Reduce.hpp:72: warning: Member node_operator(size_t parallelism=1) (function) of class Reduce is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:29: warning: Member RREmitter(size_t nworkers_, ff_loadbalancer *const lb_) (function) of class RREmitter is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:32: warning: Member svc_init() (function) of class RREmitter is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:39: warning: Member svc(void *task) (function) of class RREmitter is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:57: warning: Member SemanticDAG(std::shared_ptr< Operator > start) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:75: warning: Member add_operator(std::shared_ptr< Operator > op) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:80: warning: Member append(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:86: warning: Member add_bcast_block(std::shared_ptr< Operator > mergeOp) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:102: warning: Member append_to(const SemanticDAG &inputg, SemDAGNode *&mergeNode) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:108: warning: Member append_merge(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:138: warning: Member print() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:162: warning: Member to_dotfile(std::string filename) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:189: warning: Member bfs() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:219: warning: Member empty() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:223: warning: Member lastNode() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:227: warning: Member lastNode(SemDAGNode *node) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:231: warning: Member firstNode() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:235: warning: Member lastOp() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:239: warning: Member lastOp(std::shared_ptr< Operator > op_) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:243: warning: Member firstOp() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:247: warning: Member run() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:256: warning: Member size() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:37: warning: Member SemDAGNode(const SemDAGNode *node) (function) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:40: warning: Member SemDAGNode(std::shared_ptr< Operator > op_) (function) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:42: warning: Member SemDAGNode(DAGNodeRole role_, OperatorClass op_) (function) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:43: warning: Member SemDAGNode(DAGNodeRole role_, OperatorClass op_, size_t farmid_) (function) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:48: warning: Member assign(std::shared_ptr< Operator > op_) (function) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:54: warning: Member node_operator(size_t par_deg=1) (function) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:72: warning: Member name_short() const  (function) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:31: warning: Member op (variable) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:32: warning: Member role (variable) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:33: warning: Member opclass (variable) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:35: warning: Member farmid (variable) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:34: warning: Member farmidcounter (variable) of class SemDAGNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp:33: warning: Member UnaryFlatMapFFNode(size_t parallelism, std::function< std::vector< Out >(In)> *flatmapf) (function) of class UnaryFlatMapFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp:36: warning: Member svc(void *task) (function) of class UnaryFlatMapFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:32: warning: Member UnaryMapFFNode(size_t parallelism, std::function< Out(In)> *mapf_) (function) of class UnaryMapFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:35: warning: Member svc(void *task) (function) of class UnaryMapFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:53: warning: Member inT (typedef) of class UnaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:54: warning: Member outT (typedef) of class UnaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:39: warning: Member UnaryOperator(const UnaryOperator &copy) (function) of class UnaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:58: warning: Member checkInputTypeSanity(TypeInfoRef id) (function) of class UnaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:67: warning: Member checkOutputTypeSanity(TypeInfoRef id) (function) of class UnaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:75: warning: Member operator_class()=0 (function) of class UnaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:81: warning: Member run_kernel(In *task) (function) of class WriteToDisk is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:93: warning: Member operator_class() (function) of class WriteToDisk is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:97: warning: Member node_operator(size_t parallelism=1) (function) of class WriteToDisk is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:33: warning: Member WriteToDiskFFNode(size_t parallelism_, std::function< In(In)> kernel_, std::string filename_) (function) of class WriteToDiskFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:35: warning: Member svc_init() (function) of class WriteToDiskFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:42: warning: Member svc(void *task) (function) of class WriteToDiskFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:65: warning: Member svc_end() (function) of class WriteToDiskFFNode is not documented.
 ators/Emitter.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp...
