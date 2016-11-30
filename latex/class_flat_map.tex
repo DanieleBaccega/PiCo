@@ -1,0 +1,81 @@
+\hypertarget{class_flat_map}{\section{\-Flat\-Map$<$ \-In, \-Out $>$ \-Class \-Template \-Reference}
+\label{class_flat_map}\index{\-Flat\-Map$<$ In, Out $>$@{\-Flat\-Map$<$ In, Out $>$}}
+}
+
+
+{\ttfamily \#include $<$\-Flat\-Map.\-hpp$>$}
+
+\-Inheritance diagram for \-Flat\-Map$<$ \-In, \-Out $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_flat_map}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_flat_map_a8ec8c425acf80cf2577b434b195904bd}{\-Flat\-Map} (std\-::function$<$ std\-::vector$<$ \-Out $>$(\-In)$>$ flatmapf\-\_\-)
+\item 
+std\-::string \hyperlink{class_flat_map_ae5ead8986dd0847b81a65c4857e856c7}{name\-\_\-short} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_flat_map_ac02777613b25e9fcf563d3060a9fde26}{void {\bfseries run} (\-In $\ast$task)}\label{class_flat_map_ac02777613b25e9fcf563d3060a9fde26}
+
+\item 
+\hypertarget{class_flat_map_a448c6f98264a251bb8fb691c94bf2556}{const \-Operator\-Class {\bfseries operator\-\_\-class} ()}\label{class_flat_map_a448c6f98264a251bb8fb691c94bf2556}
+
+\item 
+\hypertarget{class_flat_map_abc46d83d6c841e3113f611ab5f9ab48f}{ff\-::ff\-\_\-node $\ast$ {\bfseries node\-\_\-operator} (size\-\_\-t par\-\_\-deg=1)}\label{class_flat_map_abc46d83d6c841e3113f611ab5f9ab48f}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_flat_map_adb788d0aa2d64624d3602a985936d7da}{class {\bfseries \-Pipe}}\label{class_flat_map_adb788d0aa2d64624d3602a985936d7da}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$typename In, typename Out$>$class Flat\-Map$<$ In, Out $>$}
+
+\-Defines an operator performing a \hyperlink{class_flat_map}{\-Flat\-Map}, taking in input one element from the input source and producing zero, one or more elements in output. \-The \hyperlink{class_flat_map}{\-Flat\-Map} kernel is defined by the user and can be a lambda function, a functor or a function.
+
+\-It implements a data-\/parallel operator that ignores any kind of grouping or windowing.
+
+\-The kernel is applied independently to all the elements of the collection (either bounded or unbounded). 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_flat_map_a8ec8c425acf80cf2577b434b195904bd}{\index{\-Flat\-Map@{\-Flat\-Map}!\-Flat\-Map@{\-Flat\-Map}}
+\index{\-Flat\-Map@{\-Flat\-Map}!FlatMap@{\-Flat\-Map}}
+\subsubsection[{\-Flat\-Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In , typename Out $>$ {\bf \-Flat\-Map}$<$ \-In, \-Out $>$\-::{\bf \-Flat\-Map} (
+\begin{DoxyParamCaption}
+\item[{std\-::function$<$ std\-::vector$<$ \-Out $>$(\-In)$>$}]{flatmapf\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_flat_map_a8ec8c425acf80cf2577b434b195904bd}
+\-Constructor. \-Creates a new \hyperlink{class_flat_map}{\-Flat\-Map} operator by defining its kernel function flat\-Mapf\-: \-In-\/$>$\-Out 
+\begin{DoxyParams}{\-Parameters}
+{\em flatmapf} & std\-::function$<$\-Out(\-In)$>$ \hyperlink{class_flat_map}{\-Flat\-Map} kernel function with input type \-In producing zero, one or more element of type \-Out \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_flat_map_ae5ead8986dd0847b81a65c4857e856c7}{\index{\-Flat\-Map@{\-Flat\-Map}!name\-\_\-short@{name\-\_\-short}}
+\index{name\-\_\-short@{name\-\_\-short}!FlatMap@{\-Flat\-Map}}
+\subsubsection[{name\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In , typename Out $>$ std\-::string {\bf \-Flat\-Map}$<$ \-In, \-Out $>$\-::{\bf name\-\_\-short} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_flat_map_ae5ead8986dd0847b81a65c4857e856c7}
+\-Returns the name of the operator, consisting in the name of the class. 
+
+\-Implements \hyperlink{class_operator}{\-Operator}.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/alpha-\/unito/\-Pi\-Co/\-Operators/\-Flat\-Map.\-hpp\end{DoxyCompactItemize}

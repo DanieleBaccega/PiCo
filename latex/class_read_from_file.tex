@@ -1,0 +1,93 @@
+\hypertarget{class_read_from_file}{\section{\-Read\-From\-File$<$ \-Out $>$ \-Class \-Template \-Reference}
+\label{class_read_from_file}\index{\-Read\-From\-File$<$ Out $>$@{\-Read\-From\-File$<$ Out $>$}}
+}
+
+
+{\ttfamily \#include $<$\-Read\-From\-File.\-hpp$>$}
+
+\-Inheritance diagram for \-Read\-From\-File$<$ \-Out $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_read_from_file}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_read_from_file_abe2865029ef79f9dd35e511892738dc8}{\-Read\-From\-File} (std\-::string filename\-\_\-, std\-::function$<$ \-Out(std\-::string)$>$ func\-\_\-)
+\item 
+\hyperlink{class_read_from_file_aecb083f7807d61a59bcfe3394d9aa808}{\-Read\-From\-File} (const \hyperlink{class_read_from_file}{\-Read\-From\-File} \&copy)
+\item 
+std\-::string \hyperlink{class_read_from_file_af509393aad1e80f25fee64991f365bbb}{name} ()
+\item 
+std\-::string \hyperlink{class_read_from_file_a58ff16dcafb4ad2039cf151fd7a0440f}{name\-\_\-short} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_read_from_file_af1d716032c6d0b662aba9318584b14ff}{void {\bfseries run\-\_\-kernel} ()}\label{class_read_from_file_af1d716032c6d0b662aba9318584b14ff}
+
+\item 
+\hypertarget{class_read_from_file_a1cb0beec0a2db61f86dea66931373726}{const \-Operator\-Class {\bfseries operator\-\_\-class} ()}\label{class_read_from_file_a1cb0beec0a2db61f86dea66931373726}
+
+\item 
+\hypertarget{class_read_from_file_ad7a8bb09472bbf84575a7e60fcc3bb6d}{ff\-::ff\-\_\-node $\ast$ {\bfseries node\-\_\-operator} (size\-\_\-t parallelism=1)}\label{class_read_from_file_ad7a8bb09472bbf84575a7e60fcc3bb6d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$typename Out$>$class Read\-From\-File$<$ Out $>$}
+
+\-Defines an operator that reads data from a text file and produces an \-Ordered+\-Buonded collection (i.\-e. \-L\-I\-S\-T).
+
+\-The user specifies the kernel function that operates on each line of the text file, passed as a std\-::string. \-The kernel can be a lambda function, a functor or a function.
+
+\-The operator is global and unique for the \hyperlink{class_pipe}{\-Pipe} it refers to. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_read_from_file_abe2865029ef79f9dd35e511892738dc8}{\index{\-Read\-From\-File@{\-Read\-From\-File}!\-Read\-From\-File@{\-Read\-From\-File}}
+\index{\-Read\-From\-File@{\-Read\-From\-File}!ReadFromFile@{\-Read\-From\-File}}
+\subsubsection[{\-Read\-From\-File}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Out $>$ {\bf \-Read\-From\-File}$<$ \-Out $>$\-::{\bf \-Read\-From\-File} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{filename\-\_\-, }
+\item[{std\-::function$<$ \-Out(std\-::string)$>$}]{func\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_read_from_file_abe2865029ef79f9dd35e511892738dc8}
+\-Constructor. \-Creates a new \hyperlink{class_read_from_file}{\-Read\-From\-File} operator by defining its kernel function\-: std\-::string -\/$>$ \-Out operating on each line of the textfile specified. \hypertarget{class_read_from_file_aecb083f7807d61a59bcfe3394d9aa808}{\index{\-Read\-From\-File@{\-Read\-From\-File}!\-Read\-From\-File@{\-Read\-From\-File}}
+\index{\-Read\-From\-File@{\-Read\-From\-File}!ReadFromFile@{\-Read\-From\-File}}
+\subsubsection[{\-Read\-From\-File}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Out $>$ {\bf \-Read\-From\-File}$<$ \-Out $>$\-::{\bf \-Read\-From\-File} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Read\-From\-File}$<$ \-Out $>$ \&}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_read_from_file_aecb083f7807d61a59bcfe3394d9aa808}
+\-Copy constructor. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_read_from_file_af509393aad1e80f25fee64991f365bbb}{\index{\-Read\-From\-File@{\-Read\-From\-File}!name@{name}}
+\index{name@{name}!ReadFromFile@{\-Read\-From\-File}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Out $>$ std\-::string {\bf \-Read\-From\-File}$<$ \-Out $>$\-::{\bf name} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_read_from_file_af509393aad1e80f25fee64991f365bbb}
+\-Returns a unique name for the operator. 
+
+\-Reimplemented from \hyperlink{class_operator_aabb42a0bffefa195ef28dcb8de28aec1}{\-Operator}.
+
+\hypertarget{class_read_from_file_a58ff16dcafb4ad2039cf151fd7a0440f}{\index{\-Read\-From\-File@{\-Read\-From\-File}!name\-\_\-short@{name\-\_\-short}}
+\index{name\-\_\-short@{name\-\_\-short}!ReadFromFile@{\-Read\-From\-File}}
+\subsubsection[{name\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Out $>$ std\-::string {\bf \-Read\-From\-File}$<$ \-Out $>$\-::{\bf name\-\_\-short} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_read_from_file_a58ff16dcafb4ad2039cf151fd7a0440f}
+\-Returns the name of the operator, consisting in the name of the class. 
+
+\-Reimplemented from \hyperlink{class_input_operator_a5f752278e586f9c22535bdffdbbe14d2}{\-Input\-Operator$<$ Out $>$}.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/alpha-\/unito/\-Pi\-Co/\-Operators/\-In\-Out/\-Read\-From\-File.\-hpp\end{DoxyCompactItemize}

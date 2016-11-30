@@ -1,0 +1,76 @@
+\hypertarget{class_p_reduce}{\section{\-P\-Reduce$<$ \-In $>$ \-Class \-Template \-Reference}
+\label{class_p_reduce}\index{\-P\-Reduce$<$ In $>$@{\-P\-Reduce$<$ In $>$}}
+}
+
+
+{\ttfamily \#include $<$\-P\-Reduce.\-hpp$>$}
+
+\-Inheritance diagram for \-P\-Reduce$<$ \-In $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_p_reduce}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_p_reduce_a31e0899ba12232bd9d629281a145c219}{\-P\-Reduce} (std\-::function$<$ \-In(\-In, \-In)$>$ reducef\-\_\-)
+\item 
+std\-::string \hyperlink{class_p_reduce_aeec2fa6ffc97684cc42b6dda26d498d4}{name\-\_\-short} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_p_reduce_a23d34226d830ba05591373ff0fb745b2}{void {\bfseries run} ()}\label{class_p_reduce_a23d34226d830ba05591373ff0fb745b2}
+
+\item 
+\hypertarget{class_p_reduce_af20857bc855fb223be6720efa12f0fb6}{const \-Operator\-Class {\bfseries operator\-\_\-class} ()}\label{class_p_reduce_af20857bc855fb223be6720efa12f0fb6}
+
+\item 
+\hypertarget{class_p_reduce_a0b795eb975c94cac8ef194324f0085f1}{ff\-::ff\-\_\-node $\ast$ {\bfseries node\-\_\-operator} (size\-\_\-t par\-\_\-deg=1)}\label{class_p_reduce_a0b795eb975c94cac8ef194324f0085f1}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_p_reduce_adb788d0aa2d64624d3602a985936d7da}{class {\bfseries \-Pipe}}\label{class_p_reduce_adb788d0aa2d64624d3602a985936d7da}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$typename In$>$class P\-Reduce$<$ In $>$}
+
+\-Defines a \hyperlink{class_p_reduce}{\-P\-Reduce} operator performing a tree reduce function on partitioned input (i.\-e. reduce by key). \-The reduce kernel is defined by the user and can be a lambda function, a functor or a function.
+
+\-The reduce kernel function operates on windows and/or groups if defined on the \hyperlink{class_pipe}{\-Pipe}.
+
+\-It implements a tree reduce operator where input and output value are the same. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_p_reduce_a31e0899ba12232bd9d629281a145c219}{\index{\-P\-Reduce@{\-P\-Reduce}!\-P\-Reduce@{\-P\-Reduce}}
+\index{\-P\-Reduce@{\-P\-Reduce}!PReduce@{\-P\-Reduce}}
+\subsubsection[{\-P\-Reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In $>$ {\bf \-P\-Reduce}$<$ \-In $>$\-::{\bf \-P\-Reduce} (
+\begin{DoxyParamCaption}
+\item[{std\-::function$<$ \-In(\-In, \-In)$>$}]{reducef\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_p_reduce_a31e0899ba12232bd9d629281a145c219}
+\-Constructor. \-Creates a new \hyperlink{class_p_reduce}{\-P\-Reduce} operator by defining its kernel function reducef\-: $<$\-In, \-In$>$ -\/$>$ \-In 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_p_reduce_aeec2fa6ffc97684cc42b6dda26d498d4}{\index{\-P\-Reduce@{\-P\-Reduce}!name\-\_\-short@{name\-\_\-short}}
+\index{name\-\_\-short@{name\-\_\-short}!PReduce@{\-P\-Reduce}}
+\subsubsection[{name\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In $>$ std\-::string {\bf \-P\-Reduce}$<$ \-In $>$\-::{\bf name\-\_\-short} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_p_reduce_aeec2fa6ffc97684cc42b6dda26d498d4}
+\-Returns the name of the operator, consisting in the name of the class. 
+
+\-Implements \hyperlink{class_operator}{\-Operator}.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/alpha-\/unito/\-Pi\-Co/\-Operators/\-P\-Reduce.\-hpp\end{DoxyCompactItemize}

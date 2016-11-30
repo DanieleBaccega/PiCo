@@ -1,0 +1,88 @@
+\hypertarget{class_output_operator}{\section{\-Output\-Operator$<$ \-In $>$ \-Class \-Template \-Reference}
+\label{class_output_operator}\index{\-Output\-Operator$<$ In $>$@{\-Output\-Operator$<$ In $>$}}
+}
+
+
+{\ttfamily \#include $<$\-Output\-Operator.\-hpp$>$}
+
+\-Inheritance diagram for \-Output\-Operator$<$ \-In $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_output_operator}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_output_operator_a11cc69b762cccf13c16de81705cb1808}{\-Output\-Operator} (\-Structure\-Type st\-\_\-)
+\item 
+\hyperlink{class_output_operator_a62379779fb1e0eb3446cb406a8e8d035}{\-Output\-Operator} (const \hyperlink{class_output_operator}{\-Output\-Operator} \&copy)
+\item 
+std\-::string \hyperlink{class_output_operator_aa0d416361680f33ebd6e1785a97bc3fe}{name\-\_\-short} ()
+\item 
+\hypertarget{class_output_operator_a71c66a7b3b093947272de215d8706e1f}{virtual void {\bfseries run\-\_\-kernel} (\-In $\ast$)=0}\label{class_output_operator_a71c66a7b3b093947272de215d8706e1f}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_output_operator_a76c77bafddc3651ae9afc5ff2a46ba15}{const \-Operator\-Class {\bfseries operator\-\_\-class} ()}\label{class_output_operator_a76c77bafddc3651ae9afc5ff2a46ba15}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$typename In$>$class Output\-Operator$<$ In $>$}
+
+\-Defines an operator performing the policy for managing output (i.\-e. write on file or standard output). \-It automatically performs a type sanity check on input type.
+
+\-The output kernel is defined by the user and can be a lambda function, a functor or a function.
+
+\-Furthermore, the user specifies the structure of the data type the \hyperlink{class_collector}{\-Collector} generates. \-It can be\-:
+\begin{DoxyItemize}
+\item \-Bag (spec\-: unordered, bounded)
+\item \-List (spec\-: ordered, bounded)
+\item \-Stream (spec\-: ordered, unbounded)
+\item \-Unbounded \-Bag (spec\-: unordered, unbounded)
+\end{DoxyItemize}
+
+\-Its behaviour w.\-r.\-t. composed \-Pipes (with both append and pair) has to be defined. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_output_operator_a11cc69b762cccf13c16de81705cb1808}{\index{\-Output\-Operator@{\-Output\-Operator}!\-Output\-Operator@{\-Output\-Operator}}
+\index{\-Output\-Operator@{\-Output\-Operator}!OutputOperator@{\-Output\-Operator}}
+\subsubsection[{\-Output\-Operator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In $>$ {\bf \-Output\-Operator}$<$ \-In $>$\-::{\bf \-Output\-Operator} (
+\begin{DoxyParamCaption}
+\item[{\-Structure\-Type}]{st\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_output_operator_a11cc69b762cccf13c16de81705cb1808}
+\-Constructor. \-Creates a new \hyperlink{class_collector}{\-Collector} by defining its kernel function outf\-: \-In -\/$>$ void \hypertarget{class_output_operator_a62379779fb1e0eb3446cb406a8e8d035}{\index{\-Output\-Operator@{\-Output\-Operator}!\-Output\-Operator@{\-Output\-Operator}}
+\index{\-Output\-Operator@{\-Output\-Operator}!OutputOperator@{\-Output\-Operator}}
+\subsubsection[{\-Output\-Operator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In $>$ {\bf \-Output\-Operator}$<$ \-In $>$\-::{\bf \-Output\-Operator} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Output\-Operator}$<$ \-In $>$ \&}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_output_operator_a62379779fb1e0eb3446cb406a8e8d035}
+\-Copy constructor 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_output_operator_aa0d416361680f33ebd6e1785a97bc3fe}{\index{\-Output\-Operator@{\-Output\-Operator}!name\-\_\-short@{name\-\_\-short}}
+\index{name\-\_\-short@{name\-\_\-short}!OutputOperator@{\-Output\-Operator}}
+\subsubsection[{name\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In $>$ std\-::string {\bf \-Output\-Operator}$<$ \-In $>$\-::{\bf name\-\_\-short} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_output_operator_aa0d416361680f33ebd6e1785a97bc3fe}
+\-Returns the name of the operator, consisting in the name of the class. 
+
+\-Implements \hyperlink{class_operator}{\-Operator}.
+
+
+
+\-Reimplemented in \hyperlink{class_write_to_disk_ab7f18e8983197d9917d2d045943b00ca}{\-Write\-To\-Disk$<$ In $>$}.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/alpha-\/unito/\-Pi\-Co/\-Operators/\-In\-Out/\-Output\-Operator.\-hpp\end{DoxyCompactItemize}

@@ -1,0 +1,96 @@
+\hypertarget{class_map}{\section{\-Map$<$ \-In, \-Out $>$ \-Class \-Template \-Reference}
+\label{class_map}\index{\-Map$<$ In, Out $>$@{\-Map$<$ In, Out $>$}}
+}
+
+
+{\ttfamily \#include $<$\-Map.\-hpp$>$}
+
+\-Inheritance diagram for \-Map$<$ \-In, \-Out $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_map}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_map_a592d69e973dc2596ab688914fb7f5f65}{\-Map} (std\-::function$<$ \-Out(\-In)$>$ mapf\-\_\-)
+\item 
+std\-::string \hyperlink{class_map_a0ac45a1807983af02472c0a01994bf61}{name\-\_\-short} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_map_ae61a30423820caac53954f22c5935580}{\-Out {\bfseries run\-\_\-kernel} (\-In $\ast$in\-\_\-task)}\label{class_map_ae61a30423820caac53954f22c5935580}
+
+\item 
+\hyperlink{class_map}{\-Map}$<$ \-In, \-Out $>$ $\ast$ \hyperlink{class_map_a0524200b07c1713bc9f3dd60b372b30c}{clone} ()
+\item 
+\hypertarget{class_map_a5c9fcf56ffe1fd40d3642bcfc561844a}{const \-Operator\-Class {\bfseries operator\-\_\-class} ()}\label{class_map_a5c9fcf56ffe1fd40d3642bcfc561844a}
+
+\item 
+\hypertarget{class_map_ae0cc5feac0abb9c2a7cad61dbf50157e}{ff\-::ff\-\_\-node $\ast$ {\bfseries node\-\_\-operator} (size\-\_\-t parallelism=1)}\label{class_map_ae0cc5feac0abb9c2a7cad61dbf50157e}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_map_adb788d0aa2d64624d3602a985936d7da}{class {\bfseries \-Pipe}}\label{class_map_adb788d0aa2d64624d3602a985936d7da}
+
+\item 
+\hypertarget{class_map_a298bf270ce895db324d65478b3b01f5b}{class {\bfseries \-Par\-Exec\-D\-F}}\label{class_map_a298bf270ce895db324d65478b3b01f5b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$typename In, typename Out$>$class Map$<$ In, Out $>$}
+
+\-Defines an operator performing a \hyperlink{class_map}{\-Map} function, taking in input one element from the input source and producing one in output. \-The \hyperlink{class_map}{\-Map} kernel is defined by the user and can be a lambda function, a functor or a function.
+
+\-It implements a data-\/parallel operator that ignores any kind of grouping or windowing.
+
+\-The kernel is applied independently to all the elements of the collection (either bounded or unbounded). 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_map_a592d69e973dc2596ab688914fb7f5f65}{\index{\-Map@{\-Map}!\-Map@{\-Map}}
+\index{\-Map@{\-Map}!Map@{\-Map}}
+\subsubsection[{\-Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In , typename Out $>$ {\bf \-Map}$<$ \-In, \-Out $>$\-::{\bf \-Map} (
+\begin{DoxyParamCaption}
+\item[{std\-::function$<$ \-Out(\-In)$>$}]{mapf\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_map_a592d69e973dc2596ab688914fb7f5f65}
+\-Constructor. \-Creates a new \hyperlink{class_map}{\-Map} operator by defining its kernel function mapf\-: \-In-\/$>$\-Out 
+\begin{DoxyParams}{\-Parameters}
+{\em mapf} & std\-::function$<$\-Out(\-In)$>$ \hyperlink{class_map}{\-Map} kernel function with input type \-In producing an element of type \-Out \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_map_a0524200b07c1713bc9f3dd60b372b30c}{\index{\-Map@{\-Map}!clone@{clone}}
+\index{clone@{clone}!Map@{\-Map}}
+\subsubsection[{clone}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In , typename Out $>$ {\bf \-Map}$<$\-In, \-Out$>$$\ast$ {\bf \-Map}$<$ \-In, \-Out $>$\-::{\bf clone} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}\label{class_map_a0524200b07c1713bc9f3dd60b372b30c}
+\-Duplicates a \hyperlink{class_map}{\-Map} with a copy of the \hyperlink{class_map}{\-Map} kernel function. \begin{DoxyReturn}{\-Returns}
+new \hyperlink{class_map}{\-Map} pointer 
+\end{DoxyReturn}
+\hypertarget{class_map_a0ac45a1807983af02472c0a01994bf61}{\index{\-Map@{\-Map}!name\-\_\-short@{name\-\_\-short}}
+\index{name\-\_\-short@{name\-\_\-short}!Map@{\-Map}}
+\subsubsection[{name\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In , typename Out $>$ std\-::string {\bf \-Map}$<$ \-In, \-Out $>$\-::{\bf name\-\_\-short} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_map_a0ac45a1807983af02472c0a01994bf61}
+\-Returns the name of the operator, consisting in the name of the class. 
+
+\-Implements \hyperlink{class_operator}{\-Operator}.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/alpha-\/unito/\-Pi\-Co/\-Operators/\-Map.\-hpp\end{DoxyCompactItemize}

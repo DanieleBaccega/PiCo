@@ -1,0 +1,100 @@
+\hypertarget{class_operator}{\section{\-Operator \-Class \-Reference}
+\label{class_operator}\index{\-Operator@{\-Operator}}
+}
+
+
+{\ttfamily \#include $<$\-Operator.\-hpp$>$}
+
+\-Inheritance diagram for \-Operator\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.568627cm]{class_operator}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\-::string \hyperlink{class_operator_aabb42a0bffefa195ef28dcb8de28aec1}{name} ()
+\item 
+\hypertarget{class_operator_ab818c777eba5ea81a1e35bf15cd748ba}{virtual std\-::string {\bfseries name\-\_\-short} ()=0}\label{class_operator_ab818c777eba5ea81a1e35bf15cd748ba}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_operator_a6af729a9d00cab0f62cf0e3de2548d39}{virtual bool {\bfseries check\-Input\-Type\-Sanity} (\-Type\-Info\-Ref id)=0}\label{class_operator_a6af729a9d00cab0f62cf0e3de2548d39}
+
+\item 
+\hypertarget{class_operator_aeacd17ae40fc541ee6a960ee45e405e6}{virtual bool {\bfseries check\-Output\-Type\-Sanity} (\-Type\-Info\-Ref id)=0}\label{class_operator_aeacd17ae40fc541ee6a960ee45e405e6}
+
+\item 
+\hypertarget{class_operator_a5b7ccb315884468f1683e83b3539f400}{virtual const \-Operator\-Class {\bfseries operator\-\_\-class} ()=0}\label{class_operator_a5b7ccb315884468f1683e83b3539f400}
+
+\item 
+\hypertarget{class_operator_a7753ef26769c0aa9ab986d51e7d76339}{virtual ff\-::ff\-\_\-node $\ast$ {\bfseries node\-\_\-operator} (size\-\_\-t par\-\_\-deg=1)=0}\label{class_operator_a7753ef26769c0aa9ab986d51e7d76339}
+
+\item 
+\hypertarget{class_operator_a2f0f76f195ffd9ee8f1fce2da7956926}{bool $\ast$ {\bfseries structure\-\_\-type} ()}\label{class_operator_a2f0f76f195ffd9ee8f1fce2da7956926}
+
+\item 
+\hypertarget{class_operator_a220b5efebda50b93c7fb29d997a12413}{void {\bfseries set\-\_\-input\-\_\-degree} (size\-\_\-t degree)}\label{class_operator_a220b5efebda50b93c7fb29d997a12413}
+
+\item 
+\hypertarget{class_operator_a49dbe907baab7d9d5ae44c96074fe873}{size\-\_\-t {\bfseries i\-\_\-degree} () const }\label{class_operator_a49dbe907baab7d9d5ae44c96074fe873}
+
+\item 
+\hypertarget{class_operator_a398b346d10ab14d3cb80e5b600219ff9}{void {\bfseries set\-\_\-output\-\_\-degree} (size\-\_\-t degree)}\label{class_operator_a398b346d10ab14d3cb80e5b600219ff9}
+
+\item 
+\hypertarget{class_operator_a8f4deb310b1665ae300aa3389d7b58b6}{size\-\_\-t {\bfseries o\-\_\-degree} () const }\label{class_operator_a8f4deb310b1665ae300aa3389d7b58b6}
+
+\item 
+\hypertarget{class_operator_aa690c335fa31d9b85f9c2e6271a0b018}{void {\bfseries set\-\_\-stype} (enum \-Raw\-Structure\-Type stype, bool flag)}\label{class_operator_aa690c335fa31d9b85f9c2e6271a0b018}
+
+\item 
+\hypertarget{class_operator_a910957044131a074f4fa7be8577a900a}{bool {\bfseries stype} (enum \-Raw\-Structure\-Type stype) const }\label{class_operator_a910957044131a074f4fa7be8577a900a}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_operator_adb788d0aa2d64624d3602a985936d7da}{class {\bfseries \-Pipe}}\label{class_operator_adb788d0aa2d64624d3602a985936d7da}
+
+\item 
+\hypertarget{class_operator_a54f00cc95ee21e7721a0e74cb07f324e}{class {\bfseries \-Semantic\-D\-A\-G}}\label{class_operator_a54f00cc95ee21e7721a0e74cb07f324e}
+
+\item 
+\hypertarget{class_operator_a298bf270ce895db324d65478b3b01f5b}{class {\bfseries \-Par\-Exec\-D\-F}}\label{class_operator_a298bf270ce895db324d65478b3b01f5b}
+
+\item 
+\hypertarget{class_operator_aab3ea71fc86db58fd440b9c3c1a739c1}{class {\bfseries \-Sem\-D\-A\-G\-Node}}\label{class_operator_aab3ea71fc86db58fd440b9c3c1a739c1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Base class defining a semantic dataflow operator. \-An operator has an input and output cardinality $<$\-I-\/degree, \-O-\/degree$>$, where
+\begin{DoxyItemize}
+\item \-I-\/degree = 0 if generating input, $>$1 otherwise
+\item \-O-\/degree = 0 if collecting output, 1 otherwise
+\end{DoxyItemize}
+
+\-Operators have also the specification about the \-Structure \-Type they can manage. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_operator_aabb42a0bffefa195ef28dcb8de28aec1}{\index{\-Operator@{\-Operator}!name@{name}}
+\index{name@{name}!Operator@{\-Operator}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Operator\-::name} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_operator_aabb42a0bffefa195ef28dcb8de28aec1}
+\-Returns a unique name for the operator. 
+
+\-Reimplemented in \hyperlink{class_write_to_disk_a3b57dac20171d5e166210183bceedea2}{\-Write\-To\-Disk$<$ In $>$}, \hyperlink{class_read_from_file_af509393aad1e80f25fee64991f365bbb}{\-Read\-From\-File$<$ Out $>$}, \hyperlink{class_binary_map_a891da29ca1c109f273e6b0448f261783}{\-Binary\-Map$<$ In1, In2, Out $>$}, and \hyperlink{class_binary_operator_a6df8c4e6dee857f27d870c30d4f65920}{\-Binary\-Operator$<$ In1, In2, Out $>$}.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/alpha-\/unito/\-Pi\-Co/\-Operators/\-Operator.\-hpp\end{DoxyCompactItemize}

@@ -1,0 +1,88 @@
+\hypertarget{class_input_operator}{\section{\-Input\-Operator$<$ \-Out $>$ \-Class \-Template \-Reference}
+\label{class_input_operator}\index{\-Input\-Operator$<$ Out $>$@{\-Input\-Operator$<$ Out $>$}}
+}
+
+
+{\ttfamily \#include $<$\-Input\-Operator.\-hpp$>$}
+
+\-Inheritance diagram for \-Input\-Operator$<$ \-Out $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_input_operator}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_input_operator_a70a9e8ae6fc3e6bee0b7f1e422f7cee6}{\-Input\-Operator} (\-Structure\-Type st\-\_\-)
+\item 
+\hyperlink{class_input_operator_a76e4803ef97f634399cb9de1d5ec1be7}{\-Input\-Operator} (const \hyperlink{class_input_operator}{\-Input\-Operator} \&copy)
+\item 
+std\-::string \hyperlink{class_input_operator_a5f752278e586f9c22535bdffdbbe14d2}{name\-\_\-short} ()
+\item 
+\hypertarget{class_input_operator_ab0266126058393d30ffa92b7cf408d32}{virtual void {\bfseries run\-\_\-kernel} ()=0}\label{class_input_operator_ab0266126058393d30ffa92b7cf408d32}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_input_operator_a370bbb3a5c72e0121448e8c06ae1fe28}{const \-Operator\-Class {\bfseries operator\-\_\-class} ()}\label{class_input_operator_a370bbb3a5c72e0121448e8c06ae1fe28}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$typename Out$>$class Input\-Operator$<$ Out $>$}
+
+\-Defines an operator performing the policy for generating input (i.\-e. read from file).
+
+\-The input generation kernel is defined by the user and can be a lambda function, a functor or a function.
+
+\-Furthermore, the user specifies the structure of the data type the \hyperlink{class_emitter}{\-Emitter} generates. \-It can be\-:
+\begin{DoxyItemize}
+\item \-Bag (spec\-: unordered, bounded)
+\item \-List (spec\-: ordered, bounded)
+\item \-Stream (spec\-: ordered, unbounded)
+\item \-Unbounded \-Bag (spec\-: unordered, unbounded)
+\end{DoxyItemize}
+
+\-The operator is global and unique for the \hyperlink{class_pipe}{\-Pipe} it refers to. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_input_operator_a70a9e8ae6fc3e6bee0b7f1e422f7cee6}{\index{\-Input\-Operator@{\-Input\-Operator}!\-Input\-Operator@{\-Input\-Operator}}
+\index{\-Input\-Operator@{\-Input\-Operator}!InputOperator@{\-Input\-Operator}}
+\subsubsection[{\-Input\-Operator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Out $>$ {\bf \-Input\-Operator}$<$ \-Out $>$\-::{\bf \-Input\-Operator} (
+\begin{DoxyParamCaption}
+\item[{\-Structure\-Type}]{st\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_input_operator_a70a9e8ae6fc3e6bee0b7f1e422f7cee6}
+\-Constructor. \-Creates a new \hyperlink{class_emitter}{\-Emitter} by defining its kernel function genf\-: void -\/$>$ \-Out operating on a specified datatype. \hypertarget{class_input_operator_a76e4803ef97f634399cb9de1d5ec1be7}{\index{\-Input\-Operator@{\-Input\-Operator}!\-Input\-Operator@{\-Input\-Operator}}
+\index{\-Input\-Operator@{\-Input\-Operator}!InputOperator@{\-Input\-Operator}}
+\subsubsection[{\-Input\-Operator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Out $>$ {\bf \-Input\-Operator}$<$ \-Out $>$\-::{\bf \-Input\-Operator} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Input\-Operator}$<$ \-Out $>$ \&}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_input_operator_a76e4803ef97f634399cb9de1d5ec1be7}
+\-Copy constructor 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_input_operator_a5f752278e586f9c22535bdffdbbe14d2}{\index{\-Input\-Operator@{\-Input\-Operator}!name\-\_\-short@{name\-\_\-short}}
+\index{name\-\_\-short@{name\-\_\-short}!InputOperator@{\-Input\-Operator}}
+\subsubsection[{name\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Out $>$ std\-::string {\bf \-Input\-Operator}$<$ \-Out $>$\-::{\bf name\-\_\-short} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_input_operator_a5f752278e586f9c22535bdffdbbe14d2}
+\-Returns the name of the operator, consisting in the name of the class. 
+
+\-Implements \hyperlink{class_operator}{\-Operator}.
+
+
+
+\-Reimplemented in \hyperlink{class_read_from_file_a58ff16dcafb4ad2039cf151fd7a0440f}{\-Read\-From\-File$<$ Out $>$}.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/alpha-\/unito/\-Pi\-Co/\-Operators/\-In\-Out/\-Input\-Operator.\-hpp\end{DoxyCompactItemize}

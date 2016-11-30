@@ -1,0 +1,76 @@
+\hypertarget{class_binary_operator}{\section{\-Binary\-Operator$<$ \-In1, \-In2, \-Out $>$ \-Class \-Template \-Reference}
+\label{class_binary_operator}\index{\-Binary\-Operator$<$ In1, In2, Out $>$@{\-Binary\-Operator$<$ In1, In2, Out $>$}}
+}
+
+
+{\ttfamily \#include $<$\-Binary\-Operator.\-hpp$>$}
+
+\-Inheritance diagram for \-Binary\-Operator$<$ \-In1, \-In2, \-Out $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_binary_operator}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\-::string \hyperlink{class_binary_operator_a6df8c4e6dee857f27d870c30d4f65920}{name} ()=0
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_binary_operator_a2de8a96fc037a231f39b3118069f5b08}{virtual bool {\bfseries check\-Input\-Type\-Sanity} (\-Type\-Info\-Ref id)}\label{class_binary_operator_a2de8a96fc037a231f39b3118069f5b08}
+
+\item 
+\hypertarget{class_binary_operator_a90a60672775f8d7958dda0600c5ed546}{virtual bool {\bfseries check\-Output\-Type\-Sanity} (\-Type\-Info\-Ref id)}\label{class_binary_operator_a90a60672775f8d7958dda0600c5ed546}
+
+\item 
+\hypertarget{class_binary_operator_a97a69de42fae8bab00c814459ea844b0}{virtual size\-\_\-t {\bfseries i\-\_\-degree} ()=0}\label{class_binary_operator_a97a69de42fae8bab00c814459ea844b0}
+
+\item 
+\hypertarget{class_binary_operator_aee9650145b55dfcd040042d9be249171}{virtual size\-\_\-t {\bfseries o\-\_\-degree} ()=0}\label{class_binary_operator_aee9650145b55dfcd040042d9be249171}
+
+\item 
+\hypertarget{class_binary_operator_a2fc538f30e110d6313bad1066236143b}{virtual bool $\ast$ {\bfseries structure\-\_\-type} ()=0}\label{class_binary_operator_a2fc538f30e110d6313bad1066236143b}
+
+\item 
+\hypertarget{class_binary_operator_a8c247face4b17579873d45b4b14df527}{virtual const \-Operator\-Class {\bfseries operator\-\_\-class} ()=0}\label{class_binary_operator_a8c247face4b17579873d45b4b14df527}
+
+\item 
+\hypertarget{class_binary_operator_aeedefcb624a8ab84b10bbab872df72e4}{virtual ff\-::ff\-\_\-node $\ast$ {\bfseries node\-\_\-operator} (size\-\_\-t parallelism=1)=0}\label{class_binary_operator_aeedefcb624a8ab84b10bbab872df72e4}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_binary_operator_adb788d0aa2d64624d3602a985936d7da}{class {\bfseries \-Pipe}}\label{class_binary_operator_adb788d0aa2d64624d3602a985936d7da}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$typename \-In1, typename \-In2, typename \-Out$>$class Binary\-Operator$<$ In1, In2, Out $>$}
+
+\-Base class for actor nodes with $\ast$two$\ast$ input streams and $\ast$one$\ast$ output stream, either bound or unbound and grouped or plain. \-It is provided with methods for input/output type checking. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_binary_operator_a6df8c4e6dee857f27d870c30d4f65920}{\index{\-Binary\-Operator@{\-Binary\-Operator}!name@{name}}
+\index{name@{name}!BinaryOperator@{\-Binary\-Operator}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-In1, typename \-In2, typename \-Out$>$ virtual std\-::string {\bf \-Binary\-Operator}$<$ \-In1, \-In2, \-Out $>$\-::{\bf name} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{class_binary_operator_a6df8c4e6dee857f27d870c30d4f65920}
+\-Returns a unique name for the operator. 
+
+\-Reimplemented from \hyperlink{class_operator_aabb42a0bffefa195ef28dcb8de28aec1}{\-Operator}.
+
+
+
+\-Implemented in \hyperlink{class_binary_map_a891da29ca1c109f273e6b0448f261783}{\-Binary\-Map$<$ In1, In2, Out $>$}.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/alpha-\/unito/\-Pi\-Co/\-Operators/\-Binary\-Operator.\-hpp\end{DoxyCompactItemize}

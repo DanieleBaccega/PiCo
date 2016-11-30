@@ -1,0 +1,117 @@
+\hypertarget{class_binary_map}{\section{\-Binary\-Map$<$ \-In1, \-In2, \-Out $>$ \-Class \-Template \-Reference}
+\label{class_binary_map}\index{\-Binary\-Map$<$ In1, In2, Out $>$@{\-Binary\-Map$<$ In1, In2, Out $>$}}
+}
+
+
+{\ttfamily \#include $<$\-Binary\-Map.\-hpp$>$}
+
+\-Inheritance diagram for \-Binary\-Map$<$ \-In1, \-In2, \-Out $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_binary_map}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_binary_map_abd8e19230ff0077f3782734313dafffc}{\-Binary\-Map} (std\-::function$<$ \-Out(\-In1, \-In2)$>$ bmapf\-\_\-)
+\item 
+std\-::string \hyperlink{class_binary_map_a891da29ca1c109f273e6b0448f261783}{name} ()
+\item 
+std\-::string \hyperlink{class_binary_map_a27f390ff0c80cdd9bc7b6361ed5df8c2}{name\-\_\-short} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_binary_map_a4cb82813b17f67bc603e588b8590c315}{void {\bfseries run} ()}\label{class_binary_map_a4cb82813b17f67bc603e588b8590c315}
+
+\item 
+\hyperlink{class_binary_map}{\-Binary\-Map}$<$ \-In1, \-In2, \-Out $>$ $\ast$ \hyperlink{class_binary_map_a5ee518543d1593d6ae4a443b95461f70}{clone} ()
+\item 
+\hypertarget{class_binary_map_ab57a24e23e0a80e17f6b6a8bf2461d0e}{size\-\_\-t {\bfseries i\-\_\-degree} ()}\label{class_binary_map_ab57a24e23e0a80e17f6b6a8bf2461d0e}
+
+\item 
+\hypertarget{class_binary_map_a797b1d9ba0e907ed25865315e7e0dc1a}{size\-\_\-t {\bfseries o\-\_\-degree} ()}\label{class_binary_map_a797b1d9ba0e907ed25865315e7e0dc1a}
+
+\item 
+\hypertarget{class_binary_map_a2c00076ce44f296a9fc41994c2e3e162}{bool {\bfseries structure\-\_\-type} ()}\label{class_binary_map_a2c00076ce44f296a9fc41994c2e3e162}
+
+\item 
+\hypertarget{class_binary_map_a41145194d0d78b9eb3ad0b35ebd30da2}{const \-Operator\-Class {\bfseries operator\-\_\-class} ()}\label{class_binary_map_a41145194d0d78b9eb3ad0b35ebd30da2}
+
+\item 
+\hypertarget{class_binary_map_a25c286d36f6145f22ea5cf171b07103e}{ff\-::ff\-\_\-node $\ast$ {\bfseries node\-\_\-operator} (size\-\_\-t parallelism=1)}\label{class_binary_map_a25c286d36f6145f22ea5cf171b07103e}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_binary_map_adb788d0aa2d64624d3602a985936d7da}{class {\bfseries \-Pipe}}\label{class_binary_map_adb788d0aa2d64624d3602a985936d7da}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$typename In1, typename In2, typename Out$>$class Binary\-Map$<$ In1, In2, Out $>$}
+
+\-Defines an operator performing a binary \hyperlink{class_map}{\-Map}, taking in input two elements from two different input sources and producing a single output.
+
+\-The \hyperlink{class_binary_map}{\-Binary\-Map} kernel is defined by the user and can be a lambda function, a functor or a function.
+
+\-It implements a data-\/parallel operator that ignores any kind of grouping or windowing.
+
+\-The kernel is applied independently to all the elements of both collections (either bounded or unbounded). 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_binary_map_abd8e19230ff0077f3782734313dafffc}{\index{\-Binary\-Map@{\-Binary\-Map}!\-Binary\-Map@{\-Binary\-Map}}
+\index{\-Binary\-Map@{\-Binary\-Map}!BinaryMap@{\-Binary\-Map}}
+\subsubsection[{\-Binary\-Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In1 , typename In2 , typename Out $>$ {\bf \-Binary\-Map}$<$ \-In1, \-In2, \-Out $>$\-::{\bf \-Binary\-Map} (
+\begin{DoxyParamCaption}
+\item[{std\-::function$<$ \-Out(\-In1, \-In2)$>$}]{bmapf\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_binary_map_abd8e19230ff0077f3782734313dafffc}
+\-Constructor. \-Creates a new \hyperlink{class_binary_map}{\-Binary\-Map} operator by defining its kernel function bmapf\-: $<$\-In1, \-In2$>$-\/$>$\-Out 
+\begin{DoxyParams}{\-Parameters}
+{\em bmapf} & std\-::function$<$\-Out(\-In1, In2)$>$ \hyperlink{class_binary_map}{\-Binary\-Map} kernel function with input types \-In1, \-In2 and producing an element of type \-Out \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_binary_map_a5ee518543d1593d6ae4a443b95461f70}{\index{\-Binary\-Map@{\-Binary\-Map}!clone@{clone}}
+\index{clone@{clone}!BinaryMap@{\-Binary\-Map}}
+\subsubsection[{clone}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In1 , typename In2 , typename Out $>$ {\bf \-Binary\-Map}$<$\-In1, \-In2, \-Out$>$$\ast$ {\bf \-Binary\-Map}$<$ \-In1, \-In2, \-Out $>$\-::{\bf clone} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}\label{class_binary_map_a5ee518543d1593d6ae4a443b95461f70}
+\-Duplicates a \hyperlink{class_binary_map}{\-Binary\-Map} operator with a copy of the map kernel function. \begin{DoxyReturn}{\-Returns}
+new \hyperlink{class_binary_map}{\-Binary\-Map} pointer 
+\end{DoxyReturn}
+\hypertarget{class_binary_map_a891da29ca1c109f273e6b0448f261783}{\index{\-Binary\-Map@{\-Binary\-Map}!name@{name}}
+\index{name@{name}!BinaryMap@{\-Binary\-Map}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In1 , typename In2 , typename Out $>$ std\-::string {\bf \-Binary\-Map}$<$ \-In1, \-In2, \-Out $>$\-::{\bf name} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_binary_map_a891da29ca1c109f273e6b0448f261783}
+\-Returns a unique name for the operator. 
+
+\-Implements \hyperlink{class_binary_operator_a6df8c4e6dee857f27d870c30d4f65920}{\-Binary\-Operator$<$ In1, In2, Out $>$}.
+
+\hypertarget{class_binary_map_a27f390ff0c80cdd9bc7b6361ed5df8c2}{\index{\-Binary\-Map@{\-Binary\-Map}!name\-\_\-short@{name\-\_\-short}}
+\index{name\-\_\-short@{name\-\_\-short}!BinaryMap@{\-Binary\-Map}}
+\subsubsection[{name\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename In1 , typename In2 , typename Out $>$ std\-::string {\bf \-Binary\-Map}$<$ \-In1, \-In2, \-Out $>$\-::{\bf name\-\_\-short} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_binary_map_a27f390ff0c80cdd9bc7b6361ed5df8c2}
+\-Returns the name of the operator, consisting in the name of the class. 
+
+\-Implements \hyperlink{class_operator}{\-Operator}.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/alpha-\/unito/\-Pi\-Co/\-Operators/\-Binary\-Map.\-hpp\end{DoxyCompactItemize}

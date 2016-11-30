@@ -1,0 +1,204 @@
+\hypertarget{class_pipe}{\section{\-Pipe \-Class \-Reference}
+\label{class_pipe}\index{\-Pipe@{\-Pipe}}
+}
+
+
+{\ttfamily \#include $<$\-Pipe.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pipe_a91ddad07e89d5585b1cf27fa7860e201}{\-Pipe} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_pipe_a2112ea3ec975e32d471195d7d37dced9}{\-Pipe} (const \-T \&op)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_pipe_ad634a48b656601f80db6fa413c47b035}{\-Pipe} (const \-T \&\&op)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_pipe}{\-Pipe} \& \hyperlink{class_pipe_aa0577b9eaa033a89b6a76353764eed39}{add} (const \-T \&op)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_pipe}{\-Pipe} \& \hyperlink{class_pipe_af0843b7b6b6c33606fce7a995450678a}{add} (const \-T \&\&op)
+\item 
+\hyperlink{class_pipe}{\-Pipe} \& \hyperlink{class_pipe_a1772082ed12c8b1df452a40439738138}{to} (const \hyperlink{class_pipe}{\-Pipe} \&pipe)
+\item 
+{\footnotesize template$<$typename in1 , typename in2 , typename out $>$ }\\\hyperlink{class_pipe}{\-Pipe} \& \hyperlink{class_pipe_a5ddf06055414d4ad0b511596dbf3a390}{pair\-\_\-with} (const \hyperlink{class_binary_operator}{\-Binary\-Operator}$<$ in1, in2, out $>$ \&a, const \hyperlink{class_pipe}{\-Pipe} \&pipe)
+\item 
+{\footnotesize template$<$typename in $>$ }\\\hyperlink{class_pipe}{\-Pipe} \& \hyperlink{class_pipe_a7906479c4efc825a0c222f7569842847}{merge} (const \hyperlink{class_pipe}{\-Pipe} \&pipe)
+\item 
+void \hyperlink{class_pipe_a288d5b72778f836c7fbca280bf858976}{print\-\_\-\-D\-A\-G} ()
+\item 
+void \hyperlink{class_pipe_a6ecb3df1580730102c3e925875962bfd}{run} ()
+\item 
+void \hyperlink{class_pipe_a305c4d6db780c5e2d46a89f756d9aadf}{to\-\_\-dotfile} (std\-::string filename)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A \hyperlink{class_pipe}{\-Pipe} is a single entity composed by operators. \-It can be created and modified by adding single operators or by appending \-Pipes.
+
+\-Each add or append is done on its right side.
+
+\-A \hyperlink{class_pipe}{\-Pipe} has an input cardinality and an output cardinality $<$\-I-\/degree, \-O-\/degree$>$, where
+\begin{DoxyItemize}
+\item \-I-\/degree = \{0,1\}
+\item \-O-\/degree = \{0,1\}
+\end{DoxyItemize}
+
+\-I-\/degree and \-O-\/degree define if the \hyperlink{class_pipe}{\-Pipe} can be executed or not\-: when both are zero, the current \hyperlink{class_pipe}{\-Pipe} has both input and output operators.
+
+\-Each \hyperlink{class_pipe}{\-Pipe} has a \-Structure \-Type specification that identifies the type of data that can be managed.
+
+\-The data type can be\-:
+\begin{DoxyItemize}
+\item \-Bag (spec\-: unordered, bounded)
+\item \-List (spec\-: ordered, bounded)
+\item \-Stream (spec\-: ordered, unbounded)
+\end{DoxyItemize}
+
+\-A \hyperlink{class_pipe}{\-Pipe} can manage one or more compatible \-Structure \-Types which intersection is not empty. \-The \-Structure \-Type is determined by the \hyperlink{class_emitter}{\-Emitter} since it is coded in the collection, but it can be modified while chaining \-Pipes by computing the intersection of \-Structure \-Types.
+
+\-The following show a simple pseudo-\/code example on how to compose \-Pipes.
+
+\-Pipe\-\_\-\-A -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ $|$ $|$ $|$ \-Map(f) -\/-\/-\/$>$ \-Map(g) -\/-\/-\/$>$ \-Reduce(h) $|$ $|$ $|$ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
+
+$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$\{.c\}
+
+\hyperlink{class_pipe}{\-Pipe} \-Pipe\-\_\-\-A(\-Map(f)); \-Pipe\-\_\-\-B(\-Map(g)); \-Pipe\-\_\-\-B.\-add(\-Reduce(h)); \-Pipe\-\_\-\-A.\-to(\-Pipe\-\_\-\-B)); $\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$
+
+\-This example produces a \hyperlink{class_pipe}{\-Pipe} \-Pipe\-\_\-\-A by appending \-Pipe\-\_\-\-B on its right side. \-The resulting pipe has \-I-\/degree and \-O-\/degree 1. \-This \hyperlink{class_pipe}{\-Pipe} can manage all the \-Structure \-Types specifications.
+
+\-When composing \-Pipes with other \-Pipes or \-Operators (to or add methods), the resulting \-I/\-O cardinality must be at most one. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_pipe_a91ddad07e89d5585b1cf27fa7860e201}{\index{\-Pipe@{\-Pipe}!\-Pipe@{\-Pipe}}
+\index{\-Pipe@{\-Pipe}!Pipe@{\-Pipe}}
+\subsubsection[{\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Pipe\-::\-Pipe} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_a91ddad07e89d5585b1cf27fa7860e201}
+\-Create an empty \hyperlink{class_pipe}{\-Pipe} \hypertarget{class_pipe_a2112ea3ec975e32d471195d7d37dced9}{\index{\-Pipe@{\-Pipe}!\-Pipe@{\-Pipe}}
+\index{\-Pipe@{\-Pipe}!Pipe@{\-Pipe}}
+\subsubsection[{\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf \-Pipe\-::\-Pipe} (
+\begin{DoxyParamCaption}
+\item[{const \-T \&}]{op}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_a2112ea3ec975e32d471195d7d37dced9}
+\-Create a \hyperlink{class_pipe}{\-Pipe} from an initial operator \hypertarget{class_pipe_ad634a48b656601f80db6fa413c47b035}{\index{\-Pipe@{\-Pipe}!\-Pipe@{\-Pipe}}
+\index{\-Pipe@{\-Pipe}!Pipe@{\-Pipe}}
+\subsubsection[{\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf \-Pipe\-::\-Pipe} (
+\begin{DoxyParamCaption}
+\item[{const \-T \&\&}]{op}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_ad634a48b656601f80db6fa413c47b035}
+\-Create a \hyperlink{class_pipe}{\-Pipe} from an initial operator (move) 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_pipe_aa0577b9eaa033a89b6a76353764eed39}{\index{\-Pipe@{\-Pipe}!add@{add}}
+\index{add@{add}!Pipe@{\-Pipe}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf \-Pipe}\& \-Pipe\-::add (
+\begin{DoxyParamCaption}
+\item[{const \-T \&}]{op}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_aa0577b9eaa033a89b6a76353764eed39}
+\-Add a new stage to the \hyperlink{class_pipe}{\-Pipe}.
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[\hyperlink{todo__todo000001}{\-Todo}]op should be const \end{DoxyRefDesc}
+\hypertarget{class_pipe_af0843b7b6b6c33606fce7a995450678a}{\index{\-Pipe@{\-Pipe}!add@{add}}
+\index{add@{add}!Pipe@{\-Pipe}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf \-Pipe}\& \-Pipe\-::add (
+\begin{DoxyParamCaption}
+\item[{const \-T \&\&}]{op}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_af0843b7b6b6c33606fce7a995450678a}
+\-Add a new stage to the \hyperlink{class_pipe}{\-Pipe} (move). \hypertarget{class_pipe_a7906479c4efc825a0c222f7569842847}{\index{\-Pipe@{\-Pipe}!merge@{merge}}
+\index{merge@{merge}!Pipe@{\-Pipe}}
+\subsubsection[{merge}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename in $>$ {\bf \-Pipe}\& {\bf \-Pipe\-::merge} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Pipe} \&}]{pipe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_a7906479c4efc825a0c222f7569842847}
+\-Merges data coming from the current \hyperlink{class_pipe}{\-Pipe} and the one passed as argument. \-The resulting collection is the union of the collection of the two \-Pipes. \-If the input collections are ordered, the order is respected only within each input collections, while there exists some interleaving of the two collections in the resulting one. \-Merging fails if\-:
+\begin{DoxyItemize}
+\item the current \-O-\/\-Degree is zero and the \hyperlink{class_pipe}{\-Pipe} is not empty
+\item output and input data types of the two \-Pipes are not compatible
+\item \-Structure \-Types the two \-Pipes are not compatible
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pipe} & \hyperlink{class_pipe}{\-Pipe} to merge \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_pipe_a5ddf06055414d4ad0b511596dbf3a390}{\index{\-Pipe@{\-Pipe}!pair\-\_\-with@{pair\-\_\-with}}
+\index{pair\-\_\-with@{pair\-\_\-with}!Pipe@{\-Pipe}}
+\subsubsection[{pair\-\_\-with}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename in1 , typename in2 , typename out $>$ {\bf \-Pipe}\& {\bf \-Pipe\-::pair\-\_\-with} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Binary\-Operator}$<$ in1, in2, out $>$ \&}]{a, }
+\item[{const {\bf \-Pipe} \&}]{pipe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_a5ddf06055414d4ad0b511596dbf3a390}
+\-Pair the current \hyperlink{class_pipe}{\-Pipe} with a second pipe by a \hyperlink{class_binary_operator}{\-Binary\-Operator} that combines the two input items (a pair) with the function specified by the user. \-This method fails if\-:
+\begin{DoxyItemize}
+\item the current \-O-\/degree is zero and the \hyperlink{class_pipe}{\-Pipe} is not empty
+\item output and input data types of the \-O-\/\-Degree==1 input are not compatible
+\item \-Structure \-Types are not compatible 
+\begin{DoxyParams}{\-Parameters}
+{\em a} & is a \hyperlink{class_binary_operator}{\-Binary\-Operator} \\
+\hline
+{\em pipe} & is the second input \hyperlink{class_pipe}{\-Pipe} \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\hypertarget{class_pipe_a288d5b72778f836c7fbca280bf858976}{\index{\-Pipe@{\-Pipe}!print\-\_\-\-D\-A\-G@{print\-\_\-\-D\-A\-G}}
+\index{print\-\_\-\-D\-A\-G@{print\-\_\-\-D\-A\-G}!Pipe@{\-Pipe}}
+\subsubsection[{print\-\_\-\-D\-A\-G}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Pipe\-::print\-\_\-\-D\-A\-G} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_a288d5b72778f836c7fbca280bf858976}
+\-Print the \-D\-A\-G in two subsequent format\-:
+\begin{DoxyItemize}
+\item \-Adjacency list
+\item \-B\-F\-S visit 
+\end{DoxyItemize}\hypertarget{class_pipe_a6ecb3df1580730102c3e925875962bfd}{\index{\-Pipe@{\-Pipe}!run@{run}}
+\index{run@{run}!Pipe@{\-Pipe}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Pipe\-::run} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_a6ecb3df1580730102c3e925875962bfd}
+\-Executes the \hyperlink{class_pipe}{\-Pipe} \hypertarget{class_pipe_a1772082ed12c8b1df452a40439738138}{\index{\-Pipe@{\-Pipe}!to@{to}}
+\index{to@{to}!Pipe@{\-Pipe}}
+\subsubsection[{to}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Pipe}\& {\bf \-Pipe\-::to} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Pipe} \&}]{pipe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_a1772082ed12c8b1df452a40439738138}
+\-Append a \hyperlink{class_pipe}{\-Pipe} to the current one. \-Operators in the \hyperlink{class_pipe}{\-Pipe} to append are copied into the current one. \-This method fails if\-:
+\begin{DoxyItemize}
+\item the current \-O-\/\-Degree is zero and the \hyperlink{class_pipe}{\-Pipe} is not empty
+\item output and input data types are not compatible
+\item \-Structure \-Types are not compatible 
+\begin{DoxyParams}{\-Parameters}
+{\em pipe} & \hyperlink{class_pipe}{\-Pipe} to append \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\hypertarget{class_pipe_a305c4d6db780c5e2d46a89f756d9aadf}{\index{\-Pipe@{\-Pipe}!to\-\_\-dotfile@{to\-\_\-dotfile}}
+\index{to\-\_\-dotfile@{to\-\_\-dotfile}!Pipe@{\-Pipe}}
+\subsubsection[{to\-\_\-dotfile}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Pipe\-::to\-\_\-dotfile} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_a305c4d6db780c5e2d46a89f756d9aadf}
+\-Encodes the \-D\-A\-G into a dot file. 
+\begin{DoxyParams}{\-Parameters}
+{\em filename} & dot file \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/alpha-\/unito/\-Pi\-Co/\-Pipe.\-hpp\end{DoxyCompactItemize}
