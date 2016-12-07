@@ -121,7 +121,7 @@ Inheritance diagram for WriteToDisk&lt; In &gt;:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_to_disk.html#a6e9f5e442343ed8ab0af76f7884c13f1">WriteToDisk</a> (std::string filename_, std::function&lt; In(In)&gt; func_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_to_disk.html#a32f70bda46bddcfb63fa4dc1c98caaab">WriteToDisk</a> (std::string filename_, std::function&lt; std::string(In)&gt; func_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_to_disk.html#abbdea3010854bb53dfef3f5c006fc245">WriteToDisk</a> (const <a class="el" href="class_write_to_disk.html">WriteToDisk</a> &amp;copy)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_to_disk.html#a3b57dac20171d5e166210183bceedea2">name</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_write_to_disk.html#ab7f18e8983197d9917d2d045943b00ca">name_short</a> ()</td></tr>
@@ -143,7 +143,7 @@ class WriteToDisk&lt; In &gt;</h3>
 <p>The user specifies the kernel function that operates on each line of the text file, passed as a std::string. The kernel can be a lambda function, a functor or a function.</p>
 <p>The operator is global and unique for the <a class="el" href="class_pipe.html">Pipe</a> it refers to. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a6e9f5e442343ed8ab0af76f7884c13f1"></a><!-- doxytag: member="WriteToDisk::WriteToDisk" ref="a6e9f5e442343ed8ab0af76f7884c13f1" args="(std::string filename_, std::function&lt; In(In)&gt; func_)" -->
+<a class="anchor" id="a32f70bda46bddcfb63fa4dc1c98caaab"></a><!-- doxytag: member="WriteToDisk::WriteToDisk" ref="a32f70bda46bddcfb63fa4dc1c98caaab" args="(std::string filename_, std::function&lt; std::string(In)&gt; func_)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -158,7 +158,7 @@ template&lt;typename In&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::function&lt; In(In)&gt;&#160;</td>
+          <td class="paramtype">std::function&lt; std::string(In)&gt;&#160;</td>
           <td class="paramname"><em>func_</em>&#160;</td>
         </tr>
         <tr>

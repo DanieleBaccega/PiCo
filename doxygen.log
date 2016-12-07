@@ -258,12 +258,12 @@ Finding anchors and sections in the docu/home/travis/build/alpha-unito/PiCo/Inte
 /home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:35: warning: Member Key(K key_) (function) of class KeyValue is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:36: warning: Member Value(V val_) (function) of class KeyValue is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:37: warning: Member KeyVal(K key_, V val_) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:42: warning: Member operator=(const KeyValue &kv) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:47: warning: Member operator==(KeyValue &kv) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:67: warning: Member sumValue(const KeyValue &kv) (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:71: warning: Member sameKey(const KeyValue &kv) const  (function) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:52: warning: Member operator<<(std::ostream &os, const KeyValue &kv) (friend) of class KeyValue is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:61: warning: Member operator+(KeyValue lhs, const KeyValue &rhs) (friend) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:43: warning: Member operator=(const KeyValue &kv) (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:48: warning: Member operator==(KeyValue &kv) (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:68: warning: Member sumValue(const KeyValue &kv) (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:72: warning: Member sameKey(const KeyValue &kv) const  (function) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:53: warning: Member operator<<(std::ostream &os, const KeyValue &kv) (friend) of class KeyValue is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:62: warning: Member operator+(KeyValue lhs, const KeyValue &rhs) (friend) of class KeyValue is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:64: warning: Member run_kernel(In *in_task) (function) of class Map is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:89: warning: Member operator_class() (function) of class Map is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:94: warning: Member node_operator(size_t parallelism=1) (function) of class Map is not documented.
@@ -395,7 +395,7 @@ Generating docs for compo/home/travis/build/alpha-unito/PiCo/Operators/Reduce.hp
 /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:34: warning: Member farmidcounter (variable) of class SemDAGNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp:33: warning: Member UnaryFlatMapFFNode(size_t parallelism, std::function< std::vector< Out >(In)> *flatmapf) (function) of class UnaryFlatMapFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp:36: warning: Member svc(void *task) (function) of class UnaryFlatMapFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:32: warning: Member UnaryMapFFNode(size_t parallelism, std::function< Out(In)> *mapf_) (function) of class UnaryMapFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:32: warning: Member UnaryMapFFNode(std::function< Out(In)> *mapf_) (function) of class UnaryMapFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:35: warning: Member svc(void *task) (function) of class UnaryMapFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:53: warning: Member inT (typedef) of class UnaryOperator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:54: warning: Member outT (typedef) of class UnaryOperator is not documented.
@@ -406,7 +406,7 @@ Generating docs for compo/home/travis/build/alpha-unito/PiCo/Operators/Reduce.hp
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:81: warning: Member run_kernel(In *task) (function) of class WriteToDisk is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:93: warning: Member operator_class() (function) of class WriteToDisk is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:97: warning: Member node_operator(size_t parallelism=1) (function) of class WriteToDisk is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:33: warning: Member WriteToDiskFFNode(size_t parallelism_, std::function< In(In)> kernel_, std::string filename_) (function) of class WriteToDiskFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:33: warning: Member WriteToDiskFFNode(size_t parallelism_, std::function< std::string(In)> kernel_, std::string filename_) (function) of class WriteToDiskFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:35: warning: Member svc_init() (function) of class WriteToDiskFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:42: warning: Member svc(void *task) (function) of class WriteToDiskFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:65: warning: Member svc_end() (function) of class WriteToDiskFFNode is not documented.
@@ -435,6 +435,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 407/65536 hits=18319 misses=407
-lookup cache used 584/65536 hits=3548 misses=598
+symbol cache used 402/65536 hits=18233 misses=402
+lookup cache used 584/65536 hits=3563 misses=598
 finished...

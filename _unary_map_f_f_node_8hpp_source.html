@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00029"></a>00029 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> In, <span class="keyword">typename</span> Out&gt;
 <a name="l00030"></a><a class="code" href="class_unary_map_f_f_node.html">00030</a> <span class="keyword">class </span><a class="code" href="class_unary_map_f_f_node.html">UnaryMapFFNode</a>: <span class="keyword">public</span> ff_node{
 <a name="l00031"></a>00031 <span class="keyword">public</span>:
-<a name="l00032"></a>00032     <a class="code" href="class_unary_map_f_f_node.html">UnaryMapFFNode</a>(<span class="keywordtype">size_t</span> parallelism, std::function&lt;Out(In)&gt;* mapf_): kernel(*mapf_){
+<a name="l00032"></a>00032     <a class="code" href="class_unary_map_f_f_node.html">UnaryMapFFNode</a>(std::function&lt;Out(In)&gt;* mapf_): kernel(*mapf_), in(<span class="keyword">nullptr</span>), result(<span class="keyword">nullptr</span>){
 <a name="l00033"></a>00033     };
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035     <span class="keywordtype">void</span>* svc(<span class="keywordtype">void</span>* task) {

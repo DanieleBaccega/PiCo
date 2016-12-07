@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00029"></a>00029 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> In&gt;
 <a name="l00030"></a><a class="code" href="class_write_to_disk_f_f_node.html">00030</a> <span class="keyword">class </span><a class="code" href="class_write_to_disk_f_f_node.html">WriteToDiskFFNode</a>: <span class="keyword">public</span> ff_node{
 <a name="l00031"></a>00031 <span class="keyword">public</span>:
-<a name="l00032"></a>00032     <a class="code" href="class_write_to_disk_f_f_node.html">WriteToDiskFFNode</a>(<span class="keywordtype">size_t</span> parallelism_, std::function&lt;In(In)&gt; kernel_, std::string filename_):
+<a name="l00032"></a>00032     <a class="code" href="class_write_to_disk_f_f_node.html">WriteToDiskFFNode</a>(<span class="keywordtype">size_t</span> parallelism_, std::function&lt;std::string(In)&gt; kernel_, std::string filename_):
 <a name="l00033"></a>00033             par_deg(parallelism_), kernel(kernel_), filename(filename_), recv_sync(<span class="keyword">false</span>){};
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035     <span class="keywordtype">int</span> svc_init(){
@@ -152,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00053"></a>00053             in = <span class="keyword">reinterpret_cast&lt;</span>In*<span class="keyword">&gt;</span>(task);
 <a name="l00054"></a>00054             <span class="keywordflow">if</span> (outfile.is_open()) {
 <a name="l00055"></a>00055                 in = <span class="keyword">reinterpret_cast&lt;</span>In*<span class="keyword">&gt;</span>(task);
-<a name="l00056"></a>00056                 outfile &lt;&lt; *in <span class="comment">/*kernel(*task)*/</span>&lt;&lt; std::endl;
+<a name="l00056"></a>00056                 outfile &lt;&lt; kernel(*in)&lt;&lt; std::endl;
 <a name="l00057"></a>00057                 <span class="keyword">delete</span> in;
 <a name="l00058"></a>00058             } <span class="keywordflow">else</span> {
 <a name="l00059"></a>00059                 std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open file&quot;</span>;
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a>00068 
 <a name="l00069"></a>00069 <span class="keyword">private</span>:
 <a name="l00070"></a>00070     <span class="keywordtype">size_t</span> par_deg;
-<a name="l00071"></a>00071     std::function&lt;In(In)&gt; kernel;
+<a name="l00071"></a>00071     std::function&lt;std::string(In)&gt; kernel;
 <a name="l00072"></a>00072     std::string filename;
 <a name="l00073"></a>00073     std::ofstream outfile;
 <a name="l00074"></a>00074     In* in;
