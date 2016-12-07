@@ -19,6 +19,7 @@ var annotated =
     [ "PReduceFFNode< In >", "class_p_reduce_f_f_node.html", "class_p_reduce_f_f_node" ],
     [ "ReadFromFile< Out >", "class_read_from_file.html", "class_read_from_file" ],
     [ "ReadFromFileFFNode< Out >", "class_read_from_file_f_f_node.html", "class_read_from_file_f_f_node" ],
+    [ "ReadFromFileFFNodeMB< Out >", "class_read_from_file_f_f_node_m_b.html", "class_read_from_file_f_f_node_m_b" ],
     [ "Reduce< In >", "class_reduce.html", "class_reduce" ],
     [ "RREmitter", "class_r_r_emitter.html", "class_r_r_emitter" ],
     [ "SemanticDAG", "class_semantic_d_a_g.html", "class_semantic_d_a_g" ],

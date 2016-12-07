@@ -15,6 +15,7 @@ var files =
     [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp", null, null ],
+    [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNodeMB.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp", null, null ],

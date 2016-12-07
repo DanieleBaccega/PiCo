@@ -35,6 +35,7 @@ var hierarchy =
     [ "Pipe", "class_pipe.html", null ],
     [ "PReduceFFNode< In >", "class_p_reduce_f_f_node.html", null ],
     [ "ReadFromFileFFNode< Out >", "class_read_from_file_f_f_node.html", null ],
+    [ "ReadFromFileFFNodeMB< Out >", "class_read_from_file_f_f_node_m_b.html", null ],
     [ "SemanticDAG", "class_semantic_d_a_g.html", null ],
     [ "SemDAGNode", "class_sem_d_a_g_node.html", null ],
     [ "UnaryFlatMapFFNode< In, Out >", "class_unary_flat_map_f_f_node.html", null ],
