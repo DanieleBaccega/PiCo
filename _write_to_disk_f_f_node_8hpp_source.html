@@ -128,8 +128,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00029"></a>00029 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> In&gt;
 <a name="l00030"></a><a class="code" href="class_write_to_disk_f_f_node.html">00030</a> <span class="keyword">class </span><a class="code" href="class_write_to_disk_f_f_node.html">WriteToDiskFFNode</a>: <span class="keyword">public</span> ff_node{
 <a name="l00031"></a>00031 <span class="keyword">public</span>:
-<a name="l00032"></a>00032     <a class="code" href="class_write_to_disk_f_f_node.html">WriteToDiskFFNode</a>(<span class="keywordtype">size_t</span> parallelism_, std::function&lt;std::string(In)&gt; kernel_, std::string filename_):
-<a name="l00033"></a>00033             par_deg(parallelism_), kernel(kernel_), filename(filename_), recv_sync(<span class="keyword">false</span>){};
+<a name="l00032"></a>00032     <a class="code" href="class_write_to_disk_f_f_node.html">WriteToDiskFFNode</a>(std::function&lt;std::string(In)&gt; kernel_, std::string filename_):
+<a name="l00033"></a>00033             kernel(kernel_), filename(filename_), recv_sync(<span class="keyword">false</span>){};
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035     <span class="keywordtype">int</span> svc_init(){
 <a name="l00036"></a>00036 <span class="comment">//#ifdef DEBUG</span>
@@ -166,17 +166,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00067"></a>00067     }
 <a name="l00068"></a>00068 
 <a name="l00069"></a>00069 <span class="keyword">private</span>:
-<a name="l00070"></a>00070     <span class="keywordtype">size_t</span> par_deg;
-<a name="l00071"></a>00071     std::function&lt;std::string(In)&gt; kernel;
-<a name="l00072"></a>00072     std::string filename;
-<a name="l00073"></a>00073     std::ofstream outfile;
-<a name="l00074"></a>00074     In* in;
-<a name="l00075"></a>00075     <span class="keywordtype">bool</span> recv_sync;
-<a name="l00076"></a>00076 };
+<a name="l00070"></a>00070     std::function&lt;std::string(In)&gt; kernel;
+<a name="l00071"></a>00071     std::string filename;
+<a name="l00072"></a>00072     std::ofstream outfile;
+<a name="l00073"></a>00073     In* in;
+<a name="l00074"></a>00074     <span class="keywordtype">bool</span> recv_sync;
+<a name="l00075"></a>00075 };
+<a name="l00076"></a>00076 
 <a name="l00077"></a>00077 
 <a name="l00078"></a>00078 
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_FFOPERATORS_INOUT_WRITETODISKFFNODE_HPP_ */</span>
+<a name="l00079"></a>00079 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_FFOPERATORS_INOUT_WRITETODISKFFNODE_HPP_ */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

@@ -349,9 +349,9 @@ Generating code for file /home/travis/build/home/travis/build/alpha-unito/PiCo/I
 /home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:68: warning: Member node_operator(size_t par_deg=1) (function) of class PReduce is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp:36: warning: Member PReduceFFNode(size_t parallelism, std::function< In(In, In)> *preducef) (function) of class PReduceFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp:42: warning: Member svc(void *task) (function) of class PReduceFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:81: warning: Member run_kernel() (function) of class ReadFromFile is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:85: warning: Member operator_class() (function) of class ReadFromFile is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:89: warning: Member node_operator(size_t parallelism=1) (function) of class ReadFromFile is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:82: warning: Member run_kernel() (function) of class ReadFromFile is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:86: warning: Member operator_class() (function) of class ReadFromFile is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:90: warning: Member node_operator(size_t parallelism=1) (function) of class ReadFromFile is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:34: warning: Member ReadFromFileFFNode(std::function< Out(std::string)> kernel_, std::string filename_) (function) of class ReadFromFileFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:36: warning: Member svc(void *in) (function) of class ReadFromFileFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNodeMB.hpp:33: warning: Member ReadFromFileFFNodeMB(std::function< Out(std::string)> kernel_, std::string filename_) (function) of class ReadFromFileFFNodeMB is not documented.
@@ -405,7 +405,7 @@ Generating code for file /home/travis/build/home/travis/build/alpha-unito/PiCo/I
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:81: warning: Member run_kernel(In *task) (function) of class WriteToDisk is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:93: warning: Member operator_class() (function) of class WriteToDisk is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:97: warning: Member node_operator(size_t parallelism=1) (function) of class WriteToDisk is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:33: warning: Member WriteToDiskFFNode(size_t parallelism_, std::function< std::string(In)> kernel_, std::string filename_) (function) of class WriteToDiskFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:33: warning: Member WriteToDiskFFNode(std::function< std::string(In)> kernel_, std::string filename_) (function) of class WriteToDiskFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:35: warning: Member svc_init() (function) of class WriteToDiskFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:42: warning: Member svc(void *task) (function) of class WriteToDiskFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:65: warning: Member svc_end() (function) of class WriteToDiskFFNode is not documented.
@@ -460,6 +460,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 427/65536 hits=18745 misses=427
-lookup cache used 616/65536 hits=3799 misses=631
+symbol cache used 429/65536 hits=18785 misses=429
+lookup cache used 609/65536 hits=3757 misses=624
 finished...
