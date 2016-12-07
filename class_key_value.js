@@ -14,5 +14,6 @@ var class_key_value =
     [ "Value", "class_key_value.html#a24db94572b5cb3117524f91f7927d8b8", null ],
     [ "Value", "class_key_value.html#ada87254eda6cc833578d5a001c3c08e7", null ],
     [ "operator+", "class_key_value.html#a60405bd4e3c6371f045b28bb6100c58b", null ],
+    [ "operator<", "class_key_value.html#a96e65cf641e10c9767a5f2c05787ec93", null ],
     [ "operator<<", "class_key_value.html#a39c082a850561b5283e7bf5858a88cac", null ]
 ];
