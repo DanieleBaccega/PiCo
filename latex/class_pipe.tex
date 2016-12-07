@@ -22,7 +22,7 @@
 \item 
 {\footnotesize template$<$typename in1 , typename in2 , typename out $>$ }\\\hyperlink{class_pipe}{\-Pipe} \& \hyperlink{class_pipe_a5ddf06055414d4ad0b511596dbf3a390}{pair\-\_\-with} (const \hyperlink{class_binary_operator}{\-Binary\-Operator}$<$ in1, in2, out $>$ \&a, const \hyperlink{class_pipe}{\-Pipe} \&pipe)
 \item 
-{\footnotesize template$<$typename in $>$ }\\\hyperlink{class_pipe}{\-Pipe} \& \hyperlink{class_pipe_a7906479c4efc825a0c222f7569842847}{merge} (const \hyperlink{class_pipe}{\-Pipe} \&pipe)
+\hyperlink{class_pipe}{\-Pipe} \& \hyperlink{class_pipe_ac07aed5f6efda8248a8d3fe7410df6f2}{merge} (const \hyperlink{class_pipe}{\-Pipe} \&pipe)
 \item 
 void \hyperlink{class_pipe_a288d5b72778f836c7fbca280bf858976}{print\-\_\-\-D\-A\-G} ()
 \item 
@@ -111,13 +111,13 @@ $\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$$\sim$\{
 \item[{const \-T \&\&}]{op}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_af0843b7b6b6c33606fce7a995450678a}
-\-Add a new stage to the \hyperlink{class_pipe}{\-Pipe} (move). \hypertarget{class_pipe_a7906479c4efc825a0c222f7569842847}{\index{\-Pipe@{\-Pipe}!merge@{merge}}
+\-Add a new stage to the \hyperlink{class_pipe}{\-Pipe} (move). \hypertarget{class_pipe_ac07aed5f6efda8248a8d3fe7410df6f2}{\index{\-Pipe@{\-Pipe}!merge@{merge}}
 \index{merge@{merge}!Pipe@{\-Pipe}}
-\subsubsection[{merge}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename in $>$ {\bf \-Pipe}\& {\bf \-Pipe\-::merge} (
+\subsubsection[{merge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Pipe}\& {\bf \-Pipe\-::merge} (
 \begin{DoxyParamCaption}
 \item[{const {\bf \-Pipe} \&}]{pipe}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_a7906479c4efc825a0c222f7569842847}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_pipe_ac07aed5f6efda8248a8d3fe7410df6f2}
 \-Merges data coming from the current \hyperlink{class_pipe}{\-Pipe} and the one passed as argument. \-The resulting collection is the union of the collection of the two \-Pipes. \-If the input collections are ordered, the order is respected only within each input collections, while there exists some interleaving of the two collections in the resulting one. \-Merging fails if\-:
 \begin{DoxyItemize}
 \item the current \-O-\/\-Degree is zero and the \hyperlink{class_pipe}{\-Pipe} is not empty

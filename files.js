@@ -1,6 +1,7 @@
 var files =
 [
     [ "/home/travis/build/alpha-unito/PiCo/Pipe.hpp", null, null ],
+    [ "/home/travis/build/alpha-unito/PiCo/examples/stock-market/black_scholes.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/GroupParam.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/utils.hpp", null, null ],

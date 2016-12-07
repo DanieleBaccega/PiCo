@@ -6,7 +6,7 @@ var class_pipe =
     [ "~Pipe", "class_pipe.html#af4519cc3f1f13857a724db7b2220eefa", null ],
     [ "add", "class_pipe.html#aa0577b9eaa033a89b6a76353764eed39", null ],
     [ "add", "class_pipe.html#af0843b7b6b6c33606fce7a995450678a", null ],
-    [ "merge", "class_pipe.html#a7906479c4efc825a0c222f7569842847", null ],
+    [ "merge", "class_pipe.html#ac07aed5f6efda8248a8d3fe7410df6f2", null ],
     [ "pair_with", "class_pipe.html#a5ddf06055414d4ad0b511596dbf3a390", null ],
     [ "print_DAG", "class_pipe.html#a288d5b72778f836c7fbca280bf858976", null ],
     [ "run", "class_pipe.html#a6ecb3df1580730102c3e925875962bfd", null ],

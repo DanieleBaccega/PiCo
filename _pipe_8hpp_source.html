@@ -306,90 +306,89 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00314"></a>00314         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
 <a name="l00315"></a>00315     }
 <a name="l00316"></a>00316 
-<a name="l00329"></a>00329     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> in&gt;
-<a name="l00330"></a><a class="code" href="class_pipe.html#a7906479c4efc825a0c222f7569842847">00330</a>     <a class="code" href="class_pipe.html">Pipe</a>&amp; <a class="code" href="class_pipe.html#a7906479c4efc825a0c222f7569842847">merge</a>(<span class="keyword">const</span> <a class="code" href="class_pipe.html">Pipe</a>&amp; pipe){
-<a name="l00331"></a>00331         std::cerr &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot; Pipe L-ref merge\n&quot;</span>;
-<a name="l00332"></a>00332         <span class="comment">// output: eventually ordered elements from both pipes</span>
-<a name="l00333"></a>00333         assert(o_deg==1 &amp;&amp; !DAG.empty()); <span class="comment">// can not add new nodes if pipe is complete</span>
-<a name="l00334"></a>00334             <span class="comment">// can not append pipes without compatibility on data types</span>
-<a name="l00335"></a>00335         assert(pipe.getTailTypeInfo() == infotypes.back());
-<a name="l00336"></a>00336             <span class="comment">// can not append pipes with I-Degree zero if Pipe is not empty</span>
-<a name="l00337"></a>00337         assert(pipe.DAG.firstOp()-&gt;i_degree() == 0);
-<a name="l00338"></a>00338             <span class="comment">// can not append pipes without compatibility on structure types</span>
-<a name="l00339"></a>00339         assert(struct_type_check(pipe.raw_struct_type));
-<a name="l00340"></a>00340         struct_type_intersection(pipe.raw_struct_type);
-<a name="l00341"></a>00341         infotypes.back() = pipe.getTailTypeInfo();
-<a name="l00342"></a>00342         <span class="comment">// create and add merge node to the pipe iff the last node is not already a merge node</span>
-<a name="l00343"></a>00343         DAG.append_merge(pipe.DAG);
-<a name="l00344"></a>00344         o_deg = 1;
-<a name="l00345"></a>00345         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00346"></a>00346     }
-<a name="l00347"></a>00347 
-<a name="l00353"></a><a class="code" href="class_pipe.html#a288d5b72778f836c7fbca280bf858976">00353</a>     <span class="keywordtype">void</span> <a class="code" href="class_pipe.html#a288d5b72778f836c7fbca280bf858976">print_DAG</a>(){
-<a name="l00354"></a>00354         DAG.print();
-<a name="l00355"></a>00355     }
+<a name="l00329"></a><a class="code" href="class_pipe.html#ac07aed5f6efda8248a8d3fe7410df6f2">00329</a>     <a class="code" href="class_pipe.html">Pipe</a>&amp; <a class="code" href="class_pipe.html#ac07aed5f6efda8248a8d3fe7410df6f2">merge</a>(<span class="keyword">const</span> <a class="code" href="class_pipe.html">Pipe</a>&amp; pipe){
+<a name="l00330"></a>00330         std::cerr &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot; Pipe L-ref merge\n&quot;</span>;
+<a name="l00331"></a>00331         <span class="comment">// output: eventually ordered elements from both pipes</span>
+<a name="l00332"></a>00332         assert(o_deg==1 &amp;&amp; !DAG.empty()); <span class="comment">// can not add new nodes if pipe is complete</span>
+<a name="l00333"></a>00333             <span class="comment">// can not append pipes without compatibility on data types</span>
+<a name="l00334"></a>00334         assert(pipe.getTailTypeInfo() == infotypes.back());
+<a name="l00335"></a>00335             <span class="comment">// can not append pipes with I-Degree zero if Pipe is not empty</span>
+<a name="l00336"></a>00336         assert(pipe.DAG.firstOp()-&gt;i_degree() == 0);
+<a name="l00337"></a>00337             <span class="comment">// can not append pipes without compatibility on structure types</span>
+<a name="l00338"></a>00338         assert(struct_type_check(pipe.raw_struct_type));
+<a name="l00339"></a>00339         struct_type_intersection(pipe.raw_struct_type);
+<a name="l00340"></a>00340         infotypes.back() = pipe.getTailTypeInfo();
+<a name="l00341"></a>00341         <span class="comment">// create and add merge node to the pipe iff the last node is not already a merge node</span>
+<a name="l00342"></a>00342         DAG.append_merge(pipe.DAG);
+<a name="l00343"></a>00343         o_deg = 1;
+<a name="l00344"></a>00344         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00345"></a>00345     }
+<a name="l00346"></a>00346 
+<a name="l00352"></a><a class="code" href="class_pipe.html#a288d5b72778f836c7fbca280bf858976">00352</a>     <span class="keywordtype">void</span> <a class="code" href="class_pipe.html#a288d5b72778f836c7fbca280bf858976">print_DAG</a>(){
+<a name="l00353"></a>00353         DAG.print();
+<a name="l00354"></a>00354     }
+<a name="l00355"></a>00355 
 <a name="l00356"></a>00356 
-<a name="l00357"></a>00357 
-<a name="l00358"></a>00358     ~<a class="code" href="class_pipe.html">Pipe</a>(){
-<a name="l00359"></a>00359 <span class="preprocessor">#ifdef DEBUG</span>
-<a name="l00360"></a>00360 <span class="preprocessor"></span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[PIPE] Deleting\n&quot;</span>;
-<a name="l00361"></a>00361 <span class="preprocessor">#endif</span>
-<a name="l00362"></a>00362 <span class="preprocessor"></span>    }
-<a name="l00363"></a>00363 
-<a name="l00367"></a><a class="code" href="class_pipe.html#a6ecb3df1580730102c3e925875962bfd">00367</a>     <span class="keywordtype">void</span> <a class="code" href="class_pipe.html#a6ecb3df1580730102c3e925875962bfd">run</a>() {
-<a name="l00368"></a>00368 <span class="preprocessor">#ifdef DEBUG</span>
-<a name="l00369"></a>00369 <span class="preprocessor"></span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[PIPE] Running Pipe...\n&quot;</span>;
-<a name="l00370"></a>00370 <span class="preprocessor">#endif</span>
-<a name="l00371"></a>00371 <span class="preprocessor"></span>        assert(i_deg == 0 &amp;&amp; o_deg == 0);
-<a name="l00372"></a>00372         DAG.run();
-<a name="l00373"></a>00373     }
+<a name="l00357"></a>00357     ~<a class="code" href="class_pipe.html">Pipe</a>(){
+<a name="l00358"></a>00358 <span class="preprocessor">#ifdef DEBUG</span>
+<a name="l00359"></a>00359 <span class="preprocessor"></span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[PIPE] Deleting\n&quot;</span>;
+<a name="l00360"></a>00360 <span class="preprocessor">#endif</span>
+<a name="l00361"></a>00361 <span class="preprocessor"></span>    }
+<a name="l00362"></a>00362 
+<a name="l00366"></a><a class="code" href="class_pipe.html#a6ecb3df1580730102c3e925875962bfd">00366</a>     <span class="keywordtype">void</span> <a class="code" href="class_pipe.html#a6ecb3df1580730102c3e925875962bfd">run</a>() {
+<a name="l00367"></a>00367 <span class="preprocessor">#ifdef DEBUG</span>
+<a name="l00368"></a>00368 <span class="preprocessor"></span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[PIPE] Running Pipe...\n&quot;</span>;
+<a name="l00369"></a>00369 <span class="preprocessor">#endif</span>
+<a name="l00370"></a>00370 <span class="preprocessor"></span>        assert(i_deg == 0 &amp;&amp; o_deg == 0);
+<a name="l00371"></a>00371         DAG.run();
+<a name="l00372"></a>00372     }
+<a name="l00373"></a>00373 
 <a name="l00374"></a>00374 
-<a name="l00375"></a>00375 
-<a name="l00380"></a><a class="code" href="class_pipe.html#a305c4d6db780c5e2d46a89f756d9aadf">00380</a>     <span class="keywordtype">void</span> <a class="code" href="class_pipe.html#a305c4d6db780c5e2d46a89f756d9aadf">to_dotfile</a>(std::string filename){
-<a name="l00381"></a>00381 <span class="preprocessor">#ifdef DEBUG</span>
-<a name="l00382"></a>00382 <span class="preprocessor"></span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[PIPE] Converting DAG to .dot file\n&quot;</span>;
-<a name="l00383"></a>00383 <span class="preprocessor">#endif</span>
-<a name="l00384"></a>00384 <span class="preprocessor"></span>        DAG.to_dotfile(filename);
-<a name="l00385"></a>00385     }
-<a name="l00386"></a>00386 <span class="keyword">private</span>:
+<a name="l00379"></a><a class="code" href="class_pipe.html#a305c4d6db780c5e2d46a89f756d9aadf">00379</a>     <span class="keywordtype">void</span> <a class="code" href="class_pipe.html#a305c4d6db780c5e2d46a89f756d9aadf">to_dotfile</a>(std::string filename){
+<a name="l00380"></a>00380 <span class="preprocessor">#ifdef DEBUG</span>
+<a name="l00381"></a>00381 <span class="preprocessor"></span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[PIPE] Converting DAG to .dot file\n&quot;</span>;
+<a name="l00382"></a>00382 <span class="preprocessor">#endif</span>
+<a name="l00383"></a>00383 <span class="preprocessor"></span>        DAG.to_dotfile(filename);
+<a name="l00384"></a>00384     }
+<a name="l00385"></a>00385 <span class="keyword">private</span>:
+<a name="l00386"></a>00386 
 <a name="l00387"></a>00387 
-<a name="l00388"></a>00388 
-<a name="l00389"></a>00389     <span class="keyword">inline</span> <span class="keyword">const</span> std::type_info&amp; getHeadTypeInfo()<span class="keyword"> const </span>{
-<a name="l00390"></a>00390         <span class="keywordflow">return</span> infotypes.front();
-<a name="l00391"></a>00391     }
-<a name="l00392"></a>00392 
-<a name="l00393"></a>00393     <span class="keyword">inline</span> <span class="keyword">const</span> std::type_info&amp; getTailTypeInfo()<span class="keyword"> const </span>{
-<a name="l00394"></a>00394         <span class="keywordflow">return</span> infotypes.back();
-<a name="l00395"></a>00395     }
-<a name="l00396"></a>00396 
-<a name="l00397"></a>00397     <span class="keyword">inline</span> <span class="keywordtype">bool</span> struct_type_check(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
-<a name="l00398"></a>00398         <span class="keywordtype">bool</span> ret = (raw_struct_type[0] &amp;&amp; raw_st[0]);
-<a name="l00399"></a>00399         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; 4; ++i){
-<a name="l00400"></a>00400             ret = ret || (raw_struct_type[i] &amp;&amp; raw_st[i]);
-<a name="l00401"></a>00401         }
-<a name="l00402"></a>00402         <span class="keywordflow">return</span> ret;
-<a name="l00403"></a>00403     }
-<a name="l00404"></a>00404 
-<a name="l00405"></a>00405     <span class="keyword">inline</span> <span class="keywordtype">void</span> copy_struct_type(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
-<a name="l00406"></a>00406         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; ++i){
-<a name="l00407"></a>00407             raw_struct_type[i] = raw_st[i];
-<a name="l00408"></a>00408         }
-<a name="l00409"></a>00409     }
-<a name="l00410"></a>00410 
-<a name="l00411"></a>00411     <span class="keyword">inline</span> <span class="keywordtype">void</span> struct_type_intersection(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
-<a name="l00412"></a>00412         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; ++i){
-<a name="l00413"></a>00413             raw_struct_type[i] = raw_st[i] &amp;&amp; raw_struct_type[i];
-<a name="l00414"></a>00414         }
-<a name="l00415"></a>00415     }
-<a name="l00416"></a>00416 
-<a name="l00417"></a>00417     std::vector&lt;TypeInfoRef&gt; infotypes;
-<a name="l00418"></a>00418     <span class="keywordtype">size_t</span> i_deg, o_deg;
-<a name="l00419"></a>00419     <span class="keywordtype">bool</span> raw_struct_type[4];
-<a name="l00420"></a>00420     <a class="code" href="class_semantic_d_a_g.html">SemanticDAG</a> DAG;
-<a name="l00421"></a>00421 };
-<a name="l00422"></a>00422 
-<a name="l00423"></a>00423 <span class="preprocessor">#endif </span><span class="comment">/* PIPE_HPP_ */</span>
-<a name="l00424"></a>00424 
+<a name="l00388"></a>00388     <span class="keyword">inline</span> <span class="keyword">const</span> std::type_info&amp; getHeadTypeInfo()<span class="keyword"> const </span>{
+<a name="l00389"></a>00389         <span class="keywordflow">return</span> infotypes.front();
+<a name="l00390"></a>00390     }
+<a name="l00391"></a>00391 
+<a name="l00392"></a>00392     <span class="keyword">inline</span> <span class="keyword">const</span> std::type_info&amp; getTailTypeInfo()<span class="keyword"> const </span>{
+<a name="l00393"></a>00393         <span class="keywordflow">return</span> infotypes.back();
+<a name="l00394"></a>00394     }
+<a name="l00395"></a>00395 
+<a name="l00396"></a>00396     <span class="keyword">inline</span> <span class="keywordtype">bool</span> struct_type_check(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
+<a name="l00397"></a>00397         <span class="keywordtype">bool</span> ret = (raw_struct_type[0] &amp;&amp; raw_st[0]);
+<a name="l00398"></a>00398         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; 4; ++i){
+<a name="l00399"></a>00399             ret = ret || (raw_struct_type[i] &amp;&amp; raw_st[i]);
+<a name="l00400"></a>00400         }
+<a name="l00401"></a>00401         <span class="keywordflow">return</span> ret;
+<a name="l00402"></a>00402     }
+<a name="l00403"></a>00403 
+<a name="l00404"></a>00404     <span class="keyword">inline</span> <span class="keywordtype">void</span> copy_struct_type(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
+<a name="l00405"></a>00405         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; ++i){
+<a name="l00406"></a>00406             raw_struct_type[i] = raw_st[i];
+<a name="l00407"></a>00407         }
+<a name="l00408"></a>00408     }
+<a name="l00409"></a>00409 
+<a name="l00410"></a>00410     <span class="keyword">inline</span> <span class="keywordtype">void</span> struct_type_intersection(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
+<a name="l00411"></a>00411         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; ++i){
+<a name="l00412"></a>00412             raw_struct_type[i] = raw_st[i] &amp;&amp; raw_struct_type[i];
+<a name="l00413"></a>00413         }
+<a name="l00414"></a>00414     }
+<a name="l00415"></a>00415 
+<a name="l00416"></a>00416     std::vector&lt;TypeInfoRef&gt; infotypes;
+<a name="l00417"></a>00417     <span class="keywordtype">size_t</span> i_deg, o_deg;
+<a name="l00418"></a>00418     <span class="keywordtype">bool</span> raw_struct_type[4];
+<a name="l00419"></a>00419     <a class="code" href="class_semantic_d_a_g.html">SemanticDAG</a> DAG;
+<a name="l00420"></a>00420 };
+<a name="l00421"></a>00421 
+<a name="l00422"></a>00422 <span class="preprocessor">#endif </span><span class="comment">/* PIPE_HPP_ */</span>
+<a name="l00423"></a>00423 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

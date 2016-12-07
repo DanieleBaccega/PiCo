@@ -11,6 +11,7 @@ var annotated =
     [ "KeyValue< K, V >", "class_key_value.html", "class_key_value" ],
     [ "Map< In, Out >", "class_map.html", "class_map" ],
     [ "Operator", "class_operator.html", "class_operator" ],
+    [ "OptionData", "struct_option_data.html", "struct_option_data" ],
     [ "OutputOperator< In >", "class_output_operator.html", "class_output_operator" ],
     [ "ParExecDF", "class_par_exec_d_f.html", "class_par_exec_d_f" ],
     [ "Pipe", "class_pipe.html", "class_pipe" ],
