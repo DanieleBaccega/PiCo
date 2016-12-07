@@ -356,7 +356,7 @@ Generating docs for compound BinaryOperator./home/travis/build/alpha-unito/PiCo/
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:81: warning: Member run_kernel() (function) of class ReadFromFile is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:85: warning: Member operator_class() (function) of class ReadFromFile is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:89: warning: Member node_operator(size_t parallelism=1) (function) of class ReadFromFile is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:34: warning: Member ReadFromFileFFNode(size_t parallelism_, std::function< Out(std::string)> kernel_, std::string filename_) (function) of class ReadFromFileFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:34: warning: Member ReadFromFileFFNode(std::function< Out(std::string)> kernel_, std::string filename_) (function) of class ReadFromFileFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:36: warning: Member svc(void *in) (function) of class ReadFromFileFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Reduce.hpp:59: warning: Member run() (function) of class Reduce is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Reduce.hpp:68: warning: Member operator_class() (function) of class Reduce is not documented.
@@ -453,6 +453,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 423/65536 hits=18635 misses=423
-lookup cache used 605/65536 hits=3712 misses=620
+symbol cache used 421/65536 hits=18520 misses=421
+lookup cache used 604/65536 hits=3707 misses=619
 finished...
