@@ -140,66 +140,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00041"></a>00041 
 <a name="l00042"></a>00042     <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>(DAGNodeRole role_, OperatorClass op_):op(<span class="keyword">nullptr</span>),role(role_), opclass(op_), farmid(0){}
 <a name="l00043"></a>00043     <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>(DAGNodeRole role_, OperatorClass op_, <span class="keywordtype">size_t</span> farmid_):op(<span class="keyword">nullptr</span>),role(role_), opclass(op_), farmid(farmid_){}
-<a name="l00044"></a>00044     ~<a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>(){
-<a name="l00045"></a>00045         std::cerr &lt;&lt; <span class="stringliteral">&quot;[[[[[[[[ Deleting SEMDAGNODE ]]]]]]]]\n&quot;</span>;
-<a name="l00046"></a>00046     }
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048     <span class="keywordtype">void</span> assign(std::shared_ptr&lt;Operator&gt; op_){
-<a name="l00049"></a>00049         op = op_;
-<a name="l00050"></a>00050         role = DAGNodeRole::Processing;
-<a name="l00051"></a>00051         opclass = op-&gt;operator_class();
-<a name="l00052"></a>00052     }
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054     ff::ff_node* node_operator(<span class="keywordtype">size_t</span> par_deg=1){
-<a name="l00055"></a>00055         ff::ff_node *res = <span class="keyword">nullptr</span>;
-<a name="l00056"></a>00056         <span class="keywordflow">if</span>(op.get())
-<a name="l00057"></a>00057             res = op-&gt;node_operator();
-<a name="l00058"></a>00058         <span class="keywordflow">return</span> res;
-<a name="l00059"></a>00059     }
-<a name="l00060"></a>00060 
-<a name="l00064"></a><a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">00064</a>     std::string <a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">name</a>()<span class="keyword"> const</span>{
-<a name="l00065"></a>00065         std::string <a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">name</a>;
-<a name="l00066"></a>00066         std::ostringstream address;
-<a name="l00067"></a>00067         address &lt;&lt; (<span class="keywordtype">void</span> <span class="keyword">const</span> *) <span class="keyword">this</span>;
-<a name="l00068"></a>00068         name = <span class="stringliteral">&quot;a&quot;</span> + address.str().erase(0, 2);
-<a name="l00069"></a>00069         <span class="keywordflow">return</span> <a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">name</a>;
-<a name="l00070"></a>00070     }
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072     std::string name_short()<span class="keyword"> const</span>{
-<a name="l00073"></a>00073         <span class="keywordflow">if</span>(op)
-<a name="l00074"></a>00074             <span class="keywordflow">return</span> op-&gt;name_short();
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076         std::string <a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">name</a>;
-<a name="l00077"></a>00077         <span class="keywordflow">switch</span>(role) {
-<a name="l00078"></a>00078         <span class="keywordflow">case</span> DAGNodeRole::EntryPoint:
-<a name="l00079"></a>00079             name = <span class="stringliteral">&quot;EntryPoint&quot;</span>;
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045     <span class="keywordtype">void</span> assign(std::shared_ptr&lt;Operator&gt; op_){
+<a name="l00046"></a>00046         op = op_;
+<a name="l00047"></a>00047         role = DAGNodeRole::Processing;
+<a name="l00048"></a>00048         opclass = op-&gt;operator_class();
+<a name="l00049"></a>00049     }
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051     ff::ff_node* node_operator(<span class="keywordtype">size_t</span> par_deg=1){
+<a name="l00052"></a>00052         ff::ff_node *res = <span class="keyword">nullptr</span>;
+<a name="l00053"></a>00053         <span class="keywordflow">if</span>(op.get())
+<a name="l00054"></a>00054             res = op-&gt;node_operator();
+<a name="l00055"></a>00055         <span class="keywordflow">return</span> res;
+<a name="l00056"></a>00056     }
+<a name="l00057"></a>00057 
+<a name="l00061"></a><a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">00061</a>     std::string <a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">name</a>()<span class="keyword"> const</span>{
+<a name="l00062"></a>00062         std::string <a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">name</a>;
+<a name="l00063"></a>00063         std::ostringstream address;
+<a name="l00064"></a>00064         address &lt;&lt; (<span class="keywordtype">void</span> <span class="keyword">const</span> *) <span class="keyword">this</span>;
+<a name="l00065"></a>00065         name = <span class="stringliteral">&quot;a&quot;</span> + address.str().erase(0, 2);
+<a name="l00066"></a>00066         <span class="keywordflow">return</span> <a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">name</a>;
+<a name="l00067"></a>00067     }
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069     std::string name_short()<span class="keyword"> const</span>{
+<a name="l00070"></a>00070         <span class="keywordflow">if</span>(op)
+<a name="l00071"></a>00071             <span class="keywordflow">return</span> op-&gt;name_short();
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073         std::string <a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">name</a>;
+<a name="l00074"></a>00074         <span class="keywordflow">switch</span>(role) {
+<a name="l00075"></a>00075         <span class="keywordflow">case</span> DAGNodeRole::EntryPoint:
+<a name="l00076"></a>00076             name = <span class="stringliteral">&quot;EntryPoint&quot;</span>;
+<a name="l00077"></a>00077             <span class="keywordflow">break</span>;
+<a name="l00078"></a>00078         <span class="keywordflow">case</span> DAGNodeRole::ExitPoint:
+<a name="l00079"></a>00079             name = <span class="stringliteral">&quot;ExitPoint&quot;</span>;
 <a name="l00080"></a>00080             <span class="keywordflow">break</span>;
-<a name="l00081"></a>00081         <span class="keywordflow">case</span> DAGNodeRole::ExitPoint:
-<a name="l00082"></a>00082             name = <span class="stringliteral">&quot;ExitPoint&quot;</span>;
+<a name="l00081"></a>00081         <span class="keywordflow">case</span> DAGNodeRole::BCast:
+<a name="l00082"></a>00082             name = <span class="stringliteral">&quot;BCast&quot;</span>;
 <a name="l00083"></a>00083             <span class="keywordflow">break</span>;
-<a name="l00084"></a>00084         <span class="keywordflow">case</span> DAGNodeRole::BCast:
-<a name="l00085"></a>00085             name = <span class="stringliteral">&quot;BCast&quot;</span>;
-<a name="l00086"></a>00086             <span class="keywordflow">break</span>;
-<a name="l00087"></a>00087         <span class="keywordflow">default</span>:
-<a name="l00088"></a>00088             <span class="keywordflow">break</span>;
-<a name="l00089"></a>00089         }
-<a name="l00090"></a>00090         <span class="keywordflow">switch</span>(opclass){
-<a name="l00091"></a>00091         <span class="keywordflow">case</span> OperatorClass::MERGE:
-<a name="l00092"></a>00092             name.append(<span class="stringliteral">&quot;MERGE&quot;</span>);
+<a name="l00084"></a>00084         <span class="keywordflow">default</span>:
+<a name="l00085"></a>00085             <span class="keywordflow">break</span>;
+<a name="l00086"></a>00086         }
+<a name="l00087"></a>00087         <span class="keywordflow">switch</span>(opclass){
+<a name="l00088"></a>00088         <span class="keywordflow">case</span> OperatorClass::MERGE:
+<a name="l00089"></a>00089             name.append(<span class="stringliteral">&quot;MERGE&quot;</span>);
+<a name="l00090"></a>00090             <span class="keywordflow">break</span>;
+<a name="l00091"></a>00091         <span class="keywordflow">case</span> OperatorClass::none:
+<a name="l00092"></a>00092             name.append(<span class="stringliteral">&quot;TO&quot;</span>);
 <a name="l00093"></a>00093             <span class="keywordflow">break</span>;
-<a name="l00094"></a>00094         <span class="keywordflow">case</span> OperatorClass::none:
-<a name="l00095"></a>00095             name.append(<span class="stringliteral">&quot;TO&quot;</span>);
-<a name="l00096"></a>00096             <span class="keywordflow">break</span>;
-<a name="l00097"></a>00097         <span class="keywordflow">default</span>:
-<a name="l00098"></a>00098             <span class="keywordflow">break</span>;
-<a name="l00099"></a>00099         }
-<a name="l00100"></a>00100         <span class="keywordflow">return</span> <a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">name</a>;
-<a name="l00101"></a>00101     }
-<a name="l00102"></a>00102 };
-<a name="l00103"></a>00103 
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_GRAPH_SEMDAGNODE_HPP_ */</span>
+<a name="l00094"></a>00094         <span class="keywordflow">default</span>:
+<a name="l00095"></a>00095             <span class="keywordflow">break</span>;
+<a name="l00096"></a>00096         }
+<a name="l00097"></a>00097         <span class="keywordflow">return</span> <a class="code" href="class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431">name</a>;
+<a name="l00098"></a>00098     }
+<a name="l00099"></a>00099 };
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_GRAPH_SEMDAGNODE_HPP_ */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

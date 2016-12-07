@@ -5,7 +5,6 @@ var class_sem_d_a_g_node =
     [ "SemDAGNode", "class_sem_d_a_g_node.html#aa4464f1e30cc1cb1d307abc7b3e04491", null ],
     [ "SemDAGNode", "class_sem_d_a_g_node.html#aca6ad5fd83da57766e0f0d0dbd303430", null ],
     [ "SemDAGNode", "class_sem_d_a_g_node.html#aff57e8ea2a78f2d741b902809029cf86", null ],
-    [ "~SemDAGNode", "class_sem_d_a_g_node.html#a14258038f9cded0171599a336e0a00c0", null ],
     [ "assign", "class_sem_d_a_g_node.html#a378126db24a189d1c5c4e53466044200", null ],
     [ "name", "class_sem_d_a_g_node.html#a4b4318e6fb92342851d261ffcafc8431", null ],
     [ "name_short", "class_sem_d_a_g_node.html#a2e6ee10ddc285d8de8012ee034b8bca9", null ],
