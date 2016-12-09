@@ -1,8 +1,11 @@
 var hierarchy =
 [
-    [ "Collector", "class_collector.html", null ],
+    [ "Collector", "class_collector.html", [
+      [ "FarmCollector", "class_farm_collector.html", null ]
+    ] ],
     [ "Emitter", "class_emitter.html", [
       [ "BCastEmitter", "class_b_cast_emitter.html", null ],
+      [ "FarmEmitter", "class_farm_emitter.html", null ],
       [ "RREmitter", "class_r_r_emitter.html", null ]
     ] ],
     [ "GroupParam", "class_group_param.html", null ],
@@ -39,7 +42,10 @@ var hierarchy =
     [ "SemanticDAG", "class_semantic_d_a_g.html", null ],
     [ "SemDAGNode", "class_sem_d_a_g_node.html", null ],
     [ "UnaryFlatMapFFNode< In, Out >", "class_unary_flat_map_f_f_node.html", null ],
+    [ "UnaryFlatMapFFNodeMB< In, Out >", "class_unary_flat_map_f_f_node_m_b.html", null ],
     [ "UnaryMapFFNode< In, Out >", "class_unary_map_f_f_node.html", null ],
+    [ "UnaryMapFFNodeMB< In, Out >", "class_unary_map_f_f_node_m_b.html", null ],
     [ "WindowParam", "class_window_param.html", null ],
-    [ "WriteToDiskFFNode< In >", "class_write_to_disk_f_f_node.html", null ]
+    [ "WriteToDiskFFNode< In >", "class_write_to_disk_f_f_node.html", null ],
+    [ "WriteToDiskFFNodeMB< In >", "class_write_to_disk_f_f_node_m_b.html", null ]
 ];

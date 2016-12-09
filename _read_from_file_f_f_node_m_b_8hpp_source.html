@@ -138,36 +138,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00039"></a>00039         <span class="keywordflow">if</span> (infile.is_open()) {
 <a name="l00040"></a>00040             microbatch = <span class="keyword">new</span> std::vector&lt;Out*&gt;();
 <a name="l00041"></a>00041             <span class="keywordflow">while</span> (getline(infile, line)) {
-<a name="l00042"></a>00042                 <span class="keywordflow">if</span>(count++&lt;mb_size){
-<a name="l00043"></a>00043                     microbatch-&gt;push_back(<span class="keyword">new</span> Out(kernel(line)));
-<a name="l00044"></a>00044                 } <span class="keywordflow">else</span> {
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043                 microbatch-&gt;push_back(<span class="keyword">new</span> Out(kernel(line)));
+<a name="l00044"></a>00044                 <span class="keywordflow">if</span>(++count == mb_size) {
 <a name="l00045"></a>00045                     ff_send_out(reinterpret_cast&lt;void*&gt;(microbatch));
 <a name="l00046"></a>00046                     microbatch = <span class="keyword">new</span> std::vector&lt;Out*&gt;();
 <a name="l00047"></a>00047                     count=0;
 <a name="l00048"></a>00048                 }
 <a name="l00049"></a>00049             }
-<a name="l00050"></a>00050             infile.close();
-<a name="l00051"></a>00051         } <span class="keywordflow">else</span> {
-<a name="l00052"></a>00052             fprintf(stderr, <span class="stringliteral">&quot;Unable to open file %s\n&quot;</span>, filename.c_str());
-<a name="l00053"></a>00053         }
-<a name="l00054"></a>00054 <span class="preprocessor">#ifdef DEBUG</span>
-<a name="l00055"></a>00055 <span class="preprocessor"></span>        fprintf(stderr, <span class="stringliteral">&quot;[READ FROM FILE-%p] In SVC: SEND OUT PICO_EOS\n&quot;</span>, <span class="keyword">this</span>);
-<a name="l00056"></a>00056 <span class="preprocessor">#endif</span>
-<a name="l00057"></a>00057 <span class="preprocessor"></span>        ff_send_out(PICO_EOS);
-<a name="l00058"></a>00058         <span class="keywordflow">return</span> EOS;
-<a name="l00059"></a>00059     }
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061 <span class="keyword">private</span>:
-<a name="l00062"></a>00062     std::function&lt;Out(std::string)&gt; kernel;
-<a name="l00063"></a>00063     std::string filename;
-<a name="l00064"></a>00064     <span class="keywordtype">int</span> mb_size;
-<a name="l00065"></a>00065     std::vector&lt;Out*&gt;* microbatch;
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067 };
-<a name="l00068"></a>00068 
+<a name="l00050"></a>00050             <span class="keywordflow">if</span>(infile.eof() &amp;&amp; count &lt; mb_size){
+<a name="l00051"></a>00051                 ff_send_out(reinterpret_cast&lt;void*&gt;(microbatch));
+<a name="l00052"></a>00052             }
+<a name="l00053"></a>00053             infile.close();
+<a name="l00054"></a>00054         } <span class="keywordflow">else</span> {
+<a name="l00055"></a>00055             fprintf(stderr, <span class="stringliteral">&quot;Unable to open file %s\n&quot;</span>, filename.c_str());
+<a name="l00056"></a>00056         }
+<a name="l00057"></a>00057 <span class="preprocessor">#ifdef DEBUG</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span>        fprintf(stderr, <span class="stringliteral">&quot;[READ FROM FILE MB-%p] In SVC: SEND OUT PICO_EOS\n&quot;</span>, <span class="keyword">this</span>);
+<a name="l00059"></a>00059 <span class="preprocessor">#endif</span>
+<a name="l00060"></a>00060 <span class="preprocessor"></span>        ff_send_out(PICO_EOS);
+<a name="l00061"></a>00061         <span class="keywordflow">return</span> EOS;
+<a name="l00062"></a>00062     }
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 <span class="keyword">private</span>:
+<a name="l00065"></a>00065     std::function&lt;Out(std::string)&gt; kernel;
+<a name="l00066"></a>00066     std::string filename;
+<a name="l00067"></a>00067     <span class="keywordtype">int</span> mb_size;
+<a name="l00068"></a>00068     std::vector&lt;Out*&gt;* microbatch;
 <a name="l00069"></a>00069 
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_FFOPERATORS_INOUT_READFROMFILEFFNODEMB_HPP_ */</span>
+<a name="l00070"></a>00070 };
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_FFOPERATORS_INOUT_READFROMFILEFFNODEMB_HPP_ */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

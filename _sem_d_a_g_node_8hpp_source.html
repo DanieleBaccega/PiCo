@@ -150,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00051"></a>00051     ff::ff_node* node_operator(<span class="keywordtype">size_t</span> par_deg=1){
 <a name="l00052"></a>00052         ff::ff_node *res = <span class="keyword">nullptr</span>;
 <a name="l00053"></a>00053         <span class="keywordflow">if</span>(op.get())
-<a name="l00054"></a>00054             res = op-&gt;node_operator();
+<a name="l00054"></a>00054             res = op-&gt;node_operator(par_deg);
 <a name="l00055"></a>00055         <span class="keywordflow">return</span> res;
 <a name="l00056"></a>00056     }
 <a name="l00057"></a>00057 

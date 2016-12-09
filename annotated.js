@@ -5,6 +5,8 @@ var annotated =
     [ "BinaryOperator< In1, In2, Out >", "class_binary_operator.html", "class_binary_operator" ],
     [ "Collector", "class_collector.html", "class_collector" ],
     [ "Emitter", "class_emitter.html", null ],
+    [ "FarmCollector", "class_farm_collector.html", "class_farm_collector" ],
+    [ "FarmEmitter", "class_farm_emitter.html", "class_farm_emitter" ],
     [ "FlatMap< In, Out >", "class_flat_map.html", "class_flat_map" ],
     [ "GroupParam", "class_group_param.html", null ],
     [ "InputOperator< Out >", "class_input_operator.html", "class_input_operator" ],
@@ -25,9 +27,12 @@ var annotated =
     [ "SemanticDAG", "class_semantic_d_a_g.html", "class_semantic_d_a_g" ],
     [ "SemDAGNode", "class_sem_d_a_g_node.html", "class_sem_d_a_g_node" ],
     [ "UnaryFlatMapFFNode< In, Out >", "class_unary_flat_map_f_f_node.html", "class_unary_flat_map_f_f_node" ],
+    [ "UnaryFlatMapFFNodeMB< In, Out >", "class_unary_flat_map_f_f_node_m_b.html", "class_unary_flat_map_f_f_node_m_b" ],
     [ "UnaryMapFFNode< In, Out >", "class_unary_map_f_f_node.html", "class_unary_map_f_f_node" ],
+    [ "UnaryMapFFNodeMB< In, Out >", "class_unary_map_f_f_node_m_b.html", "class_unary_map_f_f_node_m_b" ],
     [ "UnaryOperator< In, Out >", "class_unary_operator.html", "class_unary_operator" ],
     [ "WindowParam", "class_window_param.html", null ],
     [ "WriteToDisk< In >", "class_write_to_disk.html", "class_write_to_disk" ],
-    [ "WriteToDiskFFNode< In >", "class_write_to_disk_f_f_node.html", "class_write_to_disk_f_f_node" ]
+    [ "WriteToDiskFFNode< In >", "class_write_to_disk_f_f_node.html", "class_write_to_disk_f_f_node" ],
+    [ "WriteToDiskFFNodeMB< In >", "class_write_to_disk_f_f_node_m_b.html", "class_write_to_disk_f_f_node_m_b" ]
 ];

@@ -121,67 +121,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define MAPACTORNODE_HPP_</span>
 <a name="l00023"></a>00023 <span class="preprocessor"></span>
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;../Internals/FFOperators/UnaryMapFFNode.hpp&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;UnaryOperator.hpp&quot;</span>
-<a name="l00035"></a>00035 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> In, <span class="keyword">typename</span> Out&gt;
-<a name="l00036"></a><a class="code" href="class_map.html">00036</a> <span class="keyword">class </span><a class="code" href="class_map.html">Map</a> : <span class="keyword">public</span> <a class="code" href="class_unary_operator.html">UnaryOperator</a>&lt;In, Out&gt; {
-<a name="l00037"></a>00037     <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_pipe.html">Pipe</a>;
-<a name="l00038"></a>00038     <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_par_exec_d_f.html">ParExecDF</a>;
-<a name="l00039"></a>00039 <span class="keyword">public</span>:
-<a name="l00040"></a>00040 
-<a name="l00045"></a><a class="code" href="class_map.html#a592d69e973dc2596ab688914fb7f5f65">00045</a>     <a class="code" href="class_map.html#a592d69e973dc2596ab688914fb7f5f65">Map</a>(std::function&lt;Out(In)&gt; mapf_){
-<a name="l00046"></a>00046         mapf = mapf_;
-<a name="l00047"></a>00047         this-&gt;set_input_degree(1);
-<a name="l00048"></a>00048         this-&gt;set_output_degree(1);
-<a name="l00049"></a>00049         this-&gt;set_stype(BOUNDED, <span class="keyword">true</span>);
-<a name="l00050"></a>00050         this-&gt;set_stype(UNBOUNDED, <span class="keyword">true</span>);
-<a name="l00051"></a>00051         this-&gt;set_stype(ORDERED, <span class="keyword">true</span>);
-<a name="l00052"></a>00052         this-&gt;set_stype(UNORDERED, <span class="keyword">true</span>);
-<a name="l00053"></a>00053     }
-<a name="l00054"></a>00054 
-<a name="l00058"></a><a class="code" href="class_map.html#a0ac45a1807983af02472c0a01994bf61">00058</a>     std::string <a class="code" href="class_map.html#a0ac45a1807983af02472c0a01994bf61">name_short</a>(){
-<a name="l00059"></a>00059         <span class="keywordflow">return</span> <span class="stringliteral">&quot;Map&quot;</span>;
-<a name="l00060"></a>00060     }
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 <span class="keyword">protected</span>:
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064     Out run_kernel(In* in_task){
-<a name="l00065"></a>00065 <span class="preprocessor">#ifdef DEBUG</span>
-<a name="l00066"></a>00066 <span class="preprocessor"></span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[MAP] running... \n&quot;</span>;
-<a name="l00067"></a>00067 <span class="preprocessor">#endif</span>
-<a name="l00068"></a>00068 <span class="preprocessor"></span>
-<a name="l00069"></a>00069 <span class="preprocessor">#ifdef WORDC</span>
-<a name="l00070"></a>00070 <span class="preprocessor"></span>        <span class="keywordflow">if</span>(kv_pairs == <span class="keyword">nullptr</span>)
-<a name="l00071"></a>00071             kv_pairs = <span class="keyword">new</span> std::list&lt;Out&gt;();
-<a name="l00072"></a>00072         <span class="keywordflow">for</span>(In in: *tokens) {
-<a name="l00073"></a>00073             kv_pairs-&gt;push_back(mapf(in));
-<a name="l00074"></a>00074         }
-<a name="l00075"></a>00075         std::cerr &lt;&lt; <span class="stringliteral">&quot;list size &quot;</span> &lt;&lt; kv_pairs-&gt;size() &lt;&lt; std::endl;
-<a name="l00076"></a>00076 <span class="preprocessor">#else</span>
-<a name="l00077"></a>00077 <span class="preprocessor"></span>        <span class="keywordflow">return</span> mapf(*in_task);
-<a name="l00078"></a>00078 <span class="preprocessor">#endif</span>
-<a name="l00079"></a>00079 <span class="preprocessor"></span>    }
-<a name="l00080"></a>00080 
-<a name="l00085"></a><a class="code" href="class_map.html#a0524200b07c1713bc9f3dd60b372b30c">00085</a>     <a class="code" href="class_map.html">Map&lt;In, Out&gt;</a>* <a class="code" href="class_map.html#a0524200b07c1713bc9f3dd60b372b30c">clone</a>(){
-<a name="l00086"></a>00086         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_map.html">Map&lt;In, Out&gt;</a> (mapf);
-<a name="l00087"></a>00087     }
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089     <span class="keyword">const</span> OperatorClass operator_class(){
-<a name="l00090"></a>00090         <span class="keywordflow">return</span> OperatorClass::UMAP;
-<a name="l00091"></a>00091     }
-<a name="l00092"></a>00092 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;../Internals/FFOperators/UnaryMapFFNodeMB.hpp&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;UnaryOperator.hpp&quot;</span>
+<a name="l00036"></a>00036 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> In, <span class="keyword">typename</span> Out&gt;
+<a name="l00037"></a><a class="code" href="class_map.html">00037</a> <span class="keyword">class </span><a class="code" href="class_map.html">Map</a> : <span class="keyword">public</span> <a class="code" href="class_unary_operator.html">UnaryOperator</a>&lt;In, Out&gt; {
+<a name="l00038"></a>00038     <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_pipe.html">Pipe</a>;
+<a name="l00039"></a>00039     <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_par_exec_d_f.html">ParExecDF</a>;
+<a name="l00040"></a>00040 <span class="keyword">public</span>:
+<a name="l00041"></a>00041 
+<a name="l00046"></a><a class="code" href="class_map.html#a592d69e973dc2596ab688914fb7f5f65">00046</a>     <a class="code" href="class_map.html#a592d69e973dc2596ab688914fb7f5f65">Map</a>(std::function&lt;Out(In)&gt; mapf_){
+<a name="l00047"></a>00047         mapf = mapf_;
+<a name="l00048"></a>00048         this-&gt;set_input_degree(1);
+<a name="l00049"></a>00049         this-&gt;set_output_degree(1);
+<a name="l00050"></a>00050         this-&gt;set_stype(BOUNDED, <span class="keyword">true</span>);
+<a name="l00051"></a>00051         this-&gt;set_stype(UNBOUNDED, <span class="keyword">true</span>);
+<a name="l00052"></a>00052         this-&gt;set_stype(ORDERED, <span class="keyword">true</span>);
+<a name="l00053"></a>00053         this-&gt;set_stype(UNORDERED, <span class="keyword">true</span>);
+<a name="l00054"></a>00054     }
+<a name="l00055"></a>00055 
+<a name="l00059"></a><a class="code" href="class_map.html#a0ac45a1807983af02472c0a01994bf61">00059</a>     std::string <a class="code" href="class_map.html#a0ac45a1807983af02472c0a01994bf61">name_short</a>(){
+<a name="l00060"></a>00060         <span class="keywordflow">return</span> <span class="stringliteral">&quot;Map&quot;</span>;
+<a name="l00061"></a>00061     }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 <span class="keyword">protected</span>:
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     Out run_kernel(In* in_task){
+<a name="l00066"></a>00066 <span class="preprocessor">#ifdef DEBUG</span>
+<a name="l00067"></a>00067 <span class="preprocessor"></span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[MAP] running... \n&quot;</span>;
+<a name="l00068"></a>00068 <span class="preprocessor">#endif</span>
+<a name="l00069"></a>00069 <span class="preprocessor"></span>
+<a name="l00070"></a>00070 <span class="preprocessor">#ifdef WORDC</span>
+<a name="l00071"></a>00071 <span class="preprocessor"></span>        <span class="keywordflow">if</span>(kv_pairs == <span class="keyword">nullptr</span>)
+<a name="l00072"></a>00072             kv_pairs = <span class="keyword">new</span> std::list&lt;Out&gt;();
+<a name="l00073"></a>00073         <span class="keywordflow">for</span>(In in: *tokens) {
+<a name="l00074"></a>00074             kv_pairs-&gt;push_back(mapf(in));
+<a name="l00075"></a>00075         }
+<a name="l00076"></a>00076         std::cerr &lt;&lt; <span class="stringliteral">&quot;list size &quot;</span> &lt;&lt; kv_pairs-&gt;size() &lt;&lt; std::endl;
+<a name="l00077"></a>00077 <span class="preprocessor">#else</span>
+<a name="l00078"></a>00078 <span class="preprocessor"></span>        <span class="keywordflow">return</span> mapf(*in_task);
+<a name="l00079"></a>00079 <span class="preprocessor">#endif</span>
+<a name="l00080"></a>00080 <span class="preprocessor"></span>    }
+<a name="l00081"></a>00081 
+<a name="l00086"></a><a class="code" href="class_map.html#a0524200b07c1713bc9f3dd60b372b30c">00086</a>     <a class="code" href="class_map.html">Map&lt;In, Out&gt;</a>* <a class="code" href="class_map.html#a0524200b07c1713bc9f3dd60b372b30c">clone</a>(){
+<a name="l00087"></a>00087         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_map.html">Map&lt;In, Out&gt;</a> (mapf);
+<a name="l00088"></a>00088     }
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090     <span class="keyword">const</span> OperatorClass operator_class(){
+<a name="l00091"></a>00091         <span class="keywordflow">return</span> OperatorClass::UMAP;
+<a name="l00092"></a>00092     }
 <a name="l00093"></a>00093 
-<a name="l00094"></a>00094     ff::ff_node* node_operator(<span class="keywordtype">size_t</span> parallelism = 1){
-<a name="l00095"></a>00095         <span class="comment">//if(parallelism == 1){</span>
-<a name="l00096"></a>00096             <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_unary_map_f_f_node.html">UnaryMapFFNode&lt;In, Out&gt;</a>(&amp;mapf);
-<a name="l00097"></a>00097     <span class="comment">//  }</span>
-<a name="l00098"></a>00098         <span class="comment">//return new UnaryMapFFFarm&lt;In, Out&gt;(parallelism, &amp;mapf);</span>
-<a name="l00099"></a>00099     }
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101 <span class="keyword">private</span>:
-<a name="l00102"></a>00102     std::function&lt;Out(In)&gt; mapf;
-<a name="l00103"></a>00103 };
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105 <span class="preprocessor">#endif </span><span class="comment">/* MAPACTORNODE_HPP_ */</span>
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095     ff::ff_node* node_operator(<span class="keywordtype">size_t</span> parallelism){
+<a name="l00096"></a>00096         <span class="keywordflow">if</span>(parallelism == 1){
+<a name="l00097"></a>00097             <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_unary_map_f_f_node.html">UnaryMapFFNode&lt;In, Out&gt;</a>(&amp;mapf);
+<a name="l00098"></a>00098         }
+<a name="l00099"></a>00099         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_unary_map_f_f_node_m_b.html">UnaryMapFFNodeMB&lt;In, Out&gt;</a>(parallelism, &amp;mapf);
+<a name="l00100"></a>00100     }
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102 <span class="keyword">private</span>:
+<a name="l00103"></a>00103     std::function&lt;Out(In)&gt; mapf;
+<a name="l00104"></a>00104 };
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106 <span class="preprocessor">#endif </span><span class="comment">/* MAPACTORNODE_HPP_ */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

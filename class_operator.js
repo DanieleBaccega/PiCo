@@ -6,7 +6,7 @@ var class_operator =
     [ "i_degree", "class_operator.html#a49dbe907baab7d9d5ae44c96074fe873", null ],
     [ "name", "class_operator.html#aabb42a0bffefa195ef28dcb8de28aec1", null ],
     [ "name_short", "class_operator.html#ab818c777eba5ea81a1e35bf15cd748ba", null ],
-    [ "node_operator", "class_operator.html#a7753ef26769c0aa9ab986d51e7d76339", null ],
+    [ "node_operator", "class_operator.html#ae9539b3351b16c22f7edbed01b987899", null ],
     [ "o_degree", "class_operator.html#a8f4deb310b1665ae300aa3389d7b58b6", null ],
     [ "operator_class", "class_operator.html#a5b7ccb315884468f1683e83b3539f400", null ],
     [ "set_input_degree", "class_operator.html#a220b5efebda50b93c7fb29d997a12413", null ],

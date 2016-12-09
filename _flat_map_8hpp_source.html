@@ -121,48 +121,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define OPERATORS_FLATMAP_HPP_</span>
 <a name="l00023"></a>00023 <span class="preprocessor"></span>
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;../Internals/FFOperators/UnaryFlatMapFFNode.hpp&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;UnaryOperator.hpp&quot;</span>
-<a name="l00035"></a>00035 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> In, <span class="keyword">typename</span> Out&gt;
-<a name="l00036"></a><a class="code" href="class_flat_map.html">00036</a> <span class="keyword">class </span><a class="code" href="class_flat_map.html">FlatMap</a> : <span class="keyword">public</span> <a class="code" href="class_unary_operator.html">UnaryOperator</a>&lt;In, Out&gt; {
-<a name="l00037"></a>00037     <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_pipe.html">Pipe</a>;
-<a name="l00038"></a>00038 <span class="keyword">public</span>:
-<a name="l00039"></a>00039 
-<a name="l00045"></a><a class="code" href="class_flat_map.html#a8ec8c425acf80cf2577b434b195904bd">00045</a>     <a class="code" href="class_flat_map.html#a8ec8c425acf80cf2577b434b195904bd">FlatMap</a>(std::function&lt;std::vector&lt;Out&gt;(In)&gt; flatmapf_) {
-<a name="l00046"></a>00046         flatmapf = flatmapf_;
-<a name="l00047"></a>00047         this-&gt;set_input_degree(1);
-<a name="l00048"></a>00048         this-&gt;set_output_degree(1);
-<a name="l00049"></a>00049         this-&gt;set_stype(BOUNDED, <span class="keyword">true</span>);
-<a name="l00050"></a>00050         this-&gt;set_stype(UNBOUNDED, <span class="keyword">true</span>);
-<a name="l00051"></a>00051         this-&gt;set_stype(ORDERED, <span class="keyword">true</span>);
-<a name="l00052"></a>00052         this-&gt;set_stype(UNORDERED, <span class="keyword">true</span>);
-<a name="l00053"></a>00053     }
-<a name="l00054"></a>00054 
-<a name="l00058"></a><a class="code" href="class_flat_map.html#ae5ead8986dd0847b81a65c4857e856c7">00058</a>     std::string <a class="code" href="class_flat_map.html#ae5ead8986dd0847b81a65c4857e856c7">name_short</a>(){
-<a name="l00059"></a>00059         <span class="keywordflow">return</span> <span class="stringliteral">&quot;FlatMap&quot;</span>;
-<a name="l00060"></a>00060     }
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 <span class="keyword">protected</span>:
-<a name="l00063"></a>00063     <span class="keywordtype">void</span> <a class="code" href="class_pipe.html#a6ecb3df1580730102c3e925875962bfd">run</a>(In* task) {
-<a name="l00064"></a>00064         assert(<span class="keyword">false</span>);
-<a name="l00065"></a>00065 <span class="preprocessor">#ifdef DEBUG</span>
-<a name="l00066"></a>00066 <span class="preprocessor"></span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[FLATMAP] running... \n&quot;</span>;
-<a name="l00067"></a>00067 <span class="preprocessor">#endif</span>
-<a name="l00068"></a>00068 <span class="preprocessor"></span>    }
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070     <span class="keyword">const</span> OperatorClass operator_class(){
-<a name="l00071"></a>00071         <span class="keywordflow">return</span> OperatorClass::UMAP;
-<a name="l00072"></a>00072     }
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074     ff::ff_node* node_operator(<span class="keywordtype">size_t</span> par_deg = 1) {
-<a name="l00075"></a>00075         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_unary_flat_map_f_f_node.html">UnaryFlatMapFFNode&lt;In, Out&gt;</a>(par_deg, &amp;flatmapf);
-<a name="l00076"></a>00076     }
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079 <span class="keyword">private</span>:
-<a name="l00080"></a>00080     std::function&lt;std::vector&lt;Out&gt;(In)&gt; flatmapf;
-<a name="l00081"></a>00081 };
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;../Internals/FFOperators/UnaryFlatMapFFNodeMB.hpp&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;UnaryOperator.hpp&quot;</span>
+<a name="l00036"></a>00036 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> In, <span class="keyword">typename</span> Out&gt;
+<a name="l00037"></a><a class="code" href="class_flat_map.html">00037</a> <span class="keyword">class </span><a class="code" href="class_flat_map.html">FlatMap</a> : <span class="keyword">public</span> <a class="code" href="class_unary_operator.html">UnaryOperator</a>&lt;In, Out&gt; {
+<a name="l00038"></a>00038     <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_pipe.html">Pipe</a>;
+<a name="l00039"></a>00039 <span class="keyword">public</span>:
+<a name="l00040"></a>00040 
+<a name="l00046"></a><a class="code" href="class_flat_map.html#a8ec8c425acf80cf2577b434b195904bd">00046</a>     <a class="code" href="class_flat_map.html#a8ec8c425acf80cf2577b434b195904bd">FlatMap</a>(std::function&lt;std::vector&lt;Out&gt;(In)&gt; flatmapf_) {
+<a name="l00047"></a>00047         flatmapf = flatmapf_;
+<a name="l00048"></a>00048         this-&gt;set_input_degree(1);
+<a name="l00049"></a>00049         this-&gt;set_output_degree(1);
+<a name="l00050"></a>00050         this-&gt;set_stype(BOUNDED, <span class="keyword">true</span>);
+<a name="l00051"></a>00051         this-&gt;set_stype(UNBOUNDED, <span class="keyword">true</span>);
+<a name="l00052"></a>00052         this-&gt;set_stype(ORDERED, <span class="keyword">true</span>);
+<a name="l00053"></a>00053         this-&gt;set_stype(UNORDERED, <span class="keyword">true</span>);
+<a name="l00054"></a>00054     }
+<a name="l00055"></a>00055 
+<a name="l00059"></a><a class="code" href="class_flat_map.html#ae5ead8986dd0847b81a65c4857e856c7">00059</a>     std::string <a class="code" href="class_flat_map.html#ae5ead8986dd0847b81a65c4857e856c7">name_short</a>(){
+<a name="l00060"></a>00060         <span class="keywordflow">return</span> <span class="stringliteral">&quot;FlatMap&quot;</span>;
+<a name="l00061"></a>00061     }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 <span class="keyword">protected</span>:
+<a name="l00064"></a>00064     <span class="keywordtype">void</span> <a class="code" href="class_pipe.html#a6ecb3df1580730102c3e925875962bfd">run</a>(In* task) {
+<a name="l00065"></a>00065         assert(<span class="keyword">false</span>);
+<a name="l00066"></a>00066 <span class="preprocessor">#ifdef DEBUG</span>
+<a name="l00067"></a>00067 <span class="preprocessor"></span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[FLATMAP] running... \n&quot;</span>;
+<a name="l00068"></a>00068 <span class="preprocessor">#endif</span>
+<a name="l00069"></a>00069 <span class="preprocessor"></span>    }
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071     <span class="keyword">const</span> OperatorClass operator_class(){
+<a name="l00072"></a>00072         <span class="keywordflow">return</span> OperatorClass::UMAP;
+<a name="l00073"></a>00073     }
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075     ff::ff_node* node_operator(<span class="keywordtype">size_t</span> parallelism) {
+<a name="l00076"></a>00076         <span class="keywordflow">if</span>(parallelism==1){
+<a name="l00077"></a>00077             <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_unary_flat_map_f_f_node.html">UnaryFlatMapFFNode&lt;In, Out&gt;</a>(&amp;flatmapf);
+<a name="l00078"></a>00078         }
+<a name="l00079"></a>00079         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_unary_flat_map_f_f_node_m_b.html">UnaryFlatMapFFNodeMB&lt;In, Out&gt;</a>(parallelism, &amp;flatmapf);
+<a name="l00080"></a>00080     }
+<a name="l00081"></a>00081 
 <a name="l00082"></a>00082 
-<a name="l00083"></a>00083 <span class="preprocessor">#endif </span><span class="comment">/* OPERATORS_FLATMAP_HPP_ */</span>
+<a name="l00083"></a>00083 <span class="keyword">private</span>:
+<a name="l00084"></a>00084     std::function&lt;std::vector&lt;Out&gt;(In)&gt; flatmapf;
+<a name="l00085"></a>00085 };
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 <span class="preprocessor">#endif </span><span class="comment">/* OPERATORS_FLATMAP_HPP_ */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
