@@ -351,8 +351,8 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParE/home
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/OutputOperator.hpp:93: warning: Member run_kernel(In *)=0 (function) of class OutputOperator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/OutputOperator.hpp:96: warning: Member operator_class() (function) of class OutputOperator is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:42: warning: Member ParExecDF(adjList *dag, SemDAGNode *firstnode_, SemDAGNode *lastnode_, Operator *firstop_, Operator *lastop_) (function) of class ParExecDF is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:52: warning: Member run() (function) of class ParExecDF is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:57: warning: Member pipe_time() (function) of class ParExecDF is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:53: warning: Member run() (function) of class ParExecDF is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:58: warning: Member pipe_time() (function) of class ParExecDF is not documented.
 /home/travis/build/alpha-unito/PiCo/Pipe.hpp:386: warning: Member pipe_time() (function) of class Pipe is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:59: warning: Member run() (function) of class PReduce is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:63: warning: Member operator_class() (function) of class PReduce is not documented.
@@ -372,22 +372,22 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParE/home
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:32: warning: Member svc_init() (function) of class RREmitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:39: warning: Member svc(void *task) (function) of class RREmitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:57: warning: Member SemanticDAG(std::shared_ptr< Operator > start) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:75: warning: Member add_operator(std::shared_ptr< Operator > op) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:80: warning: Member append(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:86: warning: Member add_bcast_block(std::shared_ptr< Operator > mergeOp) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:102: warning: Member append_to(const SemanticDAG &inputg, SemDAGNode *&mergeNode) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:108: warning: Member append_merge(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:138: warning: Member print() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:162: warning: Member to_dotfile(std::string filename) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:189: warning: Member bfs() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:219: warning: Member empty() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:223: warning: Member lastNode() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:227: warning: Member lastNode(SemDAGNode *node) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:231: warning: Member firstNode() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:235: warning: Member lastOp() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:239: warning: Member lastOp(std::shared_ptr< Operator > op_) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:243: warning: Member firstOp() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:247: warning: Member run() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:76: warning: Member add_operator(std::shared_ptr< Operator > op) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:81: warning: Member append(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:87: warning: Member add_bcast_block(std::shared_ptr< Operator > mergeOp) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:103: warning: Member append_to(const SemanticDAG &inputg, SemDAGNode *&mergeNode) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:109: warning: Member append_merge(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:139: warning: Member print() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:163: warning: Member to_dotfile(std::string filename) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:190: warning: Member bfs() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:220: warning: Member empty() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:224: warning: Member lastNode() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:228: warning: Member lastNode(SemDAGNode *node) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:232: warning: Member firstNode() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:236: warning: Member lastOp() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:240: warning: Member lastOp(std::shared_ptr< Operator > op_) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:244: warning: Member firstOp() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:248: warning: Member run() (function) of class SemanticDAG is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:257: warning: Member size() (function) of class SemanticDAG is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:262: warning: Member pipe_time() (function) of class SemanticDAG is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:37: warning: Member SemDAGNode(const SemDAGNode *node) (function) of class SemDAGNode is not documented.
@@ -498,6 +498,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 455/65536 hits=19864 misses=455
-lookup cache used 685/65536 hits=4259 misses=703
+symbol cache used 456/65536 hits=19900 misses=456
+lookup cache used 687/65536 hits=4284 misses=705
 finished...
