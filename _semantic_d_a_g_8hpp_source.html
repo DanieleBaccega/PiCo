@@ -345,84 +345,91 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00251"></a>00251 <span class="preprocessor"></span>        <a class="code" href="class_par_exec_d_f.html">ParExecDF</a> parDAG(&amp;graph, firstdagnode, lastdagnode, firstop.get(),
 <a name="l00252"></a>00252                 lastop.get());
 <a name="l00253"></a>00253         parDAG.run();
-<a name="l00254"></a>00254     }
-<a name="l00255"></a>00255 
-<a name="l00256"></a>00256     <span class="keywordtype">size_t</span> size() {
-<a name="l00257"></a>00257         <span class="keywordflow">return</span> graph.size();
-<a name="l00258"></a>00258     }
-<a name="l00259"></a>00259 
-<a name="l00260"></a>00260 <span class="keyword">private</span>:
-<a name="l00261"></a>00261     <span class="keywordtype">bool</span> add_node(<a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a> *node) {
-<a name="l00262"></a>00262         <span class="keywordflow">if</span> (graph.empty()) {
-<a name="l00263"></a>00263 <span class="preprocessor">#ifdef DEBUG</span>
-<a name="l00264"></a>00264 <span class="preprocessor"></span>            std::cerr &lt;&lt; <span class="stringliteral">&quot;[SEMDAG] Adding new operator to an empty DAG&quot;</span> &lt;&lt; std::endl;
-<a name="l00265"></a>00265 <span class="preprocessor">#endif</span>
-<a name="l00266"></a>00266 <span class="preprocessor"></span>            firstdagnode = node;
-<a name="l00267"></a>00267             lastdagnode = node;
-<a name="l00268"></a>00268             firstop = firstdagnode-&gt;op;
-<a name="l00269"></a>00269             lastop = lastdagnode-&gt;op;
-<a name="l00270"></a>00270             graph[firstdagnode];
-<a name="l00271"></a>00271             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00272"></a>00272         }
-<a name="l00273"></a>00273         graph[lastdagnode].push_back(node);
-<a name="l00274"></a>00274         lastdagnode = node;
-<a name="l00275"></a>00275         <span class="keywordflow">if</span> (lastdagnode-&gt;role == DAGNodeRole::Processing)
+<a name="l00254"></a>00254         parDAG.pipe_time();
+<a name="l00255"></a>00255     }
+<a name="l00256"></a>00256 
+<a name="l00257"></a>00257     <span class="keywordtype">size_t</span> size() {
+<a name="l00258"></a>00258         <span class="keywordflow">return</span> graph.size();
+<a name="l00259"></a>00259     }
+<a name="l00260"></a>00260 
+<a name="l00261"></a>00261 
+<a name="l00262"></a>00262     <span class="keywordtype">void</span> pipe_time(){
+<a name="l00263"></a>00263 <span class="comment">//      parDAG.pipe_time();</span>
+<a name="l00264"></a>00264     }
+<a name="l00265"></a>00265 
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267 <span class="keyword">private</span>:
+<a name="l00268"></a>00268     <span class="keywordtype">bool</span> add_node(<a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a> *node) {
+<a name="l00269"></a>00269         <span class="keywordflow">if</span> (graph.empty()) {
+<a name="l00270"></a>00270 <span class="preprocessor">#ifdef DEBUG</span>
+<a name="l00271"></a>00271 <span class="preprocessor"></span>            std::cerr &lt;&lt; <span class="stringliteral">&quot;[SEMDAG] Adding new operator to an empty DAG&quot;</span> &lt;&lt; std::endl;
+<a name="l00272"></a>00272 <span class="preprocessor">#endif</span>
+<a name="l00273"></a>00273 <span class="preprocessor"></span>            firstdagnode = node;
+<a name="l00274"></a>00274             lastdagnode = node;
+<a name="l00275"></a>00275             firstop = firstdagnode-&gt;op;
 <a name="l00276"></a>00276             lastop = lastdagnode-&gt;op;
-<a name="l00277"></a>00277         graph[lastdagnode];
-<a name="l00278"></a>00278         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00279"></a>00279     }
-<a name="l00280"></a>00280 
-<a name="l00281"></a>00281     <span class="keywordtype">void</span> append_dag(<span class="keyword">const</span> <a class="code" href="class_semantic_d_a_g.html">SemanticDAG</a>&amp; inputg) {
-<a name="l00282"></a>00282         <span class="comment">//translation table for deep copy</span>
-<a name="l00283"></a>00283         std::map&lt;SemDAGNode *, SemDAGNode *&gt; ttable;
-<a name="l00284"></a>00284         <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = inputg.graph.begin(); it != inputg.graph.end(); ++it) {
-<a name="l00285"></a>00285             <span class="keywordflow">if</span>(ttable.find(it-&gt;first) == ttable.end())
-<a name="l00286"></a>00286                 ttable[it-&gt;first] = <span class="keyword">new</span> <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>(it-&gt;first);
-<a name="l00287"></a>00287             <span class="keywordflow">for</span>(<span class="keyword">auto</span> jt = it-&gt;second.begin(); jt != it-&gt;second.end(); ++jt)
-<a name="l00288"></a>00288                 <span class="keywordflow">if</span>(ttable.find(*jt) == ttable.end()) {
-<a name="l00289"></a>00289                     ttable[*jt] = <span class="keyword">new</span> <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>(*jt);
-<a name="l00290"></a>00290                 }
-<a name="l00291"></a>00291         }
-<a name="l00292"></a>00292 
-<a name="l00293"></a>00293         graph[lastdagnode].push_back(ttable[inputg.firstNode()]);
-<a name="l00294"></a>00294         lastdagnode = ttable[inputg.firstNode()];
-<a name="l00295"></a>00295         <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = inputg.graph.begin(); it != inputg.graph.end(); ++it) {
-<a name="l00296"></a>00296             <span class="comment">//iterate over each list of values</span>
-<a name="l00297"></a>00297             <span class="comment">//create new dag node</span>
-<a name="l00298"></a>00298             <span class="keywordflow">if</span> (it-&gt;first != inputg.firstNode()) {
-<a name="l00299"></a>00299                 graph[ttable[it-&gt;first]];
-<a name="l00300"></a>00300             }
-<a name="l00301"></a>00301             <span class="keywordflow">if</span> (it-&gt;first == inputg.lastNode()) {
-<a name="l00302"></a>00302                 lastdagnode = ttable[it-&gt;first];
-<a name="l00303"></a>00303 
-<a name="l00304"></a>00304                 <span class="keywordflow">if</span> (lastdagnode-&gt;role == DAGNodeRole::Processing)
-<a name="l00305"></a>00305                     lastop = lastdagnode-&gt;op;
-<a name="l00306"></a>00306             }
-<a name="l00307"></a>00307 
-<a name="l00308"></a>00308             <span class="comment">// add new dag node to current graph</span>
-<a name="l00309"></a>00309             <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; tmpnode : it-&gt;second) {
-<a name="l00310"></a>00310                 graph[ttable[it-&gt;first]].push_back(ttable[tmpnode]);
-<a name="l00311"></a>00311             }
-<a name="l00312"></a>00312         }
-<a name="l00313"></a>00313     }
+<a name="l00277"></a>00277             graph[firstdagnode];
+<a name="l00278"></a>00278             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00279"></a>00279         }
+<a name="l00280"></a>00280         graph[lastdagnode].push_back(node);
+<a name="l00281"></a>00281         lastdagnode = node;
+<a name="l00282"></a>00282         <span class="keywordflow">if</span> (lastdagnode-&gt;role == DAGNodeRole::Processing)
+<a name="l00283"></a>00283             lastop = lastdagnode-&gt;op;
+<a name="l00284"></a>00284         graph[lastdagnode];
+<a name="l00285"></a>00285         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00286"></a>00286     }
+<a name="l00287"></a>00287 
+<a name="l00288"></a>00288     <span class="keywordtype">void</span> append_dag(<span class="keyword">const</span> <a class="code" href="class_semantic_d_a_g.html">SemanticDAG</a>&amp; inputg) {
+<a name="l00289"></a>00289         <span class="comment">//translation table for deep copy</span>
+<a name="l00290"></a>00290         std::map&lt;SemDAGNode *, SemDAGNode *&gt; ttable;
+<a name="l00291"></a>00291         <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = inputg.graph.begin(); it != inputg.graph.end(); ++it) {
+<a name="l00292"></a>00292             <span class="keywordflow">if</span>(ttable.find(it-&gt;first) == ttable.end())
+<a name="l00293"></a>00293                 ttable[it-&gt;first] = <span class="keyword">new</span> <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>(it-&gt;first);
+<a name="l00294"></a>00294             <span class="keywordflow">for</span>(<span class="keyword">auto</span> jt = it-&gt;second.begin(); jt != it-&gt;second.end(); ++jt)
+<a name="l00295"></a>00295                 <span class="keywordflow">if</span>(ttable.find(*jt) == ttable.end()) {
+<a name="l00296"></a>00296                     ttable[*jt] = <span class="keyword">new</span> <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>(*jt);
+<a name="l00297"></a>00297                 }
+<a name="l00298"></a>00298         }
+<a name="l00299"></a>00299 
+<a name="l00300"></a>00300         graph[lastdagnode].push_back(ttable[inputg.firstNode()]);
+<a name="l00301"></a>00301         lastdagnode = ttable[inputg.firstNode()];
+<a name="l00302"></a>00302         <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = inputg.graph.begin(); it != inputg.graph.end(); ++it) {
+<a name="l00303"></a>00303             <span class="comment">//iterate over each list of values</span>
+<a name="l00304"></a>00304             <span class="comment">//create new dag node</span>
+<a name="l00305"></a>00305             <span class="keywordflow">if</span> (it-&gt;first != inputg.firstNode()) {
+<a name="l00306"></a>00306                 graph[ttable[it-&gt;first]];
+<a name="l00307"></a>00307             }
+<a name="l00308"></a>00308             <span class="keywordflow">if</span> (it-&gt;first == inputg.lastNode()) {
+<a name="l00309"></a>00309                 lastdagnode = ttable[it-&gt;first];
+<a name="l00310"></a>00310 
+<a name="l00311"></a>00311                 <span class="keywordflow">if</span> (lastdagnode-&gt;role == DAGNodeRole::Processing)
+<a name="l00312"></a>00312                     lastop = lastdagnode-&gt;op;
+<a name="l00313"></a>00313             }
 <a name="l00314"></a>00314 
-<a name="l00315"></a>00315     <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>* entryPoint(OperatorClass opc) {
-<a name="l00316"></a>00316         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>(DAGNodeRole::EntryPoint, opc,
-<a name="l00317"></a>00317                 SemDAGNode::farmidcounter++);
-<a name="l00318"></a>00318     }
-<a name="l00319"></a>00319 
-<a name="l00320"></a>00320     <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>* exitPoint(OperatorClass opc) {
-<a name="l00321"></a>00321         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>(DAGNodeRole::ExitPoint, opc);
-<a name="l00322"></a>00322     }
-<a name="l00323"></a>00323 
-<a name="l00324"></a>00324     <span class="comment">//TODO const-ify dagnode pointers</span>
-<a name="l00325"></a>00325     <span class="keyword">typedef</span> std::map&lt;SemDAGNode*, std::vector&lt;SemDAGNode*&gt;&gt; adjList;
-<a name="l00326"></a>00326     adjList graph;
-<a name="l00327"></a>00327     std::shared_ptr&lt;Operator&gt; firstop, lastop;
-<a name="l00328"></a>00328     <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a> *lastdagnode, *firstdagnode;
-<a name="l00329"></a>00329 };
+<a name="l00315"></a>00315             <span class="comment">// add new dag node to current graph</span>
+<a name="l00316"></a>00316             <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; tmpnode : it-&gt;second) {
+<a name="l00317"></a>00317                 graph[ttable[it-&gt;first]].push_back(ttable[tmpnode]);
+<a name="l00318"></a>00318             }
+<a name="l00319"></a>00319         }
+<a name="l00320"></a>00320     }
+<a name="l00321"></a>00321 
+<a name="l00322"></a>00322     <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>* entryPoint(OperatorClass opc) {
+<a name="l00323"></a>00323         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>(DAGNodeRole::EntryPoint, opc,
+<a name="l00324"></a>00324                 SemDAGNode::farmidcounter++);
+<a name="l00325"></a>00325     }
+<a name="l00326"></a>00326 
+<a name="l00327"></a>00327     <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>* exitPoint(OperatorClass opc) {
+<a name="l00328"></a>00328         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a>(DAGNodeRole::ExitPoint, opc);
+<a name="l00329"></a>00329     }
 <a name="l00330"></a>00330 
-<a name="l00331"></a>00331 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_GRAPH_SEMANTICDAG_HPP_ */</span>
+<a name="l00331"></a>00331     <span class="comment">//TODO const-ify dagnode pointers</span>
+<a name="l00332"></a>00332     <span class="keyword">typedef</span> std::map&lt;SemDAGNode*, std::vector&lt;SemDAGNode*&gt;&gt; adjList;
+<a name="l00333"></a>00333     adjList graph;
+<a name="l00334"></a>00334     std::shared_ptr&lt;Operator&gt; firstop, lastop;
+<a name="l00335"></a>00335     <a class="code" href="class_sem_d_a_g_node.html">SemDAGNode</a> *lastdagnode, *firstdagnode;
+<a name="l00336"></a>00336 };
+<a name="l00337"></a>00337 
+<a name="l00338"></a>00338 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_GRAPH_SEMANTICDAG_HPP_ */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

@@ -350,45 +350,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00382"></a>00382 <span class="preprocessor">#endif</span>
 <a name="l00383"></a>00383 <span class="preprocessor"></span>        DAG.to_dotfile(filename);
 <a name="l00384"></a>00384     }
-<a name="l00385"></a>00385 <span class="keyword">private</span>:
-<a name="l00386"></a>00386 
-<a name="l00387"></a>00387 
-<a name="l00388"></a>00388     <span class="keyword">inline</span> <span class="keyword">const</span> std::type_info&amp; getHeadTypeInfo()<span class="keyword"> const </span>{
-<a name="l00389"></a>00389         <span class="keywordflow">return</span> infotypes.front();
-<a name="l00390"></a>00390     }
-<a name="l00391"></a>00391 
-<a name="l00392"></a>00392     <span class="keyword">inline</span> <span class="keyword">const</span> std::type_info&amp; getTailTypeInfo()<span class="keyword"> const </span>{
-<a name="l00393"></a>00393         <span class="keywordflow">return</span> infotypes.back();
-<a name="l00394"></a>00394     }
-<a name="l00395"></a>00395 
-<a name="l00396"></a>00396     <span class="keyword">inline</span> <span class="keywordtype">bool</span> struct_type_check(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
-<a name="l00397"></a>00397         <span class="keywordtype">bool</span> ret = (raw_struct_type[0] &amp;&amp; raw_st[0]);
-<a name="l00398"></a>00398         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; 4; ++i){
-<a name="l00399"></a>00399             ret = ret || (raw_struct_type[i] &amp;&amp; raw_st[i]);
-<a name="l00400"></a>00400         }
-<a name="l00401"></a>00401         <span class="keywordflow">return</span> ret;
-<a name="l00402"></a>00402     }
-<a name="l00403"></a>00403 
-<a name="l00404"></a>00404     <span class="keyword">inline</span> <span class="keywordtype">void</span> copy_struct_type(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
-<a name="l00405"></a>00405         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; ++i){
-<a name="l00406"></a>00406             raw_struct_type[i] = raw_st[i];
-<a name="l00407"></a>00407         }
+<a name="l00385"></a>00385 
+<a name="l00386"></a>00386     <span class="keywordtype">void</span> pipe_time(){
+<a name="l00387"></a>00387          DAG.pipe_time();
+<a name="l00388"></a>00388     }
+<a name="l00389"></a>00389 
+<a name="l00390"></a>00390 
+<a name="l00391"></a>00391 <span class="keyword">private</span>:
+<a name="l00392"></a>00392 
+<a name="l00393"></a>00393 
+<a name="l00394"></a>00394     <span class="keyword">inline</span> <span class="keyword">const</span> std::type_info&amp; getHeadTypeInfo()<span class="keyword"> const </span>{
+<a name="l00395"></a>00395         <span class="keywordflow">return</span> infotypes.front();
+<a name="l00396"></a>00396     }
+<a name="l00397"></a>00397 
+<a name="l00398"></a>00398     <span class="keyword">inline</span> <span class="keyword">const</span> std::type_info&amp; getTailTypeInfo()<span class="keyword"> const </span>{
+<a name="l00399"></a>00399         <span class="keywordflow">return</span> infotypes.back();
+<a name="l00400"></a>00400     }
+<a name="l00401"></a>00401 
+<a name="l00402"></a>00402     <span class="keyword">inline</span> <span class="keywordtype">bool</span> struct_type_check(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
+<a name="l00403"></a>00403         <span class="keywordtype">bool</span> ret = (raw_struct_type[0] &amp;&amp; raw_st[0]);
+<a name="l00404"></a>00404         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; 4; ++i){
+<a name="l00405"></a>00405             ret = ret || (raw_struct_type[i] &amp;&amp; raw_st[i]);
+<a name="l00406"></a>00406         }
+<a name="l00407"></a>00407         <span class="keywordflow">return</span> ret;
 <a name="l00408"></a>00408     }
 <a name="l00409"></a>00409 
-<a name="l00410"></a>00410     <span class="keyword">inline</span> <span class="keywordtype">void</span> struct_type_intersection(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
+<a name="l00410"></a>00410     <span class="keyword">inline</span> <span class="keywordtype">void</span> copy_struct_type(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
 <a name="l00411"></a>00411         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; ++i){
-<a name="l00412"></a>00412             raw_struct_type[i] = raw_st[i] &amp;&amp; raw_struct_type[i];
+<a name="l00412"></a>00412             raw_struct_type[i] = raw_st[i];
 <a name="l00413"></a>00413         }
 <a name="l00414"></a>00414     }
 <a name="l00415"></a>00415 
-<a name="l00416"></a>00416     std::vector&lt;TypeInfoRef&gt; infotypes;
-<a name="l00417"></a>00417     <span class="keywordtype">size_t</span> i_deg, o_deg;
-<a name="l00418"></a>00418     <span class="keywordtype">bool</span> raw_struct_type[4];
-<a name="l00419"></a>00419     <a class="code" href="class_semantic_d_a_g.html">SemanticDAG</a> DAG;
-<a name="l00420"></a>00420 };
+<a name="l00416"></a>00416     <span class="keyword">inline</span> <span class="keywordtype">void</span> struct_type_intersection(<span class="keyword">const</span> <span class="keywordtype">bool</span> raw_st[4]){
+<a name="l00417"></a>00417         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; ++i){
+<a name="l00418"></a>00418             raw_struct_type[i] = raw_st[i] &amp;&amp; raw_struct_type[i];
+<a name="l00419"></a>00419         }
+<a name="l00420"></a>00420     }
 <a name="l00421"></a>00421 
-<a name="l00422"></a>00422 <span class="preprocessor">#endif </span><span class="comment">/* PIPE_HPP_ */</span>
-<a name="l00423"></a>00423 
+<a name="l00422"></a>00422     std::vector&lt;TypeInfoRef&gt; infotypes;
+<a name="l00423"></a>00423     <span class="keywordtype">size_t</span> i_deg, o_deg;
+<a name="l00424"></a>00424     <span class="keywordtype">bool</span> raw_struct_type[4];
+<a name="l00425"></a>00425     <a class="code" href="class_semantic_d_a_g.html">SemanticDAG</a> DAG;
+<a name="l00426"></a>00426 };
+<a name="l00427"></a>00427 
+<a name="l00428"></a>00428 <span class="preprocessor">#endif </span><span class="comment">/* PIPE_HPP_ */</span>
+<a name="l00429"></a>00429 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

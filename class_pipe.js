@@ -8,6 +8,7 @@ var class_pipe =
     [ "add", "class_pipe.html#af0843b7b6b6c33606fce7a995450678a", null ],
     [ "merge", "class_pipe.html#ac07aed5f6efda8248a8d3fe7410df6f2", null ],
     [ "pair_with", "class_pipe.html#a5ddf06055414d4ad0b511596dbf3a390", null ],
+    [ "pipe_time", "class_pipe.html#a6e0bfcd983a9d63d681e1885c282143a", null ],
     [ "print_DAG", "class_pipe.html#a288d5b72778f836c7fbca280bf858976", null ],
     [ "run", "class_pipe.html#a6ecb3df1580730102c3e925875962bfd", null ],
     [ "to", "class_pipe.html#a1772082ed12c8b1df452a40439738138", null ],

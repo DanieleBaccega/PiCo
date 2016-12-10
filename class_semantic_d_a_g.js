@@ -16,6 +16,7 @@ var class_semantic_d_a_g =
     [ "lastNode", "class_semantic_d_a_g.html#ad3984fc7e22740fbcc3037b2bb2e00cc", null ],
     [ "lastOp", "class_semantic_d_a_g.html#a49c425f5f51471dca674bc0856c05f27", null ],
     [ "lastOp", "class_semantic_d_a_g.html#a9c8a61c84df31d1b322f828619d65795", null ],
+    [ "pipe_time", "class_semantic_d_a_g.html#a7baba525a4392f098163640eab4f29e4", null ],
     [ "print", "class_semantic_d_a_g.html#a36fea89079fe2cc2b5e3ede3d18fec7f", null ],
     [ "run", "class_semantic_d_a_g.html#af4c527c88b2d24640e11fa16a8caf6a1", null ],
     [ "size", "class_semantic_d_a_g.html#a08f38d352f8443b9df101dd3d319829e", null ],
