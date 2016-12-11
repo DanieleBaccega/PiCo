@@ -13,6 +13,7 @@ var files =
     [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/FarmCollector.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/FarmEmitter.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp", null, null ],
+    [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNodeMB.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp", null, null ],
     [ "/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNodeMB.hpp", null, null ],

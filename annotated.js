@@ -19,6 +19,7 @@ var annotated =
     [ "Pipe", "class_pipe.html", "class_pipe" ],
     [ "PReduce< In >", "class_p_reduce.html", "class_p_reduce" ],
     [ "PReduceFFNode< In >", "class_p_reduce_f_f_node.html", "class_p_reduce_f_f_node" ],
+    [ "PReduceFFNodeMB< In >", "class_p_reduce_f_f_node_m_b.html", "class_p_reduce_f_f_node_m_b" ],
     [ "ReadFromFile< Out >", "class_read_from_file.html", "class_read_from_file" ],
     [ "ReadFromFileFFNode< Out >", "class_read_from_file_f_f_node.html", "class_read_from_file_f_f_node" ],
     [ "ReadFromFileFFNodeMB< Out >", "class_read_from_file_f_f_node_m_b.html", "class_read_from_file_f_f_node_m_b" ],

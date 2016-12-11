@@ -5,7 +5,7 @@ var class_binary_operator =
     [ "checkOutputTypeSanity", "class_binary_operator.html#a90a60672775f8d7958dda0600c5ed546", null ],
     [ "i_degree", "class_binary_operator.html#a97a69de42fae8bab00c814459ea844b0", null ],
     [ "name", "class_binary_operator.html#a6df8c4e6dee857f27d870c30d4f65920", null ],
-    [ "node_operator", "class_binary_operator.html#aeedefcb624a8ab84b10bbab872df72e4", null ],
+    [ "node_operator", "class_binary_operator.html#a4f5525e020f66def454089a8aa128fda", null ],
     [ "o_degree", "class_binary_operator.html#aee9650145b55dfcd040042d9be249171", null ],
     [ "operator_class", "class_binary_operator.html#a8c247face4b17579873d45b4b14df527", null ],
     [ "structure_type", "class_binary_operator.html#a2fc538f30e110d6313bad1066236143b", null ],

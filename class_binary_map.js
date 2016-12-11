@@ -6,7 +6,7 @@ var class_binary_map =
     [ "i_degree", "class_binary_map.html#ab57a24e23e0a80e17f6b6a8bf2461d0e", null ],
     [ "name", "class_binary_map.html#a891da29ca1c109f273e6b0448f261783", null ],
     [ "name_short", "class_binary_map.html#a27f390ff0c80cdd9bc7b6361ed5df8c2", null ],
-    [ "node_operator", "class_binary_map.html#a25c286d36f6145f22ea5cf171b07103e", null ],
+    [ "node_operator", "class_binary_map.html#a85c8ad2742ee861b45b40360be1022db", null ],
     [ "o_degree", "class_binary_map.html#a797b1d9ba0e907ed25865315e7e0dc1a", null ],
     [ "operator_class", "class_binary_map.html#a41145194d0d78b9eb3ad0b35ebd30da2", null ],
     [ "run", "class_binary_map.html#a4cb82813b17f67bc603e588b8590c315", null ],

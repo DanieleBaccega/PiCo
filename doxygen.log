@@ -125,6 +125,8 @@ Preprocessing /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/Wr
 Parsing file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp...
 Preprocessing /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp...
 Parsing file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp...
+Preprocessing /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNodeMB.hpp...
+Parsing file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNodeMB.hpp...
 Preprocessing /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp...
 Parsing file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp...
 Preprocessing /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp...
@@ -174,19 +176,16 @@ Parsing file /home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp...
 Preprocessing /home/travis/build/alpha-unito/PiCo/Operators/Reduce.hpp...
 Parsing file /home/travis/build/alpha-unito/PiCo/Operators/Reduce.hpp...
 Preprocessing /home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp...
-Parsing file /home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp...
-Preprocessing /home/travis/build/alpha-unito/PiCo/Pipe.hpp...
-Parsing file /home/travis/build/alpha-unito/PiCo/Pipe.hpp...
-Preprocessing /home/travis/build/alpha-unito/PiCo/README.md../home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Emitter.hpp:27: warning: Compound Emitter is not documented.
+Parsing file /home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hp/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Emitter.hpp:27: warning: Compound Emitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:31: warning: Compound ReadFromFileFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:26: warning: Compound BCastEmitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/FarmEmitter.hpp:26: warning: Compound FarmEmitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:29: warning: Compound SemDAGNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/GroupParam.hpp:24: warning: Compound GroupParam is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:38: warning: Compound ParExecDF is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:39: warning: Compound ParExecDF is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:27: warning: Compound KeyValue is not documented.
 /home/travis/build/alpha-unito/PiCo/examples/stock-market/black_scholes.hpp:159: warning: Compound OptionData is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNodeMB.hpp:35: warning: Compound UnaryFlatMapFFNodeMB is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNodeMB.hpp:34: warning: Compound UnaryFlatMapFFNodeMB is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:30: warning: Compound WriteToDiskFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/FarmCollector.hpp:26: warning: Compound FarmCollector is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNodeMB.hpp:30: warning: Compound ReadFromFileFFNodeMB is not documented.
@@ -196,9 +195,13 @@ Preprocessing /home/travis/build/alpha-unito/PiCo/README.md../home/travis/build/
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp:30: warning: Compound WriteToDiskFFNodeMB is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:30: warning: Compound UnaryMapFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp:29: warning: Compound UnaryFlatMapFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNodeMB.hpp:35: warning: Compound PReduceFFNodeMB is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNodeMB.hpp:34: warning: Compound UnaryMapFFNodeMB is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:26: warning: Compound RREmitter is not documented.
-.
+p...
+Preprocessing /home/travis/build/alpha-unito/PiCo/Pipe.hpp...
+Parsing file /home/travis/build/alpha-unito/PiCo/Pipe.hpp...
+Preprocessing /home/travis/build/alpha-unito/PiCo/README.md...
 Parsing file /home/travis/build/alpha-unito/PiCo/README.md...
 Preprocessing /home/travis/build/alpha-unito/PiCo/test/pico_merge.cpp...
 Parsing file /home/travis/build/alpha-unito/PiCo/test/pico_merge.cpp...
@@ -265,15 +268,13 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperato
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp...
+Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNodeMB.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNodeMB.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNodeMB.hpp...
-Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp...
-Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp...
-Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/GroupParam.hpp...
-Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParE/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:29: warning: Member BCastEmitter(size_t nworkers_, ff_loadbalancer *const lb_) (function) of class BCastEmitter is not documented.
+Generating code for file /home/travis/build/alpha-unito/PiCo/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:29: warning: Member BCastEmitter(size_t nworkers_, ff_loadbalancer *const lb_) (function) of class BCastEmitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:32: warning: Member svc_init() (function) of class BCastEmitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/BCastEmitter.hpp:39: warning: Member svc(void *task) (function) of class BCastEmitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:75: warning: Member run() (function) of class BinaryMap is not documented.
@@ -281,7 +282,7 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParE/home
 /home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:93: warning: Member o_degree() (function) of class BinaryMap is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:97: warning: Member structure_type() (function) of class BinaryMap is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:101: warning: Member operator_class() (function) of class BinaryMap is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:105: warning: Member node_operator(size_t parallelism=1) (function) of class BinaryMap is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:105: warning: Member node_operator(int parallelism=1) (function) of class BinaryMap is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:40: warning: argument 'bmapf' of command @param is not found in the argument list of BinaryMap< In1, In2, Out >::BinaryMap(std::function< Out(In1, In2)> bmapf_)
 /home/travis/build/alpha-unito/PiCo/Operators/BinaryMap.hpp:40: warning: The following parameters of BinaryMap::BinaryMap(std::function< Out(In1, In2)> bmapf_) are not documented:
   parameter 'bmapf_'
@@ -291,16 +292,16 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParE/home
 /home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:53: warning: Member o_degree()=0 (function) of class BinaryOperator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:54: warning: Member structure_type()=0 (function) of class BinaryOperator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:55: warning: Member operator_class()=0 (function) of class BinaryOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:56: warning: Member node_operator(size_t parallelism=1)=0 (function) of class BinaryOperator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/BinaryOperator.hpp:56: warning: Member node_operator(int parallelism=1)=0 (function) of class BinaryOperator is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Collector.hpp:32: warning: Member svc_init() (function) of class Collector is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Collector.hpp:38: warning: Member svc(void *task) (function) of class Collector is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/Collector.hpp:35: warning: Member svc(void *task) (function) of class Collector is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/FarmCollector.hpp:28: warning: Member FarmCollector(int nworkers_) (function) of class FarmCollector is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/FarmCollector.hpp:30: warning: Member svc(void *task) (function) of class FarmCollector is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/FarmEmitter.hpp:29: warning: Member FarmEmitter(int nworkers_, ff_loadbalancer *const lb_) (function) of class FarmEmitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/FarmEmitter.hpp:32: warning: Member svc(void *task) (function) of class FarmEmitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:64: warning: Member run(In *task) (function) of class FlatMap is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:71: warning: Member operator_class() (function) of class FlatMap is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:75: warning: Member node_operator(size_t parallelism) (function) of class FlatMap is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:75: warning: Member node_operator(int parallelism) (function) of class FlatMap is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:41: warning: argument 'flatmapf' of command @param is not found in the argument list of FlatMap< In, Out >::FlatMap(std::function< std::vector< Out >(In)> flatmapf_)
 /home/travis/build/alpha-unito/PiCo/Operators/FlatMap.hpp:41: warning: The following parameters of FlatMap::FlatMap(std::function< std::vector< Out >(In)> flatmapf_) are not documented:
   parameter 'flatmapf_'
@@ -323,7 +324,7 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParE/home
 /home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp:91: warning: Member operator+(KeyValue lhs, const KeyValue &rhs) (friend) of class KeyValue is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:65: warning: Member run_kernel(In *in_task) (function) of class Map is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:90: warning: Member operator_class() (function) of class Map is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:95: warning: Member node_operator(size_t parallelism) (function) of class Map is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:95: warning: Member node_operator(int parallelism) (function) of class Map is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:42: warning: argument 'mapf' of command @param is not found in the argument list of Map< In, Out >::Map(std::function< Out(In)> mapf_)
 /home/travis/build/alpha-unito/PiCo/Operators/Map.hpp:42: warning: The following parameters of Map::Map(std::function< Out(In)> mapf_) are not documented:
   parameter 'mapf_'
@@ -331,7 +332,7 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParE/home
 /home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:62: warning: Member checkInputTypeSanity(TypeInfoRef id)=0 (function) of class Operator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:63: warning: Member checkOutputTypeSanity(TypeInfoRef id)=0 (function) of class Operator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:64: warning: Member operator_class()=0 (function) of class Operator is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:65: warning: Member node_operator(size_t par_deg)=0 (function) of class Operator is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:65: warning: Member node_operator(int par_deg)=0 (function) of class Operator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:67: warning: Member structure_type() (function) of class Operator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:72: warning: Member set_input_degree(size_t degree) (function) of class Operator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/Operator.hpp:77: warning: Member i_degree() const  (function) of class Operator is not documented.
@@ -350,18 +351,19 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParE/home
 /home/travis/build/alpha-unito/PiCo/examples/stock-market/black_scholes.hpp:168: warning: Member DGrefval (variable) of class OptionData is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/OutputOperator.hpp:93: warning: Member run_kernel(In *)=0 (function) of class OutputOperator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/OutputOperator.hpp:96: warning: Member operator_class() (function) of class OutputOperator is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:42: warning: Member ParExecDF(adjList *dag, SemDAGNode *firstnode_, SemDAGNode *lastnode_, Operator *firstop_, Operator *lastop_) (function) of class ParExecDF is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:53: warning: Member run() (function) of class ParExecDF is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:58: warning: Member pipe_time() (function) of class ParExecDF is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:43: warning: Member ParExecDF(adjList *dag, SemDAGNode *firstnode_, SemDAGNode *lastnode_, Operator *firstop_, Operator *lastop_) (function) of class ParExecDF is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:54: warning: Member run() (function) of class ParExecDF is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp:59: warning: Member pipe_time() (function) of class ParExecDF is not documented.
 /home/travis/build/alpha-unito/PiCo/Pipe.hpp:386: warning: Member pipe_time() (function) of class Pipe is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:59: warning: Member run() (function) of class PReduce is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:63: warning: Member operator_class() (function) of class PReduce is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:68: warning: Member node_operator(size_t par_deg) (function) of class PReduce is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:61: warning: Member run() (function) of class PReduce is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:65: warning: Member operator_class() (function) of class PReduce is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/PReduce.hpp:70: warning: Member node_operator(int parallelism) (function) of class PReduce is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp:36: warning: Member PReduceFFNode(std::function< In(In, In)> *preducef) (function) of class PReduceFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp:42: warning: Member svc(void *task) (function) of class PReduceFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNode.hpp:38: warning: Member svc(void *task) (function) of class PReduceFFNode is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/PReduceFFNodeMB.hpp:37: warning: Member PReduceFFNodeMB(int parallelism, std::function< In(In, In)> *preducef) (function) of class PReduceFFNodeMB is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:82: warning: Member run_kernel() (function) of class ReadFromFile is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:86: warning: Member operator_class() (function) of class ReadFromFile is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:90: warning: Member node_operator(size_t parallelism) (function) of class ReadFromFile is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/ReadFromFile.hpp:90: warning: Member node_operator(int parallelism) (function) of class ReadFromFile is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:34: warning: Member ReadFromFileFFNode(std::function< Out(std::string)> kernel_, std::string filename_) (function) of class ReadFromFileFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNode.hpp:36: warning: Member svc(void *in) (function) of class ReadFromFileFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/ReadFromFileFFNodeMB.hpp:33: warning: Member ReadFromFileFFNodeMB(std::function< Out(std::string)> kernel_, std::string filename_) (function) of class ReadFromFileFFNodeMB is not documented.
@@ -404,10 +406,10 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParE/home
 /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:34: warning: Member farmidcounter (variable) of class SemDAGNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp:33: warning: Member UnaryFlatMapFFNode(std::function< std::vector< Out >(In)> *flatmapf) (function) of class UnaryFlatMapFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNode.hpp:36: warning: Member svc(void *task) (function) of class UnaryFlatMapFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNodeMB.hpp:38: warning: Member UnaryFlatMapFFNodeMB(size_t parallelism, std::function< std::vector< Out >(In)> *flatmapf) (function) of class UnaryFlatMapFFNodeMB is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryFlatMapFFNodeMB.hpp:37: warning: Member UnaryFlatMapFFNodeMB(int parallelism, std::function< std::vector< Out >(In)> *flatmapf) (function) of class UnaryFlatMapFFNodeMB is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:32: warning: Member UnaryMapFFNode(std::function< Out(In)> *mapf_) (function) of class UnaryMapFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNode.hpp:35: warning: Member svc(void *task) (function) of class UnaryMapFFNode is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNodeMB.hpp:37: warning: Member UnaryMapFFNodeMB(size_t parallelism, std::function< Out(In)> *mapf) (function) of class UnaryMapFFNodeMB is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/UnaryMapFFNodeMB.hpp:37: warning: Member UnaryMapFFNodeMB(int parallelism, std::function< Out(In)> *mapf) (function) of class UnaryMapFFNodeMB is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:53: warning: Member inT (typedef) of class UnaryOperator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:54: warning: Member outT (typedef) of class UnaryOperator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:39: warning: Member UnaryOperator(const UnaryOperator &copy) (function) of class UnaryOperator is not documented.
@@ -416,7 +418,7 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParE/home
 /home/travis/build/alpha-unito/PiCo/Operators/UnaryOperator.hpp:75: warning: Member operator_class()=0 (function) of class UnaryOperator is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:82: warning: Member run_kernel(In *task) (function) of class WriteToDisk is not documented.
 /home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:94: warning: Member operator_class() (function) of class WriteToDisk is not documented.
-/home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:98: warning: Member node_operator(size_t parallelism) (function) of class WriteToDisk is not documented.
+/home/travis/build/alpha-unito/PiCo/Operators/InOut/WriteToDisk.hpp:98: warning: Member node_operator(int parallelism) (function) of class WriteToDisk is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:33: warning: Member WriteToDiskFFNode(std::function< std::string(In)> kernel_, std::string filename_) (function) of class WriteToDiskFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:35: warning: Member svc_init() (function) of class WriteToDiskFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:42: warning: Member svc(void *task) (function) of class WriteToDiskFFNode is not documented.
@@ -425,7 +427,10 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParE/home
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp:35: warning: Member svc_init() (function) of class WriteToDiskFFNodeMB is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp:42: warning: Member svc(void *task) (function) of class WriteToDiskFFNodeMB is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp:67: warning: Member svc_end() (function) of class WriteToDiskFFNodeMB is not documented.
-xecDF.hpp...
+/Internals/Graph/SemanticDAG.hpp...
+Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp...
+Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/GroupParam.hpp...
+Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/ParExecDF.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/Types/Global.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/Types/KeyValue.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/utils.hpp...
@@ -467,6 +472,7 @@ Generating docs for compound ParExecDF...
 Generating docs for compound Pipe...
 Generating docs for compound PReduce...
 Generating docs for compound PReduceFFNode...
+Generating docs for compound PReduceFFNodeMB...
 Generating docs for compound ReadFromFile...
 Generating docs for compound ReadFromFileFFNode...
 Generating docs for compound ReadFromFileFFNodeMB...
@@ -498,6 +504,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 456/65536 hits=19899 misses=456
-lookup cache used 687/65536 hits=4279 misses=705
+symbol cache used 483/65536 hits=20932 misses=483
+lookup cache used 727/65536 hits=4784 misses=752
 finished...

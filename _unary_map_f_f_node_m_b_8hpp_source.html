@@ -133,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a><a class="code" href="class_unary_map_f_f_node_m_b.html">00034</a> <span class="keyword">class </span><a class="code" href="class_unary_map_f_f_node_m_b.html">UnaryMapFFNodeMB</a>: <span class="keyword">public</span> ff_farm&lt;&gt; {
 <a name="l00035"></a>00035 <span class="keyword">public</span>:
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037     <a class="code" href="class_unary_map_f_f_node_m_b.html">UnaryMapFFNodeMB</a>(<span class="keywordtype">size_t</span> parallelism, std::function&lt;Out(In)&gt;* mapf){
+<a name="l00037"></a>00037     <a class="code" href="class_unary_map_f_f_node_m_b.html">UnaryMapFFNodeMB</a>(<span class="keywordtype">int</span> parallelism, std::function&lt;Out(In)&gt;* mapf){
 <a name="l00038"></a>00038         add_emitter(<span class="keyword">new</span> <a class="code" href="class_farm_emitter.html">FarmEmitter</a>(parallelism, this-&gt;getlb()));
 <a name="l00039"></a>00039         add_collector(<span class="keyword">new</span> <a class="code" href="class_farm_collector.html">FarmCollector</a>(parallelism));
 <a name="l00040"></a>00040         std::vector&lt;ff_node *&gt; w;
@@ -154,35 +154,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00055"></a>00055             <span class="keywordflow">if</span>(task != PICO_EOS &amp;&amp; task != PICO_SYNC){
 <a name="l00056"></a>00056                 in_microbatch = <span class="keyword">reinterpret_cast&lt;</span>std::vector&lt;In*&gt;*<span class="keyword">&gt;</span>(task);
 <a name="l00057"></a>00057                 <span class="comment">// iterate over microbatch</span>
-<a name="l00058"></a>00058 <span class="comment">//              out_microbatch = new std::vector&lt;Out*&gt;();</span>
+<a name="l00058"></a>00058                 out_microbatch = <span class="keyword">new</span> std::vector&lt;Out*&gt;();
 <a name="l00059"></a>00059                 <span class="keywordflow">for</span>(In* in : *in_microbatch){
-<a name="l00060"></a>00060 <span class="comment">//                  out_microbatch-&gt;push_back(new Out(kernel(*in)));</span>
-<a name="l00061"></a>00061                     ff_send_out(<span class="keyword">new</span> Out(kernel(*in)));
+<a name="l00060"></a>00060                     out_microbatch-&gt;push_back(<span class="keyword">new</span> Out(kernel(*in)));
+<a name="l00061"></a>00061 <span class="comment">//                  ff_send_out(new Out(kernel(*in)));</span>
 <a name="l00062"></a>00062                 }
 <a name="l00063"></a>00063                 <span class="comment">//</span>
-<a name="l00064"></a>00064 <span class="comment">//              result.clear();</span>
-<a name="l00065"></a>00065 <span class="comment">//              ff_send_out(out_microbatch);</span>
-<a name="l00066"></a>00066                 <span class="keyword">delete</span> in_microbatch;
-<a name="l00067"></a>00067             } <span class="keywordflow">else</span> {
-<a name="l00068"></a>00068 <span class="preprocessor">    #ifdef DEBUG</span>
-<a name="l00069"></a>00069 <span class="preprocessor"></span>                fprintf(stderr, <span class="stringliteral">&quot;[UNARYMAP-MB-FFNODE-%p] In SVC SENDING PICO_EOS\n&quot;</span>, <span class="keyword">this</span>);
-<a name="l00070"></a>00070 <span class="preprocessor">    #endif</span>
-<a name="l00071"></a>00071 <span class="preprocessor"></span>                ff_send_out(task);
-<a name="l00072"></a>00072             }
-<a name="l00073"></a>00073             <span class="keywordflow">return</span> GO_ON;
-<a name="l00074"></a>00074         }
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076     <span class="keyword">private</span>:
-<a name="l00077"></a>00077         std::vector&lt;In*&gt;* in_microbatch;
-<a name="l00078"></a>00078         std::vector&lt;Out*&gt;* out_microbatch;
-<a name="l00079"></a>00079         std::function&lt;Out(In)&gt; kernel;
-<a name="l00080"></a>00080     };
-<a name="l00081"></a>00081 };
+<a name="l00064"></a>00064                 ff_send_out(reinterpret_cast&lt;void*&gt;(out_microbatch));
+<a name="l00065"></a>00065                 <span class="keyword">delete</span> in_microbatch;
+<a name="l00066"></a>00066             } <span class="keywordflow">else</span> {
+<a name="l00067"></a>00067 <span class="preprocessor">    #ifdef DEBUG</span>
+<a name="l00068"></a>00068 <span class="preprocessor"></span>                fprintf(stderr, <span class="stringliteral">&quot;[UNARYMAP-MB-FFNODE-%p] In SVC SENDING PICO_EOS\n&quot;</span>, <span class="keyword">this</span>);
+<a name="l00069"></a>00069 <span class="preprocessor">    #endif</span>
+<a name="l00070"></a>00070 <span class="preprocessor"></span>                ff_send_out(task);
+<a name="l00071"></a>00071             }
+<a name="l00072"></a>00072             <span class="keywordflow">return</span> GO_ON;
+<a name="l00073"></a>00073         }
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075     <span class="keyword">private</span>:
+<a name="l00076"></a>00076         std::vector&lt;In*&gt;* in_microbatch;
+<a name="l00077"></a>00077         std::vector&lt;Out*&gt;* out_microbatch;
+<a name="l00078"></a>00078         std::function&lt;Out(In)&gt; kernel;
+<a name="l00079"></a>00079     };
+<a name="l00080"></a>00080 };
+<a name="l00081"></a>00081 
 <a name="l00082"></a>00082 
 <a name="l00083"></a>00083 
 <a name="l00084"></a>00084 
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_FFOPERATORS_UNARYMAPFFNODEMB_HPP_ */</span>
+<a name="l00085"></a>00085 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_FFOPERATORS_UNARYMAPFFNODEMB_HPP_ */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

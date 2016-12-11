@@ -171,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00092"></a>00092     }
 <a name="l00093"></a>00093 
 <a name="l00094"></a>00094 
-<a name="l00095"></a>00095     ff::ff_node* node_operator(<span class="keywordtype">size_t</span> parallelism){
+<a name="l00095"></a>00095     ff::ff_node* node_operator(<span class="keywordtype">int</span> parallelism){
 <a name="l00096"></a>00096         <span class="keywordflow">if</span>(parallelism == 1){
 <a name="l00097"></a>00097             <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_unary_map_f_f_node.html">UnaryMapFFNode&lt;In, Out&gt;</a>(&amp;mapf);
 <a name="l00098"></a>00098         }
