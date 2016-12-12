@@ -148,51 +148,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00049"></a>00049 
 <a name="l00050"></a>00050     <span class="keyword">class </span>Worker : <span class="keyword">public</span> ff_node{
 <a name="l00051"></a>00051     <span class="keyword">public</span>:
-<a name="l00052"></a>00052         Worker(std::function&lt;std::vector&lt;Out&gt;(In)&gt; kernel_): out_microbatch(<span class="keyword">new</span> std::vector&lt;Out*&gt;()), kernel(kernel_){}
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054         <span class="keywordtype">void</span>* svc(<span class="keywordtype">void</span>* task) {
-<a name="l00055"></a>00055             <span class="keywordflow">if</span>(task != PICO_EOS &amp;&amp; task != PICO_SYNC){
-<a name="l00056"></a>00056                 in_microbatch = <span class="keyword">reinterpret_cast&lt;</span>std::vector&lt;In*&gt;*<span class="keyword">&gt;</span>(task);
-<a name="l00057"></a>00057                 <span class="comment">// iterate over microbatch</span>
-<a name="l00058"></a>00058                 <span class="keywordflow">for</span>(In* in : *in_microbatch){
-<a name="l00059"></a>00059                     result = kernel(*in);
-<a name="l00060"></a>00060                     <span class="comment">//out_microbatch = new std::vector&lt;Out*&gt;();</span>
-<a name="l00061"></a>00061                     <span class="keywordflow">for</span>(Out&amp; res: result){
-<a name="l00062"></a>00062                         out_microbatch-&gt;push_back(<span class="keyword">new</span> Out(res));
-<a name="l00063"></a>00063 <span class="comment">//                      ff_send_out(new Out(res));</span>
-<a name="l00064"></a>00064                         <span class="keywordflow">if</span> (out_microbatch-&gt;size() == MICROBATCH_SIZE) {
-<a name="l00065"></a>00065                             ff_send_out(reinterpret_cast&lt;void*&gt;(out_microbatch));
-<a name="l00066"></a>00066                             out_microbatch = <span class="keyword">new</span> std::vector&lt;Out*&gt;();
-<a name="l00067"></a>00067                         }
-<a name="l00068"></a>00068                     }
-<a name="l00069"></a>00069 
+<a name="l00052"></a>00052         Worker(std::function&lt;std::vector&lt;Out&gt;(In)&gt; kernel_): in_microbatch(<span class="keyword">nullptr</span>), out_microbatch(<span class="keyword">new</span> std::vector&lt;Out*&gt;()), kernel(kernel_)
+<a name="l00053"></a>00053         {}
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055         <span class="keywordtype">void</span>* svc(<span class="keywordtype">void</span>* task) {
+<a name="l00056"></a>00056             <span class="keywordflow">if</span>(task != PICO_EOS &amp;&amp; task != PICO_SYNC){
+<a name="l00057"></a>00057                 in_microbatch = <span class="keyword">reinterpret_cast&lt;</span>std::vector&lt;In*&gt;*<span class="keyword">&gt;</span>(task);
+<a name="l00058"></a>00058                 <span class="comment">// iterate over microbatch</span>
+<a name="l00059"></a>00059                 <span class="keywordflow">for</span>(In* in : *in_microbatch){
+<a name="l00060"></a>00060                     result = kernel(*in);
+<a name="l00061"></a>00061                     <span class="comment">//out_microbatch = new std::vector&lt;Out*&gt;();</span>
+<a name="l00062"></a>00062                     <span class="keywordflow">for</span>(Out&amp; res: result){
+<a name="l00063"></a>00063                         out_microbatch-&gt;push_back(<span class="keyword">new</span> Out(res));
+<a name="l00064"></a>00064 <span class="comment">//                      ff_send_out(new Out(res));</span>
+<a name="l00065"></a>00065                         <span class="keywordflow">if</span> (out_microbatch-&gt;size() == MICROBATCH_SIZE) {
+<a name="l00066"></a>00066                             ff_send_out(reinterpret_cast&lt;void*&gt;(out_microbatch));
+<a name="l00067"></a>00067                             out_microbatch = <span class="keyword">new</span> std::vector&lt;Out*&gt;();
+<a name="l00068"></a>00068                         }
+<a name="l00069"></a>00069                     }
 <a name="l00070"></a>00070 
-<a name="l00071"></a>00071                 }
-<a name="l00072"></a>00072                 result.clear();
-<a name="l00073"></a>00073                 <span class="keyword">delete</span> in_microbatch;
-<a name="l00074"></a>00074             } <span class="keywordflow">else</span> {
-<a name="l00075"></a>00075 <span class="preprocessor">    #ifdef DEBUG</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span>            fprintf(stderr, <span class="stringliteral">&quot;[UNARYFLATMAP-MB-FFNODE-%p] In SVC SENDING PICO_EOS \n&quot;</span>, <span class="keyword">this</span>);
-<a name="l00077"></a>00077 <span class="preprocessor">    #endif</span>
-<a name="l00078"></a>00078 <span class="preprocessor"></span>                <span class="keywordflow">if</span>(out_microbatch-&gt;size() &lt; MICROBATCH_SIZE &amp;&amp; out_microbatch-&gt;size() &gt; 0){
-<a name="l00079"></a>00079                     ff_send_out(reinterpret_cast&lt;void*&gt;(out_microbatch));
-<a name="l00080"></a>00080                 }
-<a name="l00081"></a>00081                 ff_send_out(task);
-<a name="l00082"></a>00082             }
-<a name="l00083"></a>00083             <span class="keywordflow">return</span> GO_ON;
-<a name="l00084"></a>00084         }
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086     <span class="keyword">private</span>:
-<a name="l00087"></a>00087         std::vector&lt;In*&gt;* in_microbatch;
-<a name="l00088"></a>00088         std::vector&lt;Out*&gt;* out_microbatch;
-<a name="l00089"></a>00089         std::vector&lt;Out&gt; result;
-<a name="l00090"></a>00090         std::function&lt;std::vector&lt;Out&gt;(In)&gt; kernel;
-<a name="l00091"></a>00091     };
-<a name="l00092"></a>00092 };
-<a name="l00093"></a>00093 
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072                 }
+<a name="l00073"></a>00073                 result.clear();
+<a name="l00074"></a>00074                 <span class="keyword">delete</span> in_microbatch;
+<a name="l00075"></a>00075             } <span class="keywordflow">else</span> {
+<a name="l00076"></a>00076 <span class="preprocessor">    #ifdef DEBUG</span>
+<a name="l00077"></a>00077 <span class="preprocessor"></span>            fprintf(stderr, <span class="stringliteral">&quot;[UNARYFLATMAP-MB-FFNODE-%p] In SVC SENDING PICO_EOS \n&quot;</span>, <span class="keyword">this</span>);
+<a name="l00078"></a>00078 <span class="preprocessor">    #endif</span>
+<a name="l00079"></a>00079 <span class="preprocessor"></span>                <span class="keywordflow">if</span>(out_microbatch-&gt;size() &lt; MICROBATCH_SIZE &amp;&amp; out_microbatch-&gt;size() &gt; 0){
+<a name="l00080"></a>00080                     ff_send_out(reinterpret_cast&lt;void*&gt;(out_microbatch));
+<a name="l00081"></a>00081                 }
+<a name="l00082"></a>00082                 ff_send_out(task);
+<a name="l00083"></a>00083             }
+<a name="l00084"></a>00084             <span class="keywordflow">return</span> GO_ON;
+<a name="l00085"></a>00085         }
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087     <span class="keyword">private</span>:
+<a name="l00088"></a>00088         std::vector&lt;In*&gt;* in_microbatch;
+<a name="l00089"></a>00089         std::vector&lt;Out*&gt;* out_microbatch;
+<a name="l00090"></a>00090         std::vector&lt;Out&gt; result;
+<a name="l00091"></a>00091         std::function&lt;std::vector&lt;Out&gt;(In)&gt; kernel;
+<a name="l00092"></a>00092     };
+<a name="l00093"></a>00093 };
 <a name="l00094"></a>00094 
 <a name="l00095"></a>00095 
-<a name="l00096"></a>00096 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_FFOPERATORS_UNARYFLATMAPFFNODEMB_HPP_ */</span>
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 <span class="preprocessor">#endif </span><span class="comment">/* INTERNALS_FFOPERATORS_UNARYFLATMAPFFNODEMB_HPP_ */</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->

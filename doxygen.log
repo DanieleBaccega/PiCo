@@ -374,24 +374,24 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/home/travis/build/a
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:32: warning: Member svc_init() (function) of class RREmitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/RREmitter.hpp:39: warning: Member svc(void *task) (function) of class RREmitter is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:57: warning: Member SemanticDAG(std::shared_ptr< Operator > start) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:76: warning: Member add_operator(std::shared_ptr< Operator > op) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:81: warning: Member append(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:87: warning: Member add_bcast_block(std::shared_ptr< Operator > mergeOp) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:103: warning: Member append_to(const SemanticDAG &inputg, SemDAGNode *&mergeNode) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:109: warning: Member append_merge(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:139: warning: Member print() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:163: warning: Member to_dotfile(std::string filename) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:190: warning: Member bfs() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:220: warning: Member empty() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:224: warning: Member lastNode() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:228: warning: Member lastNode(SemDAGNode *node) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:232: warning: Member firstNode() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:236: warning: Member lastOp() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:240: warning: Member lastOp(std::shared_ptr< Operator > op_) (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:244: warning: Member firstOp() const  (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:248: warning: Member run() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:257: warning: Member size() (function) of class SemanticDAG is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:262: warning: Member pipe_time() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:68: warning: Member add_operator(std::shared_ptr< Operator > op) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:73: warning: Member append(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:79: warning: Member add_bcast_block(std::shared_ptr< Operator > mergeOp) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:95: warning: Member append_to(const SemanticDAG &inputg, SemDAGNode *&mergeNode) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:101: warning: Member append_merge(const SemanticDAG &inputg) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:131: warning: Member print() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:155: warning: Member to_dotfile(std::string filename) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:182: warning: Member bfs() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:212: warning: Member empty() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:216: warning: Member lastNode() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:220: warning: Member lastNode(SemDAGNode *node) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:224: warning: Member firstNode() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:228: warning: Member lastOp() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:232: warning: Member lastOp(std::shared_ptr< Operator > op_) (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:236: warning: Member firstOp() const  (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:240: warning: Member run() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:249: warning: Member size() (function) of class SemanticDAG is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/Graph/SemanticDAG.hpp:254: warning: Member pipe_time() (function) of class SemanticDAG is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:37: warning: Member SemDAGNode(const SemDAGNode *node) (function) of class SemDAGNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:40: warning: Member SemDAGNode(std::shared_ptr< Operator > op_) (function) of class SemDAGNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp:42: warning: Member SemDAGNode(DAGNodeRole role_, OperatorClass op_) (function) of class SemDAGNode is not documented.
@@ -425,8 +425,8 @@ Generating code for file /home/travis/build/alpha-unito/PiCo/home/travis/build/a
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNode.hpp:65: warning: Member svc_end() (function) of class WriteToDiskFFNode is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp:33: warning: Member WriteToDiskFFNodeMB(std::function< std::string(In)> kernel_, std::string filename_) (function) of class WriteToDiskFFNodeMB is not documented.
 /home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp:35: warning: Member svc_init() (function) of class WriteToDiskFFNodeMB is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp:42: warning: Member svc(void *task) (function) of class WriteToDiskFFNodeMB is not documented.
-/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp:67: warning: Member svc_end() (function) of class WriteToDiskFFNodeMB is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp:39: warning: Member svc(void *task) (function) of class WriteToDiskFFNodeMB is not documented.
+/home/travis/build/alpha-unito/PiCo/Internals/FFOperators/InOut/WriteToDiskFFNodeMB.hpp:54: warning: Member svc_end() (function) of class WriteToDiskFFNodeMB is not documented.
 /Internals/Graph/SemanticDAG.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/Graph/SemDAGNode.hpp...
 Generating code for file /home/travis/build/alpha-unito/PiCo/Internals/GroupParam.hpp...
@@ -504,6 +504,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 483/65536 hits=20932 misses=483
-lookup cache used 727/65536 hits=4784 misses=752
+symbol cache used 483/65536 hits=20931 misses=483
+lookup cache used 727/65536 hits=4838 misses=752
 finished...

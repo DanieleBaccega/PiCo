@@ -150,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00051"></a>00051     <span class="keyword">class </span>ByKeyEmitter: <span class="keyword">public</span> <a class="code" href="class_emitter.html">Emitter</a> {
 <a name="l00052"></a>00052     <span class="keyword">public</span>:
 <a name="l00053"></a>00053         ByKeyEmitter(<span class="keywordtype">int</span> nworkers_, ff_loadbalancer * <span class="keyword">const</span> lb_) :
-<a name="l00054"></a>00054                 nworkers(nworkers_), lb(lb_), curr_worker(0) {
+<a name="l00054"></a>00054                 nworkers(nworkers_), lb(lb_), in_microbatch(<span class="keyword">nullptr</span>), curr_worker(0) {
 <a name="l00055"></a>00055         }
 <a name="l00056"></a>00056 
 <a name="l00057"></a>00057         <span class="keywordtype">void</span>* svc(<span class="keywordtype">void</span>* task) {
@@ -213,7 +213,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00114"></a>00114     <span class="keyword">class </span>Worker: <span class="keyword">public</span> ff_node {
 <a name="l00115"></a>00115     <span class="keyword">public</span>:
 <a name="l00116"></a>00116         Worker(std::function&lt;In(In, In)&gt;* preducef) :
-<a name="l00117"></a>00117                 kernel(*preducef){};
+<a name="l00117"></a>00117                 kernel(*preducef), kv(<span class="keyword">nullptr</span>){};
 <a name="l00118"></a>00118 
 <a name="l00119"></a>00119         <span class="keywordtype">void</span>* svc(<span class="keywordtype">void</span>* task) {
 <a name="l00120"></a>00120             <span class="keywordflow">if</span>(task != PICO_EOS &amp;&amp; task != PICO_SYNC){
