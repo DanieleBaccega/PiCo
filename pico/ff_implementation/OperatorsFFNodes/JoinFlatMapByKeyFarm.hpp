@@ -75,11 +75,15 @@ public:
 			if (origin_mb->payload() == PICO_CSTREAM_FROM_LEFT) {
 				send_mb(make_sync(tag, PICO_CSTREAM_FROM_LEFT));
 				s.from_left = true;
-				s.mb2w_from_left = std::vector<key_state1>(nworkers);
+				using itt = typename std::vector<mb_in1 *>::size_type;
+				for (itt i = 0; i < nworkers; ++i)
+					s.mb2w_from_left.push_back(NEW<mb_in1>(tag, mbsize));
 			} else {
 				send_mb(make_sync(tag, PICO_CSTREAM_FROM_RIGHT));
+				using itt = typename std::vector<mb_in1 *>::size_type;
 				s.from_left = false;
-				s.mb2w_from_right = std::vector<key_state2>(nworkers);
+				for (itt i = 0; i < nworkers; ++i)
+					s.mb2w_from_right.push_back(NEW<mb_in2>(tag, mbsize));
 			}
 
 			/* cleanup */
@@ -124,17 +128,14 @@ public:
 			using In = typename mb_t::DataType;
 			auto tag = in_mb->tag();
 			for (auto tt : *in_mb) {
-				auto k = tt.Key();
-				auto dst = key_to_worker(k);
-				// create k-dst microbatch if not existing
-				if (mb2w[dst].find(k) == mb2w[dst].end())
-					mb2w[dst][k] = NEW<mb_t>(tag, mbsize);
+				//auto k = tt.Key();
+				auto dst = key_to_worker(tt.Key());
 				// copy token into dst's microbatch
-				new (mb2w[dst][k]->allocate()) In(tt);
-				mb2w[dst][k]->commit();
-				if (mb2w[dst][k]->full()) {
-					send_mb_to(mb2w[dst][k], dst);
-					mb2w[dst][k] = NEW<mb_t>(tag, mbsize);
+				new (mb2w[dst]->allocate()) In(tt);
+				mb2w[dst]->commit();
+				if (mb2w[dst]->full()) {
+					send_mb_to(mb2w[dst], dst);
+					mb2w[dst] = NEW<mb_t>(tag, mbsize);
 				}
 			}
 		}
@@ -143,22 +144,19 @@ public:
 		template<typename mb2w_t>
 		void flush_remainder(mb2w_t &mb2w) {
 			for (unsigned dst = 0; dst < nworkers; ++dst)
-				for (auto &k_mb : mb2w[dst])
-					if (!k_mb.second->empty())
-						send_mb_to(k_mb.second, dst);
-					else
-						DELETE(k_mb.second); //spurious microbatch
+				if (!mb2w[dst]->empty())
+					send_mb_to(mb2w[dst], dst);
+				else
+					DELETE(mb2w[dst]); //spurious microbatch
 		}
 
 		unsigned nworkers;
 		const unsigned mbsize;
 
-		typedef std::unordered_map<K, mb_in1 *> key_state1;
-		typedef std::unordered_map<K, mb_in2 *> key_state2;
 		struct origin_state {
-			/* for both origins, one per-key microbatch for each worker */
-			std::vector<key_state1> mb2w_from_left;
-			std::vector<key_state2> mb2w_from_right;
+			/* for both origins, one micro-batch for each worker */
+			std::vector<mb_in1 *> mb2w_from_left;
+			std::vector<mb_in2 *> mb2w_from_right;
 			bool from_left;
 		};
 		std::unordered_map<base_microbatch::tag_t, origin_state> tag_state;
@@ -313,46 +311,45 @@ private:
 	 */
 	void from_left(mb_in1 *in_mb) {
 		auto tag = in_mb->tag();
-		auto k = (*in_mb->begin()).Key();
 		auto &s(tag_state[tag]);
 
 		if (!s.cached && cached_tag != base_microbatch::nil_tag()) {
-			auto &match_kmbs = tag_state[cached_tag].kmb_from_right[k];
+			auto &match_kmbs = tag_state[cached_tag].kmb_from_right;
 			from_left_(in_mb, match_kmbs, tag);
 		} else if (s.cached) {
 			for (auto match_tag : non_cached_tags) {
-				auto &match_kmbs = tag_state[match_tag].kmb_from_right[k];
+				auto &match_kmbs = tag_state[match_tag].kmb_from_right;
 				from_left_(in_mb, match_kmbs, match_tag);
 			}
 		}
 
 		/* store */
-		s.kmb_from_left[k].push_back(in_mb);
+		kv_store(tag, s.kmb_from_left, in_mb);
 	}
 
 	void from_right(mb_in2 *in_mb) {
 		auto tag = in_mb->tag();
-		auto k = (*in_mb->begin()).Key();
 		auto &s(tag_state[tag]);
 
 		if (!s.cached && cached_tag != base_microbatch::nil_tag()) {
-			auto &match_kmbs = tag_state[cached_tag].kmb_from_left[k];
+			auto &match_kmbs = tag_state[cached_tag].kmb_from_left;
 			from_right_(in_mb, match_kmbs, tag);
 		} else if (s.cached) {
 			for (auto match_tag : non_cached_tags) {
-				auto &match_kmbs = tag_state[match_tag].kmb_from_left[k];
+				auto &match_kmbs = tag_state[match_tag].kmb_from_left;
 				from_right_(in_mb, match_kmbs, match_tag);
 			}
 		}
 
 		/* store */
-		s.kmb_from_right[k].push_back(in_mb);
+		kv_store(tag, s.kmb_from_right, in_mb);
 	}
 
-	void from_left_(mb_in1 *in_mb_ptr, std::vector<mb_in2 *> &ms, tag_t otag) {
+	template<typename T>
+	void from_left_(mb_in1 *in_mb_ptr, T &ms, tag_t otag) {
 		collector.tag(otag);
-		for (auto &match_kmb_ptr : ms)
-			for (auto &in_kv : *in_mb_ptr)
+		for (auto &in_kv : *in_mb_ptr)
+			for (auto &match_kmb_ptr : ms[in_kv.Key()])
 				for (auto &match_kv : *match_kmb_ptr)
 					fkernel(in_kv, match_kv, collector);
 		auto cb = collector.begin();
@@ -361,17 +358,28 @@ private:
 		collector.clear();
 	}
 
-	void from_right_(mb_in2 *in_mb, std::vector<mb_in1 *> &ms, tag_t otag) {
+	template<typename T>
+	void from_right_(mb_in2 *in_mb, T &ms, tag_t otag) {
 		collector.tag(otag);
-		for (auto &in_kv : *in_mb) {
-			for (auto &match_kmb_ptr : ms)
+		for (auto &in_kv : *in_mb)
+			for (auto &match_kmb_ptr : ms[in_kv.Key()])
 				for (auto &match_kv : *match_kmb_ptr)
 					fkernel(match_kv, in_kv, collector);
-		}
 		auto cb = collector.begin();
 		if (cb)
 			handle_output(otag, cb);
 		collector.clear();
+	}
+
+	template<typename T, typename mb_t>
+	void kv_store(base_microbatch::tag_t tag, T &kvs, mb_t *mb) {
+		for(auto &kv : *mb) {
+			auto &kv_slot(kvs[kv.Key()]);
+			if(kv_slot.empty() || kv_slot.back()->full())
+				kv_slot.push_back(NEW<mb_t>(tag, mbsize));
+			new (kv_slot.back()->allocate()) typename mb_t::DataType(kv);
+			kv_slot.back()->commit();
+		}
 	}
 
 	void clear_tag_state(origin_state &s) {
@@ -400,6 +408,8 @@ private:
 
 	bool cache_complete = false;
 	std::vector<tag_t> uncleared_tags;
+
+	const int mbsize = global_params.MICROBATCH_SIZE;
 };
 
 /*
