@@ -65,7 +65,7 @@ private:
 				new (out_mb->allocate()) Out(mkernel(in));
 				out_mb->commit();
 			}
-			ff_send_out(reinterpret_cast<void*>(out_mb));
+			send_mb(out_mb);
 			DELETE(in_microbatch);
 		}
 

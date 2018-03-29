@@ -95,7 +95,7 @@ public:
 					mb->commit();
 					/* create next micro-batch if complete */
 					if (mb->full()) {
-						ff_send_out(reinterpret_cast<void*>(mb));
+						send_mb(mb);
 						mb = NEW<mb_t>(tag, global_params.MICROBATCH_SIZE);
 					}
 				} else
@@ -110,7 +110,7 @@ public:
 
 		/* remainder micro-batch */
 		if (!mb->empty())
-			ff_send_out(reinterpret_cast<void*>(mb));
+			send_mb(mb);
 		else
 			DELETE(mb);
 
@@ -169,7 +169,7 @@ public:
 						mb->commit();
 						/* create next micro-batch if complete */
 						if (mb->full()) {
-							ff_send_out(reinterpret_cast<void*>(mb));
+							send_mb(mb);
 							mb = NEW<mb_t>(tag, global_params.MICROBATCH_SIZE);
 						}
 						line = new (mb->allocate()) std::string();
@@ -196,7 +196,7 @@ public:
 
 		/* remainder micro-batch */
 		if (!mb->empty())
-			ff_send_out(reinterpret_cast<void*>(mb));
+			send_mb(mb);
 		else
 			DELETE(mb);
 
@@ -294,7 +294,7 @@ private:
 
 		void wrap_and_send(prange *p) {
 			auto wmb = NEW<mb_wrapped<prange>>(tag, p);
-			ff_send_out(wmb);
+			send_mb(wmb);
 		}
 	};
 

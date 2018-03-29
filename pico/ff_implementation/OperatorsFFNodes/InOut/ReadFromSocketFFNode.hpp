@@ -93,7 +93,7 @@ public:
 				if (!f.eof()) {         // line contains another delimiter
 					mb->commit();
 					if (mb->full()) {
-						ff_send_out(reinterpret_cast<void*>(mb));
+						send_mb(mb);
 						mb = NEW<mb_t>(tag, global_params.MICROBATCH_SIZE);
 					}
 					tail.clear();
@@ -107,7 +107,7 @@ public:
 		} // end while read
 
 		if (!mb->empty()) {
-			ff_send_out(reinterpret_cast<void*>(mb));
+			send_mb(mb);
 		} else {
 			DELETE(mb);
 		}

@@ -89,13 +89,13 @@ private:
 				new (out_mb->allocate()) Out(it->first, it->second);
 				out_mb->commit();
 				if (out_mb->full()) {
-					ff_send_out(reinterpret_cast<void*>(out_mb));
+					send_mb(out_mb);
 					out_mb = NEW<out_mb_t>(tag, global_params.MICROBATCH_SIZE);
 				}
 			}
 
 			if (!out_mb->empty())
-				ff_send_out(reinterpret_cast<void*>(out_mb));
+				send_mb(out_mb);
 			else
 				DELETE(out_mb); //spurious microbatch
 		}

@@ -113,14 +113,14 @@ private:
 				new (mb->allocate()) Out(it->first, it->second);
 				mb->commit();
 				if (mb->full()) {
-					ff_send_out(reinterpret_cast<void*>(mb));
+					send_mb(mb);
 					mb = NEW<mb_out>(tag, global_params.MICROBATCH_SIZE);
 				}
 			}
 
 			/* send out the remainder micro-batch or destroy if spurious */
 			if (!mb->empty()) {
-				ff_send_out(reinterpret_cast<void*>(mb));
+				send_mb(mb);
 			} else {
 				DELETE(mb);
 			}

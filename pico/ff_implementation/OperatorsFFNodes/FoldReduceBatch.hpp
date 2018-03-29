@@ -78,7 +78,7 @@ private:
 		void cstream_end_callback(base_microbatch::tag_t tag) {
 			/* wrap state into a microbatch and send out */
 			auto &s(tag_state[tag]);
-			ff_send_out(NEW<mb_wrapped<State>>(tag, s.state_));
+			send_mb(NEW<mb_wrapped<State>>(tag, s.state_));
 		}
 
 	private:
@@ -115,7 +115,7 @@ private:
 			auto out_mb = NEW<mb_out>(tag, 1);
 			new (out_mb->allocate()) State(s.state_);
 			out_mb->commit();
-			ff_send_out(out_mb);
+			send_mb(out_mb);
 		}
 
 	private:

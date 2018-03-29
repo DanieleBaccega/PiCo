@@ -70,16 +70,16 @@ public:
 			assert(tag_state.find(tag) == tag_state.end());
 			auto &s(tag_state[tag]);
 
-			send_mb(make_sync(tag, PICO_CSTREAM_BEGIN)); //propagate begin
+			send_sync_mb(make_sync(tag, PICO_CSTREAM_BEGIN)); //propagate begin
 			auto origin_mb = recv_mb(); //wait for origin
 			if (origin_mb->payload() == PICO_CSTREAM_FROM_LEFT) {
-				send_mb(make_sync(tag, PICO_CSTREAM_FROM_LEFT));
+				send_sync_mb(make_sync(tag, PICO_CSTREAM_FROM_LEFT));
 				s.from_left = true;
 				using itt = typename std::vector<mb_in1 *>::size_type;
 				for (itt i = 0; i < nworkers; ++i)
 					s.mb2w_from_left.push_back(NEW<mb_in1>(tag, mbsize));
 			} else {
-				send_mb(make_sync(tag, PICO_CSTREAM_FROM_RIGHT));
+				send_sync_mb(make_sync(tag, PICO_CSTREAM_FROM_RIGHT));
 				using itt = typename std::vector<mb_in1 *>::size_type;
 				s.from_left = false;
 				for (itt i = 0; i < nworkers; ++i)
@@ -93,7 +93,7 @@ public:
 		/* on c-stream end, notify */
 		virtual void handle_cstream_end(base_microbatch::tag_t tag) {
 			finalize(tag);
-			send_mb(make_sync(tag, PICO_CSTREAM_END));
+			send_sync_mb(make_sync(tag, PICO_CSTREAM_END));
 		}
 
 		/* dispatch data with micro-batch buffering */
@@ -235,7 +235,7 @@ public:
 
 		/* propagate begin if not cached */
 		if (!s.cached) {
-			send_mb(make_sync(tag, PICO_CSTREAM_BEGIN));
+			send_sync_mb(make_sync(tag, PICO_CSTREAM_BEGIN));
 			non_cached_tags.push_back(tag);
 		} else {
 			assert(cached_tag == base_microbatch::nil_tag());
@@ -442,7 +442,7 @@ class JoinFlatMapByKeyFarm: public base_JFMBK_Farm<TokenTypeIn1, TokenTypeIn2,
 		}
 
 		void finalize_output_tag(tag_t tag) {
-			this->send_mb(make_sync(tag, PICO_CSTREAM_END)); //propagate end
+			this->send_sync_mb(make_sync(tag, PICO_CSTREAM_END)); //propagate end
 		}
 	};
 
@@ -532,7 +532,7 @@ class JFMRBK_seq_red: public base_JFMBK_Farm<TT1, TT2, TTO> {
 				DELETE(mb);
 
 			/* close the collection */
-			this->send_mb(make_sync(tag, PICO_CSTREAM_END));
+			this->send_sync_mb(make_sync(tag, PICO_CSTREAM_END));
 		}
 
 		redf_t redf;
@@ -637,7 +637,7 @@ private:
 						this->send_mb(mb);
 
 				/* close the collection */
-				this->send_mb(make_sync(tag, PICO_CSTREAM_END));
+				this->send_sync_mb(make_sync(tag, PICO_CSTREAM_END));
 			}
 
 			const int mb_size = global_params.MICROBATCH_SIZE;

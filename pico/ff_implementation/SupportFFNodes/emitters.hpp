@@ -38,10 +38,11 @@ public:
 	}
 
 	void kernel(base_microbatch *mb) {
-		this->ff_send_out(mb);
+		this->send_mb(mb);
 	}
 };
 
+#if 0
 /*
  * Broadcasts each token.
  */
@@ -53,8 +54,9 @@ public:
 	}
 
 	void kernel(base_microbatch *mb) {
-		this->broadcast_task(mb);
+		this->bcast_mb(mb);
 	}
 };
+#endif
 
 #endif /* INTERNALS_FFOPERATORS_EMITTER_HPP_ */

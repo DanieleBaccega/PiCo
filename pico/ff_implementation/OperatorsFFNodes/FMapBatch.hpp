@@ -66,7 +66,7 @@ private:
 				mkernel(tt, collector);
 			}
 			if (collector.begin())
-				ff_send_out(NEW<mb_wrapped<cnode_t>>(tag, collector.begin()));
+				send_mb(NEW<mb_wrapped<cnode_t>>(tag, collector.begin()));
 
 			//clean up
 			DELETE(in_mb);

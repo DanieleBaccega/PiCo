@@ -28,7 +28,7 @@ public:
 	using base_collector::base_collector;
 
 	void kernel(base_microbatch* mb) {
-		ff_send_out(mb);
+		send_mb(mb);
 	}
 };
 
@@ -44,7 +44,7 @@ public:
 		cnode_t *it_, *it = wmb->get();
 		/* send out all the micro-batches in the list */
 		while (it) {
-			ff_send_out(reinterpret_cast<void *>(it->mb));
+			send_mb(it->mb);
 
 			/* clean up and skip to the next micro-batch */
 			it_ = it;

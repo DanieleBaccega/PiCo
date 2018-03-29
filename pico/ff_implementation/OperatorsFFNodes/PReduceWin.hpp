@@ -87,7 +87,7 @@ private:
 					out_mb = NEW<mb_t>(tag, 1);
 					new (out_mb->allocate()) In(k, s.kvmap[k]);
 					out_mb->commit();
-					ff_send_out(reinterpret_cast<void*>(out_mb));
+					send_mb(out_mb);
 					s.kvcountmap[k] = 0;
 				}
 			}
@@ -104,7 +104,7 @@ private:
 					out_mb = NEW<mb_t>(tag, 1);
 					new (out_mb->allocate()) In(k, s.kvmap[k]);
 					out_mb->commit();
-					ff_send_out(reinterpret_cast<void*>(out_mb));
+					send_mb(out_mb);
 					s.kvcountmap[k] = 0;
 				}
 			}

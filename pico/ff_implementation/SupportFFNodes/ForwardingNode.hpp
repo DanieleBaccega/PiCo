@@ -33,7 +33,7 @@
 class ForwardingNode: public base_filter {
 public:
 	void kernel(base_microbatch* task) {
-		ff_send_out(task);
+		send_mb(task);
 	}
 };
 

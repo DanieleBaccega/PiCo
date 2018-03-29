@@ -58,14 +58,14 @@ private:
 			new (out_microbatch->allocate()) KV(it->first, it->second);
 			out_microbatch->commit();
 			if (out_microbatch->full()) {
-				ff_send_out(reinterpret_cast<void*>(out_microbatch));
+				send_mb(out_microbatch);
 				out_microbatch = NEW<mb_t>(tag, mb_size);
 			}
 		}
 
 		/* send or delete residual microbatch */
 		if (!out_microbatch->empty())
-			ff_send_out(reinterpret_cast<void*>(out_microbatch));
+			send_mb(out_microbatch);
 		else
 			DELETE(out_microbatch);
 	}
