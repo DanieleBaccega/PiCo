@@ -291,6 +291,7 @@ public:
 			auto mb = reinterpret_cast<mb_in2 *>(in_mb);
 			from_right(mb);
 		}
+		DELETE(in_mb);
 	}
 
 private:
